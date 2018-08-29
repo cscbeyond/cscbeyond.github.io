@@ -171,6 +171,83 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-defineProperty" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/29/defineProperty/">关于defineProperty</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/29/defineProperty/" class="archive-article-date">
+  	<time datetime="2018-08-29T01:49:07.340Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>我是在了解vue原理的时候看到的这个源于ES5的属性,所以想深入理解一下<br>对象是对个键值对的集合。每个属性对应任意类型的值<br>定义对象最常用的方法是使用构造函数或字面量的形式<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var obj = new Object();</span><br><span class="line">obj.name = <span class="string">'zhangsan'</span>;</span><br><span class="line">obj.say = <span class="function"><span class="title">function</span></span>()&#123;&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>#我们还可以使用Object.defineProperty定义新属性或修改原有的属性。</p>
+<p>Object.defineProperty(obj,prop,descriptor);<br>obj:必须。目标对象<br>prop: 必须。 要定义或修改的属性名<br>descriptor: 必须。目标属性所拥有的特性</p>
+<p>eg:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">    <span class="built_in">test</span>:<span class="string">'hello'</span></span><br><span class="line">&#125;</span><br><span class="line">//对象已有的属性添加特性描述</span><br><span class="line">Object.defineProperty(obj,<span class="string">'test'</span>,&#123;</span><br><span class="line">    configurable:<span class="literal">true</span> | <span class="literal">false</span>,</span><br><span class="line">    enumerable:<span class="literal">true</span> | <span class="literal">false</span>,</span><br><span class="line">    value:任意类型的值,</span><br><span class="line">    writable:<span class="literal">true</span> | <span class="literal">false</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">//对象新添加的属性的特性描述</span><br><span class="line">Object.defineProperty(obj,<span class="string">"newKey"</span>,&#123;</span><br><span class="line">    configurable:<span class="literal">true</span> | <span class="literal">false</span>,</span><br><span class="line">    enumerable:<span class="literal">true</span> | <span class="literal">false</span>,</span><br><span class="line">    value:任意类型的值,</span><br><span class="line">    writable:<span class="literal">true</span> | <span class="literal">false</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>属性详解：<br>value: 属性对应的值，可以是任意类型的值，默认为undefined<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;&#125;;</span><br><span class="line">//不设置value属性</span><br><span class="line">Object.defineProperty(obj,;<span class="string">'newKey'</span>,&#123;</span><br><span class="line">&#125;)</span><br><span class="line">console.log( obj.newKey );  //undefined</span><br><span class="line"></span><br><span class="line">设置value属性</span><br><span class="line">Object.defineProperty(obj,;<span class="string">'newKey'</span>,&#123;</span><br><span class="line">    value:<span class="string">'hello'</span></span><br><span class="line">&#125;)</span><br><span class="line">console.log( obj.newKey );  //hello</span><br></pre></td></tr></table></figure></p>
+<p>writable:属性的值是否可以被重写.默认false 不能被重写<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;&#125;</span><br><span class="line">//第一种情况：writable设置为<span class="literal">false</span>，不能重写。</span><br><span class="line">Object.defineProperty(obj,<span class="string">"newKey"</span>,&#123;</span><br><span class="line">    value:<span class="string">"hello"</span>,</span><br><span class="line">    writable:<span class="literal">false</span></span><br><span class="line">&#125;);</span><br><span class="line">//更改newKey的值</span><br><span class="line">obj.newKey = <span class="string">"change value"</span>;</span><br><span class="line">console.log( obj.newKey );  //hello</span><br><span class="line"></span><br><span class="line">//第二种情况：writable设置为<span class="literal">true</span>，可以重写</span><br><span class="line">Object.defineProperty(obj,<span class="string">"newKey"</span>,&#123;</span><br><span class="line">    value:<span class="string">"hello"</span>,</span><br><span class="line">    writable:<span class="literal">true</span></span><br><span class="line">&#125;);</span><br><span class="line">//更改newKey的值</span><br><span class="line">obj.newKey = <span class="string">"change value"</span>;</span><br><span class="line">console.log( obj.newKey );  //change value</span><br></pre></td></tr></table></figure></p>
+<p>enumerable：属性是否可被枚举（ 使用for…in 或Object.keys() ）。默认false</p>
+<p>configurable:是否可以删除目标属性或是否可以再次修改属性的特性（writable, configurable, enumerable）。设置为true可以被删除或可以重新设置特性；设置为false，不能被可以被删除或不可以重新设置特性。默认为false。</p>
+<h1 id="存取器描述"><a href="#存取器描述" class="headerlink" title="存取器描述"></a>存取器描述</h1><p>当使用存取器描述属性特性的时候，允许设置一下特性属性：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;&#125;;</span><br><span class="line">Object.defineProperty(obj,<span class="string">"newKey"</span>,&#123;</span><br><span class="line">    get:<span class="function"><span class="title">function</span></span> ()&#123;&#125; | undefined,</span><br><span class="line">    <span class="built_in">set</span>:<span class="keyword">function</span> (value)&#123;&#125; | undefined</span><br><span class="line">    configurable: <span class="literal">true</span> | <span class="literal">false</span></span><br><span class="line">    enumerable: <span class="literal">true</span> | <span class="literal">false</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>注:当使用了getter或setter方法，不允许使用writable和value这两个属性</p>
+<p>当设置或获取对象的某个属性的值的时候，可以提供getter/setter方法。</p>
+<p>getter 是一种获得属性值的方法<br>setter是一种设置属性值的方法。</p>
+<p>在特性中使用get/set属性来定义对应的方法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;&#125;;</span><br><span class="line">var initval = <span class="string">'hello'</span>;</span><br><span class="line">Object.defineProperty(obj,<span class="string">'newKey'</span>,&#123;</span><br><span class="line">    get: <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        <span class="built_in">return</span> initValue;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="built_in">set</span>: <span class="keyword">function</span>(value)&#123;</span><br><span class="line">        initValue = value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">//获取值</span><br><span class="line">console.log( obj.newKey );  //hello</span><br><span class="line">//设置值</span><br><span class="line">obj.newKey = <span class="string">'change value'</span>;</span><br><span class="line">console.log( obj.newKey ); //change value</span><br></pre></td></tr></table></figure></p>
+<h4 id="注：get或set不是必须成对出现，任写其一就可以。如果不设置方法，则get和set的默认值为undefined"><a href="#注：get或set不是必须成对出现，任写其一就可以。如果不设置方法，则get和set的默认值为undefined" class="headerlink" title="注：get或set不是必须成对出现，任写其一就可以。如果不设置方法，则get和set的默认值为undefined"></a>注：get或set不是必须成对出现，任写其一就可以。如果不设置方法，则get和set的默认值为undefined</h4><p>configurable和enumerable同上面的用法</p>
+<p>兼容性：在IE8下，只能在DOM对象上使用，尝试在原生对象使用Object.defineProperty()会报错。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/08/29/defineProperty/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-my-first-hexo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
