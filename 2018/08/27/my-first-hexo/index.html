@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="码农阿成个人博客">
 <meta property="og:description" content="解决vue项目首页加载过慢的问题 1.使用vue-router结合webapack的require异步加载，按需加载模块2.使用异步组件，按需加载123components: &amp;#123;    &apos;my-component&apos;:()=&amp;gt;import(&apos;./my-async-component&apos;)&amp;#125; 3.vue-lazyload插件可以实现图片的懒加载4.moment.js插件  外部">
 <meta property="og:locale" content="Chinese/English">
-<meta property="og:updated_time" content="2018-08-29T01:41:49.891Z">
+<meta property="og:updated_time" content="2018-08-29T01:46:52.926Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="解决vue首页加载过慢问题">
 <meta name="twitter:description" content="解决vue项目首页加载过慢的问题 1.使用vue-router结合webapack的require异步加载，按需加载模块2.使用异步组件，按需加载123components: &amp;#123;    &apos;my-component&apos;:()=&amp;gt;import(&apos;./my-async-component&apos;)&amp;#125; 3.vue-lazyload插件可以实现图片的懒加载4.moment.js插件  外部">
@@ -192,9 +192,7 @@
       
         <p>解决vue项目首页加载过慢的问题</p>
 <p>1.使用vue-router结合webapack的require异步加载，按需加载模块<br>2.使用异步组件，按需加载<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">components: &#123;</span><br><span class="line">    <span class="string">'my-component'</span>:()=&gt;import(<span class="string">'./my-async-component'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>3.vue-lazyload插件可以实现图片的懒加载<br>4.moment.js插件  外部引入一些插件，不要在vue中引入</p>
-<p>列入，我在次项目中有用到moment.js这个插件，在vue内部引入后打包的项目大小要比在外部用src的方式引入打包的项目大个300k左右。</p>
-<p>下载好moment.min.js包，然后在vue项目的webpack.base.conf.js中添加：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">externals:&#123;</span><br><span class="line">    &apos;moment&apos;:&apos;moment&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>3.vue-lazyload插件可以实现图片的懒加载<br>4.moment.js插件  外部引入一些插件，不要在vue中引入<br>项目中有用到moment.js这个插件，在vue内部引入后打包的项目大小要比在外部用src的方式引入打包的项目大个300k左右。下载好moment.min.js包，然后在vue项目的webpack.base.conf.js中添加：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">externals:&#123;</span><br><span class="line">    &apos;moment&apos;:&apos;moment&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>代码后是不会将moment.js给打包到js中的。<br>将刚才下载的moment.min.js包，手动引入到打包好的index.html 文件中</p>
 
       
