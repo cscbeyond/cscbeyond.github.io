@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://github.com/cscbeyond/cscbeyond.github.io">
-  <title>Archives | 码农阿成的个人博客</title>
+  <title>js获取屏幕大小 | 码农阿成的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="利用GitHub + Hexo搭建的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="码农阿成的个人博客">
-<meta property="og:url" content="https://github.com/cscbeyond/cscbeyond.github.io/archives/page/2/index.html">
+  <meta name="description" content="1234567891011121314151617181920212223242526272829303132333435function a()&amp;#123;document.write(&quot;屏幕分辨率为：&quot;+screen.width+&quot;*&quot;+screen.height+&quot;&amp;lt;br /&amp;gt;&quot;+&quot;屏幕可用大小：&quot;+screen.availWidth+&quot;*&quot;+screen.availHeight">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js获取屏幕大小">
+<meta property="og:url" content="https://github.com/cscbeyond/cscbeyond.github.io/2018/12/03/js获取屏幕信息/index.html">
 <meta property="og:site_name" content="码农阿成的个人博客">
-<meta property="og:description" content="利用GitHub + Hexo搭建的博客">
+<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132333435function a()&amp;#123;document.write(&quot;屏幕分辨率为：&quot;+screen.width+&quot;*&quot;+screen.height+&quot;&amp;lt;br /&amp;gt;&quot;+&quot;屏幕可用大小：&quot;+screen.availWidth+&quot;*&quot;+screen.availHeight">
 <meta property="og:locale" content="Chinese/English">
+<meta property="og:updated_time" content="2018-12-02T16:38:51.070Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="码农阿成的个人博客">
-<meta name="twitter:description" content="利用GitHub + Hexo搭建的博客">
+<meta name="twitter:title" content="js获取屏幕大小">
+<meta name="twitter:description" content="1234567891011121314151617181920212223242526272829303132333435function a()&amp;#123;document.write(&quot;屏幕分辨率为：&quot;+screen.width+&quot;*&quot;+screen.height+&quot;&amp;lt;br /&amp;gt;&quot;+&quot;屏幕可用大小：&quot;+screen.availWidth+&quot;*&quot;+screen.availHeight">
   
     <link rel="alternative" href="/atom.xml" title="码农阿成的个人博客" type="application/atom+xml">
   
@@ -169,160 +170,154 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-js获取屏幕信息" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      js获取屏幕大小
+    </h1>
+  
+
+        
+        <a href="/2018/12/03/js获取屏幕信息/" class="archive-article-date">
+  	<time datetime="2018-12-02T16:37:56.543Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-03</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">a</span></span>()&#123;</span><br><span class="line">document.write(</span><br><span class="line"><span class="string">"屏幕分辨率为："</span>+screen.width+<span class="string">"*"</span>+screen.height</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"屏幕可用大小："</span>+screen.availWidth+<span class="string">"*"</span>+screen.availHeight</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"网页可见区域宽："</span>+document.body.clientWidth</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"网页可见区域高："</span>+document.body.clientHeight</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"网页可见区域宽(包括边线的宽)："</span>+document.body.offsetWidth </span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"网页可见区域高(包括边线的宽)："</span>+document.body.offsetHeight </span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"网页正文全文宽："</span>+document.body.scrollWidth</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"网页正文全文高："</span>+document.body.scrollHeight</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"网页被卷去的高："</span>+document.body.scrollTop</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"网页被卷去的左："</span>+document.body.scrollLeft</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"网页正文部分上："</span>+window.screenTop</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"网页正文部分左："</span>+window.screenLeft</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"屏幕分辨率的高："</span>+window.screen.height</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"屏幕分辨率的宽："</span>+window.screen.width</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"屏幕可用工作区高度："</span>+window.screen.availHeight</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"屏幕可用工作区宽度："</span>+window.screen.availWidth</span><br><span class="line">);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/06/jsstandard/" class="archive-article-date">
-  	<time datetime="2018-09-06T07:20:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/06/jsstandard/">JS规范（CommonJS/CMD/AMD）</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://github.com/cscbeyond/cscbeyond.github.io/2018/12/03/js获取屏幕信息/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/29/about-vue/" class="archive-article-date">
-  	<time datetime="2018-08-29T05:45:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-29</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/10/26/vue/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vue开发手记</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/29/about-vue/">vue双向绑定MVVM原理浅解</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/29/defineProperty/" class="archive-article-date">
-  	<time datetime="2018-08-29T02:35:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/29/defineProperty/">关于defineProperty</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/29/my-first-hexo/" class="archive-article-date">
-  	<time datetime="2018-08-29T01:46:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/29/my-first-hexo/">解决vue首页加载过慢问题</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/29/hello-world/" class="archive-article-date">
-  	<time datetime="2018-08-29T01:23:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/29/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-    </nav>
   
 
 
@@ -346,8 +341,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
