@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://github.com/cscbeyond/cscbeyond.github.io">
   <title>centOS初体验 | 码农阿成的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="码农阿成的个人博客">
 <meta property="og:description" content="大概是一瓶不满半瓶晃，前端这么多乱七八糟的东西还没学好，非要学linux。好吧，其实我是为了fan墙才想起来要搞一下linux。最近买了个搬瓦工的vps,方便科学上网，但是光用来科学上网有些奢侈，索性了解了一下linux，搭建了一个服务，并且配置了node环境，服务布上去发现，嘿，真好玩，我竟然有了自己的第一个网站！好了，言归正传，我使用的是搬瓦工一年19.99美元的最低配，自己搞着玩足够了。 #">
 <meta property="og:locale" content="Chinese/English">
-<meta property="og:updated_time" content="2018-10-22T05:46:20.436Z">
+<meta property="og:updated_time" content="2018-10-22T08:32:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="centOS初体验">
 <meta name="twitter:description" content="大概是一瓶不满半瓶晃，前端这么多乱七八糟的东西还没学好，非要学linux。好吧，其实我是为了fan墙才想起来要搞一下linux。最近买了个搬瓦工的vps,方便科学上网，但是光用来科学上网有些奢侈，索性了解了一下linux，搭建了一个服务，并且配置了node环境，服务布上去发现，嘿，真好玩，我竟然有了自己的第一个网站！好了，言归正传，我使用的是搬瓦工一年19.99美元的最低配，自己搞着玩足够了。 #">
@@ -37,7 +37,7 @@
   
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -170,7 +170,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-centos" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-centos" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -183,7 +183,7 @@
 
         
         <a href="/2018/10/22/centos/" class="archive-article-date">
-  	<time datetime="2018-10-22T05:30:27.421Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-22</time>
+  	<time datetime="2018-10-22T08:32:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-22</time>
 </a>
         
       </header>
@@ -192,7 +192,9 @@
       
         <p>大概是一瓶不满半瓶晃，前端这么多乱七八糟的东西还没学好，非要学linux。<br>好吧，其实我是为了fan墙才想起来要搞一下linux。<br>最近买了个搬瓦工的vps,方便科学上网，但是光用来科学上网有些奢侈，索性了解了一下linux，搭建了一个服务，并且配置了node环境，服务布上去发现，嘿，真好玩，我竟然有了自己的第一个网站！<br>好了，言归正传，我使用的是搬瓦工一年19.99美元的最低配，自己搞着玩足够了。</p>
 <p>#配置node环境<br>开始时候，我是纯手动配置了一遍node环境，还有nginx做反向代理，因为平时工作中有一丢丢nginx的配置经验，所以配置起来感觉并不难。<br>方法一：<br>中间可能会出现gcc未安装或版本过低的情况，先进行升级。<br>1.安装wget命令<br>2.安装解压工具<br>3.下载node压缩包<br>4.解压<br>5.配置软连接，达到全局都可以使用node和npm的目的<br>nginx的配置也大体相同，下载，安装，配置反向代理。<br>方法二：<br>使用宝塔一键配置<br>很好用的一个可视化工具，安装完成后nginx，mysql以及php环境就都配置好了。<br>然后再按照上面步骤安装node。</p>
-<p>#如果让node服务一直在服务器上运行<br>写过node服务的都知道，要想让服务运行，就不能关掉命令窗口，一旦关闭，服务也就随即停止。<br>forever这个插件，可以让你的node服务一直运行，即使退出了xshell也不会关闭服务。<br>我是按照这个教程安装并使用的， 里面提供的几个命令都测试过，都没问题，很不错。<br><a href="https://blog.csdn.net/zhiyual/article/details/79774225" target="_blank" rel="noopener">传送门</a></p>
+<p>#如果让node服务一直在服务器上运行<br>写过node服务的都知道，要想让服务运行，就不能关掉命令窗口，一旦关闭，服务也就随即停止。<br>forever这个插件，可以让你的node服务一直运行，即使退出了xshell也不会关闭服务。<br>我是按照这个教程安装并使用的， 里面提供的几个命令都测试过，都没问题，很不错。<br><a href="https://blog.csdn.net/zhiyual/article/details/79774225" target="_blank" rel="noopener">传送门</a><br>我遇到的情况是使用express-generator搭建的项目，要使用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm start</span><br></pre></td></tr></table></figure></p>
+<p>才可以让项目运行起来，网上有人说可以使用<br>forever start “npm start”，但是我使用的时候报错了，所以最后我干脆在项目目录下运行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">forever start ./bin/www</span><br></pre></td></tr></table></figure></p>
+<p>也就是在bin下找到www文件，运行，就ok了。我们运行npm start的时候，在package.json中可以看到，实际上运行的就是这一个文件。<br>pm2包管理器似乎更强大一些，免去了很多安装带来的问题。还未尝试</p>
 
       
 
@@ -286,9 +288,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2018/10/26/closure/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          闭包
+        
+      </div>
+    </a>
   
-    <a href="/2018/10/22/hexoTheme/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">hexo更换主题</div>
+  
+    <a href="/2018/10/22/clearfix/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">css清除浮动相关</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -418,7 +429,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:
