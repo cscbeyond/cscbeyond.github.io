@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://github.com/cscbeyond/cscbeyond.github.io">
-  <title>js获取屏幕大小 | 码农阿成的个人博客</title>
+  <title>document和window的区别及联系 | 码农阿成的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1234567891011121314151617181920212223242526272829303132333435function a()&amp;#123;document.write(&quot;屏幕分辨率为：&quot;+screen.width+&quot;*&quot;+screen.height+&quot;&amp;lt;br /&amp;gt;&quot;+&quot;屏幕可用大小：&quot;+screen.availWidth+&quot;*&quot;+screen.availHeight">
+  <meta name="description" content="前端工程师每天都在与这两个对象接触，可是他们之间到底是什么关系呢？ document对象每个载入浏览器的html文档都会成为document对象document对象使我们可以从脚本中对html页面中的所有元素进行访问document是window的一部分，可以用window.document对其进行访问 document对象描述HTMLDocument 接口对 DOM Document 接口进行了">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js获取屏幕大小">
-<meta property="og:url" content="https://github.com/cscbeyond/cscbeyond.github.io/2018/12/03/js获取屏幕信息/index.html">
+<meta property="og:title" content="document和window的区别及联系">
+<meta property="og:url" content="https://github.com/cscbeyond/cscbeyond.github.io/2018/11/30/document&window/index.html">
 <meta property="og:site_name" content="码农阿成的个人博客">
-<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132333435function a()&amp;#123;document.write(&quot;屏幕分辨率为：&quot;+screen.width+&quot;*&quot;+screen.height+&quot;&amp;lt;br /&amp;gt;&quot;+&quot;屏幕可用大小：&quot;+screen.availWidth+&quot;*&quot;+screen.availHeight">
+<meta property="og:description" content="前端工程师每天都在与这两个对象接触，可是他们之间到底是什么关系呢？ document对象每个载入浏览器的html文档都会成为document对象document对象使我们可以从脚本中对html页面中的所有元素进行访问document是window的一部分，可以用window.document对其进行访问 document对象描述HTMLDocument 接口对 DOM Document 接口进行了">
 <meta property="og:locale" content="Chinese/English">
-<meta property="og:updated_time" content="2018-12-02T16:38:51.070Z">
+<meta property="og:updated_time" content="2018-11-30T06:00:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js获取屏幕大小">
-<meta name="twitter:description" content="1234567891011121314151617181920212223242526272829303132333435function a()&amp;#123;document.write(&quot;屏幕分辨率为：&quot;+screen.width+&quot;*&quot;+screen.height+&quot;&amp;lt;br /&amp;gt;&quot;+&quot;屏幕可用大小：&quot;+screen.availWidth+&quot;*&quot;+screen.availHeight">
+<meta name="twitter:title" content="document和window的区别及联系">
+<meta name="twitter:description" content="前端工程师每天都在与这两个对象接触，可是他们之间到底是什么关系呢？ document对象每个载入浏览器的html文档都会成为document对象document对象使我们可以从脚本中对html页面中的所有元素进行访问document是window的一部分，可以用window.document对其进行访问 document对象描述HTMLDocument 接口对 DOM Document 接口进行了">
   
     <link rel="alternative" href="/atom.xml" title="码农阿成的个人博客" type="application/atom+xml">
   
@@ -170,27 +170,38 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-js获取屏幕信息" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-document&amp;window" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      js获取屏幕大小
+      document和window的区别及联系
     </h1>
   
 
         
-        <a href="/2018/12/03/js获取屏幕信息/" class="archive-article-date">
-  	<time datetime="2018-12-02T16:37:56.543Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-03</time>
+        <a href="/2018/11/30/document&window/" class="archive-article-date">
+  	<time datetime="2018-11-30T06:00:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-30</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">a</span></span>()&#123;</span><br><span class="line">document.write(</span><br><span class="line"><span class="string">"屏幕分辨率为："</span>+screen.width+<span class="string">"*"</span>+screen.height</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"屏幕可用大小："</span>+screen.availWidth+<span class="string">"*"</span>+screen.availHeight</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"网页可见区域宽："</span>+document.body.clientWidth</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"网页可见区域高："</span>+document.body.clientHeight</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"网页可见区域宽(包括边线的宽)："</span>+document.body.offsetWidth </span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"网页可见区域高(包括边线的宽)："</span>+document.body.offsetHeight </span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"网页正文全文宽："</span>+document.body.scrollWidth</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"网页正文全文高："</span>+document.body.scrollHeight</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"网页被卷去的高："</span>+document.body.scrollTop</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"网页被卷去的左："</span>+document.body.scrollLeft</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"网页正文部分上："</span>+window.screenTop</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"网页正文部分左："</span>+window.screenLeft</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"屏幕分辨率的高："</span>+window.screen.height</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"屏幕分辨率的宽："</span>+window.screen.width</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"屏幕可用工作区高度："</span>+window.screen.availHeight</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"屏幕可用工作区宽度："</span>+window.screen.availWidth</span><br><span class="line">);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>前端工程师每天都在与这两个对象接触，可是他们之间到底是什么关系呢？</p>
+<h3 id="document对象"><a href="#document对象" class="headerlink" title="document对象"></a>document对象</h3><p>每个载入浏览器的html文档都会成为document对象<br>document对象使我们可以从脚本中对html页面中的所有元素进行访问<br>document是window的一部分，可以用window.document对其进行访问</p>
+<h3 id="document对象描述"><a href="#document对象描述" class="headerlink" title="document对象描述"></a>document对象描述</h3><p>HTMLDocument 接口对 DOM Document 接口进行了扩展，定义 HTML 专用的属性和方法。<br>很多属性和方法都是 HTMLCollection 对象（实际上是可以用数组或名称索引的只读数组），其中保存了对锚、表单、链接以及其他可脚本元素的引用。<br>这些集合属性都源自于 0 级 DOM。它们已经被 Document.getElementsByTagName() 所取代，但是仍然常常使用，因为他们很方便。<br>write() 方法值得注意，在文档载入和解析的时候，它允许一个脚本向文档中插入动态生成的内容。<br>注意，在 1 级 DOM 中，HTMLDocument 定义了一个名为 getElementById() 的非常有用的方法。在 2 级 DOM 中，<br>该方法已经被转移到了 document 接口，它现在由 HTMLDocument 继承而不是由它定义了。</p>
+<h3 id="Window-对象"><a href="#Window-对象" class="headerlink" title="Window 对象"></a>Window 对象</h3><p>Window 对象表示浏览器中打开的窗口。<br>如果文档包含框架（frame 或 iframe 标签），浏览器会为 HTML 文档创建一个 window 对象，并为每个框架创建一个额外的 window 对象。<br>注释：没有应用于 window 对象的公开标准，不过所有浏览器都支持该对象</p>
+<h3 id="Window-对象描述"><a href="#Window-对象描述" class="headerlink" title="Window 对象描述"></a>Window 对象描述</h3><p>Window 对象表示一个浏览器窗口或一个框架。在客户端 JavaScript 中，Window 对象是全局对象，所有的表达式都在当前的环境中计算。也就是说，要引用当前窗口根本不需要特殊的语法，可以把那个窗口的属性作为全局变量来使用。例如，可以只写document，而不必写 window.document。</p>
+<p>同样，可以把当前窗口对象的方法当作函数来使用，如只写 alert()，而不必写 Window.alert()。</p>
+<p>除了上面列出的属性和方法，Window 对象还实现了核心 JavaScript 所定义的所有全局属性和方法。</p>
+<p>Window 对象的 window 属性和 self 属性引用的都是它自己。当你想明确地引用当前窗口，而不仅仅是隐式地引用它时，可以使用这两个属性。除了这两个属性之外，parent 属性、top 属性以及 frame[] 数组都引用了与当前 Window 对象相关的其他 Window 对象。</p>
+<h3 id="再说说我们平时常用的入口函数异同："><a href="#再说说我们平时常用的入口函数异同：" class="headerlink" title="再说说我们平时常用的入口函数异同："></a>再说说我们平时常用的入口函数异同：</h3><p>1.执行时间上：<br>window.onload必须等到页面内包括图片的所有元素加载完成后才执行<br>$(document).ready() 是DOM结构绘制完成后就执行，不必等到加载完毕，这种情况，适用于dDOM加载完成后绑定事件，第一种也可以，页面加载时间过长的话，再去绑定事件，这种体验是比较差的。</p>
+<p>2.编写个数：<br>window.onload不能同时编写多个，如果有多个window.onload，只会执行一个。<br>$(document).ready()可以同时编写多个，并且都可以执行。</p>
+<p>3.简化写法：<br>window.onload   无<br>$(document).ready(function(){}) 可以简化成$(function(){});</p>
+
       
 
       
@@ -269,7 +280,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://github.com/cscbeyond/cscbeyond.github.io/2018/12/03/js获取屏幕信息/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://github.com/cscbeyond/cscbeyond.github.io/2018/11/30/document&window/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -283,18 +294,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/12/03/继承/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/12/03/js获取屏幕信息/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          继承
+          js获取屏幕大小
         
       </div>
     </a>
   
   
-    <a href="/2018/11/30/document&window/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">document和window的区别及联系</div>
+    <a href="/2018/11/30/事件冒泡及捕获/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">事件冒泡及捕获</div>
       <i class="icon-circle-right"></i>
     </a>
   

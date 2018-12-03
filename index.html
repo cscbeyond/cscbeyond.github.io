@@ -171,6 +171,69 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-继承" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/03/继承/">继承</a>
+    </h1>
+  
+
+        
+        <a href="/2018/12/03/继承/" class="archive-article-date">
+  	<time datetime="2018-12-03T03:03:49.162Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>原型对象主要用来继承，eg：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var Person = <span class="keyword">function</span>(name)&#123;</span><br><span class="line">	this.name = name; </span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.getName = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	<span class="built_in">return</span> this.name;</span><br><span class="line">&#125;</span><br><span class="line">var person1 = new Person(<span class="string">'chen'</span>);</span><br><span class="line">person1.getName(); // chen</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/12/03/继承/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-js获取屏幕信息" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -204,6 +267,332 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/12/03/js获取屏幕信息/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-document&amp;window" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/30/document&window/">document和window的区别及联系</a>
+    </h1>
+  
+
+        
+        <a href="/2018/11/30/document&window/" class="archive-article-date">
+  	<time datetime="2018-11-30T06:00:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>前端工程师每天都在与这两个对象接触，可是他们之间到底是什么关系呢？</p>
+<h3 id="document对象"><a href="#document对象" class="headerlink" title="document对象"></a>document对象</h3><p>每个载入浏览器的html文档都会成为document对象<br>document对象使我们可以从脚本中对html页面中的所有元素进行访问<br>document是window的一部分，可以用window.document对其进行访问</p>
+<h3 id="document对象描述"><a href="#document对象描述" class="headerlink" title="document对象描述"></a>document对象描述</h3><p>HTMLDocument 接口对 DOM Document 接口进行了扩展，定义 HTML 专用的属性和方法。<br>很多属性和方法都是 HTMLCollection 对象（实际上是可以用数组或名称索引的只读数组），其中保存了对锚、表单、链接以及其他可脚本元素的引用。<br>这些集合属性都源自于 0 级 DOM。它们已经被 Document.getElementsByTagName() 所取代，但是仍然常常使用，因为他们很方便。<br>write() 方法值得注意，在文档载入和解析的时候，它允许一个脚本向文档中插入动态生成的内容。<br>注意，在 1 级 DOM 中，HTMLDocument 定义了一个名为 getElementById() 的非常有用的方法。在 2 级 DOM 中，<br>该方法已经被转移到了 document 接口，它现在由 HTMLDocument 继承而不是由它定义了。</p>
+<h3 id="Window-对象"><a href="#Window-对象" class="headerlink" title="Window 对象"></a>Window 对象</h3><p>Window 对象表示浏览器中打开的窗口。<br>如果文档包含框架（frame 或 iframe 标签），浏览器会为 HTML 文档创建一个 window 对象，并为每个框架创建一个额外的 window 对象。<br>注释：没有应用于 window 对象的公开标准，不过所有浏览器都支持该对象</p>
+<h3 id="Window-对象描述"><a href="#Window-对象描述" class="headerlink" title="Window 对象描述"></a>Window 对象描述</h3><p>Window 对象表示一个浏览器窗口或一个框架。在客户端 JavaScript 中，Window 对象是全局对象，所有的表达式都在当前的环境中计算。也就是说，要引用当前窗口根本不需要特殊的语法，可以把那个窗口的属性作为全局变量来使用。例如，可以只写document，而不必写 window.document。</p>
+<p>同样，可以把当前窗口对象的方法当作函数来使用，如只写 alert()，而不必写 Window.alert()。</p>
+<p>除了上面列出的属性和方法，Window 对象还实现了核心 JavaScript 所定义的所有全局属性和方法。</p>
+<p>Window 对象的 window 属性和 self 属性引用的都是它自己。当你想明确地引用当前窗口，而不仅仅是隐式地引用它时，可以使用这两个属性。除了这两个属性之外，parent 属性、top 属性以及 frame[] 数组都引用了与当前 Window 对象相关的其他 Window 对象。</p>
+<h3 id="再说说我们平时常用的入口函数异同："><a href="#再说说我们平时常用的入口函数异同：" class="headerlink" title="再说说我们平时常用的入口函数异同："></a>再说说我们平时常用的入口函数异同：</h3><p>1.执行时间上：<br>window.onload必须等到页面内包括图片的所有元素加载完成后才执行<br>$(document).ready() 是DOM结构绘制完成后就执行，不必等到加载完毕，这种情况，适用于dDOM加载完成后绑定事件，第一种也可以，页面加载时间过长的话，再去绑定事件，这种体验是比较差的。</p>
+<p>2.编写个数：<br>window.onload不能同时编写多个，如果有多个window.onload，只会执行一个。<br>$(document).ready()可以同时编写多个，并且都可以执行。</p>
+<p>3.简化写法：<br>window.onload   无<br>$(document).ready(function(){}) 可以简化成$(function(){});</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/11/30/document&window/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-事件冒泡及捕获" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/30/事件冒泡及捕获/">事件冒泡及捕获</a>
+    </h1>
+  
+
+        
+        <a href="/2018/11/30/事件冒泡及捕获/" class="archive-article-date">
+  	<time datetime="2018-11-30T02:50:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 冒泡</span></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">    &lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span><br><span class="line">    &lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"ie=edge"</span>&gt;</span><br><span class="line">    &lt;title&gt;捕获和冒泡&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        .out&#123;</span><br><span class="line">            width: 500px;</span><br><span class="line">            height: 500px;</span><br><span class="line">            background-color: lightblue;</span><br><span class="line">            overflow: hidden;</span><br><span class="line">        &#125;</span><br><span class="line">        .mid&#123;</span><br><span class="line">            width: 300px;</span><br><span class="line">            height: 300px;</span><br><span class="line">            background-color: lightcoral;</span><br><span class="line">            margin: 100px auto;</span><br><span class="line">            overflow: hidden;</span><br><span class="line">        &#125;</span><br><span class="line">        .inner&#123;</span><br><span class="line">            width: 100x;</span><br><span class="line">            height: 100px;</span><br><span class="line">            background-color: lightgreen;</span><br><span class="line">            margin: 100px auto;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class=<span class="string">"out"</span>&gt;</span><br><span class="line">        &lt;div class=<span class="string">"mid"</span>&gt;</span><br><span class="line">            &lt;div class=<span class="string">"inner"</span>&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        window.onload = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">            <span class="built_in">let</span> out = document.querySelector(<span class="string">'.out'</span>);</span><br><span class="line">            <span class="built_in">let</span> mid = document.querySelector(<span class="string">'.mid'</span>);</span><br><span class="line">            <span class="built_in">let</span> inner = document.querySelector(<span class="string">'.inner'</span>);</span><br><span class="line">            out.addEventListener(<span class="string">'click'</span>,<span class="keyword">function</span>(e)&#123;</span><br><span class="line">                alert(<span class="string">'out'</span>);</span><br><span class="line">            &#125;)</span><br><span class="line">            mid.addEventListener(<span class="string">'click'</span>,<span class="keyword">function</span>(e)&#123;</span><br><span class="line">                e.stopPropagation();  //这里阻止事件继续向上冒泡，因此，在点击了inner后，弹出inner mid，不会有out</span><br><span class="line">                alert(<span class="string">'mid'</span>);</span><br><span class="line">            &#125;)</span><br><span class="line">            inner.addEventListener(<span class="string">'click'</span>,<span class="keyword">function</span>(e)&#123;</span><br><span class="line">                e.stopPropagation();  </span><br><span class="line">                alert(<span class="string">'inner'</span>);</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">        //冒泡，是从小的元素向大的元素传递，子元素使用e.stopPropagation()阻止冒泡后，事件无法向上传递，因此，父级元素无法监听到子元素事件。</span><br><span class="line">        // 以上是事件冒泡</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/11/30/事件冒泡及捕获/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-event" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/30/event/">关于js中的事件问题</a>
+    </h1>
+  
+
+        
+        <a href="/2018/11/30/event/" class="archive-article-date">
+  	<time datetime="2018-11-30T01:52:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>使用js原生来书写代码时，我们通常用addEventListener来为元素添加事件，<br>使用removeEventListener来移除事件。<br>注意，removeEventListener无法移除匿名函数的事件。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/11/30/event/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-bad-mpvue" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/28/bad-mpvue/">mpvue踩坑记</a>
+    </h1>
+  
+
+        
+        <a href="/2018/11/28/bad-mpvue/" class="archive-article-date">
+  	<time datetime="2018-11-28T09:23:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>以下引自官方文档：</p>
+<h3 id="mpvue-（github-地址请参见）是一个使用-Vue-js-开发小程序的前端框架。框架基于-Vue-js-核心，mpvue-修改了-Vue-js-的-runtime-和-compiler-实现，使其可以运行在小程序环境中，从而为小程序开发引入了整套-Vue-js-开发体验。"><a href="#mpvue-（github-地址请参见）是一个使用-Vue-js-开发小程序的前端框架。框架基于-Vue-js-核心，mpvue-修改了-Vue-js-的-runtime-和-compiler-实现，使其可以运行在小程序环境中，从而为小程序开发引入了整套-Vue-js-开发体验。" class="headerlink" title="mpvue （github 地址请参见）是一个使用 Vue.js 开发小程序的前端框架。框架基于 Vue.js 核心，mpvue 修改了 Vue.js 的 runtime 和 compiler 实现，使其可以运行在小程序环境中，从而为小程序开发引入了整套 Vue.js 开发体验。"></a>mpvue （github 地址请参见）是一个使用 Vue.js 开发小程序的前端框架。框架基于 Vue.js 核心，mpvue 修改了 Vue.js 的 runtime 和 compiler 实现，使其可以运行在小程序环境中，从而为小程序开发引入了整套 Vue.js 开发体验。</h3><p>然而，当我想自定义一个底部导航的时候，把底部导航提出来作为一个组件，试了半天发现无法实现跳转，不能响应click事件，后来查了下文档才知道，在组件上面是无法绑定click事件的，原文这样解释：</p>
+<h3 id="暂不支持在组件引用时，在组件上定义-click-等原生事件、v-show（可用-v-if-代替）和-class-style-等样式属性-例：-样式是不会生效的-，因为编译到-wxml，小程序不会生成节点，建议写在内部顶级元素上。"><a href="#暂不支持在组件引用时，在组件上定义-click-等原生事件、v-show（可用-v-if-代替）和-class-style-等样式属性-例：-样式是不会生效的-，因为编译到-wxml，小程序不会生成节点，建议写在内部顶级元素上。" class="headerlink" title="暂不支持在组件引用时，在组件上定义 click 等原生事件、v-show（可用 v-if 代替）和 class style 等样式属性(例：  样式是不会生效的)，因为编译到 wxml，小程序不会生成节点，建议写在内部顶级元素上。"></a>暂不支持在组件引用时，在组件上定义 click 等原生事件、v-show（可用 v-if 代替）和 class style 等样式属性(例：<card class="class-name"> </card> 样式是不会生效的)，因为编译到 wxml，小程序不会生成节点，建议写在内部顶级元素上。</h3><p>组件不支持click事件，难道要我每个页面再复制一遍？？</p>
+<p>所以，组件存在的意义是什么？静态的展示吗？O**K</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/11/28/bad-mpvue/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-array" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/26/array/">数组</a>
+    </h1>
+  
+
+        
+        <a href="/2018/11/26/array/" class="archive-article-date">
+  	<time datetime="2018-11-26T05:38:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="数组的长度是比数组最大索引值多一的数。"><a href="#数组的长度是比数组最大索引值多一的数。" class="headerlink" title="数组的长度是比数组最大索引值多一的数。"></a>数组的长度是比数组最大索引值多一的数。</h3>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/11/26/array/">展开全文 >></a>
         </p>
       
 
@@ -428,402 +817,9 @@
 
 
   
-    <article id="post-clearfix" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/22/clearfix/">css清除浮动相关</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/22/clearfix/" class="archive-article-date">
-  	<time datetime="2018-10-22T05:49:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/22/clearfix/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-node" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/22/node/">node学习笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/22/node/" class="archive-article-date">
-  	<time datetime="2018-10-22T05:30:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>比较流行的node框架是express和koa。<br>以前就听人讲，express很容易陷入回调地狱，但对我这个新手来说，好像还没涉及到这里。<br>koa的开发团队就是express的原班人马，这…<br>好吧，毕竟我写不出来框架，就不瞎哔哔了。<br>关于koa和express的区别，简单了解了一下，express是用es5书写的，最后到处的是一个函数。<br>koa中使用了大量的es6语法，最后导出的是一个类。<br>还有人说，从express转为koa觉得有点困难，我觉得应该是express还不熟练的原因吧。<br>最开始接触node，我是徒手撸原生，然后上手了express，后来又使用了express-generator这个框架，安装完成后项目目录就有了，不用自己再去构建。直接写接口就好。<br>想了解一下koa，发现koa的文档实在是简单到不能再简单，大概是我express还没用熟悉的原因吧。个人感觉express比较好上手，毕竟对于我这个菜鸟来说，太多东西都是看着文档进行开发的…   :·(</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/22/node/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hexoTheme" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/22/hexoTheme/">hexo更换主题</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/22/hexoTheme/" class="archive-article-date">
-  	<time datetime="2018-10-22T05:10:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/22/hexoTheme/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-shallowCopeAndDeepCopy" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/18/shallowCopeAndDeepCopy/">深拷贝对象的技巧</a>
-    </h1>
-  
-
-        
-        <a href="/2018/09/18/shallowCopeAndDeepCopy/" class="archive-article-date">
-  	<time datetime="2018-09-18T10:15:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="主要介绍两种方法"><a href="#主要介绍两种方法" class="headerlink" title="主要介绍两种方法"></a>主要介绍两种方法</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//浅拷贝</span><br><span class="line"><span class="built_in">let</span> obj1 = &#123;<span class="string">"name"</span>:<span class="string">"c1"</span>,<span class="string">"age"</span>:18,<span class="string">"job"</span>:<span class="string">"coder"</span>&#125;;</span><br><span class="line"><span class="built_in">let</span> obj2 = obj1;</span><br><span class="line">console.log(obj1);//  &#123;<span class="string">"name"</span>:<span class="string">"c1"</span>,<span class="string">"age"</span>:18,<span class="string">"job"</span>:<span class="string">"coder"</span>&#125;</span><br><span class="line">console.log(obj2);//  &#123;<span class="string">"name"</span>:<span class="string">"c1"</span>,<span class="string">"age"</span>:18,<span class="string">"job"</span>:<span class="string">"coder"</span>&#125;</span><br><span class="line">obj2.name = <span class="string">"c2"</span>;</span><br><span class="line">console.log(obj1); //  &#123;name: <span class="string">"c2"</span>, age: 18, job: <span class="string">"coder"</span>&#125;</span><br><span class="line">console.log(obj2); //  &#123;name: <span class="string">"c2"</span>, age: 18, job: <span class="string">"coder"</span>&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="1-利用JSON-stringify和JSON-parse"><a href="#1-利用JSON-stringify和JSON-parse" class="headerlink" title="1.利用JSON.stringify和JSON.parse"></a>1.利用JSON.stringify和JSON.parse</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//深拷贝</span><br><span class="line">    <span class="built_in">let</span> obj1 = &#123;name:<span class="string">'c1'</span>,age:18,job:<span class="string">'coder'</span>&#125;;</span><br><span class="line">    console.log(obj1);//  &#123;<span class="string">"name"</span>:<span class="string">"c1"</span>,<span class="string">"age"</span>:18,<span class="string">"job"</span>:<span class="string">"coder"</span>&#125;</span><br><span class="line">    <span class="built_in">let</span> obj2 = JSON.parse(JSON.stringify(obj1));</span><br><span class="line">    obj2.name = <span class="string">"c2"</span>;</span><br><span class="line">    console.log(obj1); //  &#123;name: <span class="string">"c1"</span>, age: 18, job: <span class="string">"coder"</span>&#125;</span><br><span class="line">    console.log(obj2); //  &#123;name: <span class="string">"c2"</span>, age: 18, job: <span class="string">"coder"</span>&#125;</span><br></pre></td></tr></table></figure>
-<p>原理就是先将对象转换成js的基本数据类型（字符串），存在于栈中。<br>再将字符串通过JSON.parse()这个api转换为js对象，并且内存地址不会指向之前的obj1。这样就实现了深拷贝。</p>
-<h2 id="2-利用Object-assign"><a href="#2-利用Object-assign" class="headerlink" title="2.利用Object.assign()"></a>2.利用Object.assign()</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//深拷贝</span><br><span class="line"><span class="built_in">let</span> obj1 = &#123;<span class="string">"name"</span>:<span class="string">"c1"</span>,<span class="string">"age"</span>:18,<span class="string">"job"</span>:<span class="string">"coder"</span>&#125;;</span><br><span class="line">console.log(obj1);//  &#123;<span class="string">"name"</span>:<span class="string">"c1"</span>,<span class="string">"age"</span>:18,<span class="string">"job"</span>:<span class="string">"coder"</span>&#125;</span><br><span class="line"><span class="built_in">let</span> obj2 = Object.assign(&#123;&#125;,obj1);</span><br><span class="line">obj2.name = <span class="string">"c2"</span>;</span><br><span class="line">console.log(obj1); //  &#123;name: <span class="string">"c1"</span>, age: 18, job: <span class="string">"coder"</span>&#125;</span><br><span class="line">console.log(obj2); //  &#123;name: <span class="string">"c2"</span>, age: 18, job: <span class="string">"coder"</span>&#125;</span><br></pre></td></tr></table></figure>
-<p>Object.assign()的使用方法<br>（不全，请自行百度）</p>
-<p>语法<br>Object.assign(target, …sources)<br>参数<br>target<br>目标对象。<br>sources<br>源对象。<br>返回值<br>目标对象。</p>
-<p>复制一个对象<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;a:1&#125;;</span><br><span class="line">var copy = Object.assign(&#123;&#125;,obj);</span><br><span class="line">console.log(copy); // &#123;a:1&#125;</span><br></pre></td></tr></table></figure></p>
-<p>合并对象<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var o1 = &#123;a:1&#125;;</span><br><span class="line">var o2 = &#123;b:2&#125;;</span><br><span class="line">var o3 = &#123;c:3&#125;;</span><br><span class="line"></span><br><span class="line">var obj = Object.assign(o1,o2,o3);</span><br><span class="line">console.log(obj);  // &#123;a:1,b:2,c:3&#125;</span><br><span class="line">console.log(o1);   // &#123;a:1,b:2,c:3&#125;  ---&gt;目标对象自身也会发生变化</span><br><span class="line">console.log(o2);   // &#123;b:2&#125;</span><br></pre></td></tr></table></figure></p>
-<p>合并具有相同属性的对象<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var o1 = &#123; a: 1, b: 1, c: 1 &#125;;</span><br><span class="line">var o2 = &#123; b: 2, c: 2 &#125;;</span><br><span class="line">var o3 = &#123; c: 3 &#125;;</span><br><span class="line">var obj = Object.assign(&#123;&#125;, o1, o2, o3);</span><br><span class="line">console.log(obj); // &#123; a: 1, b: 2, c: 3 &#125;;  //属性被后面参数中具有相同属性的其他对象覆盖</span><br></pre></td></tr></table></figure></p>
-<p>继承属性和不可枚举属性是不能拷贝的</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/18/shallowCopeAndDeepCopy/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-es6" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/10/es6/">es6</a>
-    </h1>
-  
-
-        
-        <a href="/2018/09/10/es6/" class="archive-article-date">
-  	<time datetime="2018-09-10T03:23:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>解构赋值：<br>左右两边结构格式要一致<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> [a,b,c] = [12,[5,6]];</span><br><span class="line">console.log(a,b,c)</span><br></pre></td></tr></table></figure></p>
-<p>结构的时候可以给默认值</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> [a,b,c=默认值] = [<span class="string">'aa'</span>,<span class="string">'bb'</span>]</span><br></pre></td></tr></table></figure>
-<p>字符串的查找<br>includes<br>str.indexOf(要找的东西)  返回的是位置<br>str.indexOf(要找的东西)  返回的是true/false<br>startsWith<br>endsWith<br>let str = ‘222ww.ll–’;<br>console.log(str.repeat(3));</p>
-<p>参数可以给默认值</p>
-<p>函数的参数默认是已经定义的<br>不能再使用let const声明</p>
-<p>扩展运算符</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/10/es6/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-chain-program" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/07/chain-program/">关于链式编程的一点理解</a>
-    </h1>
-  
-
-        
-        <a href="/2018/09/07/chain-program/" class="archive-article-date">
-  	<time datetime="2018-09-07T01:10:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>对于前端来说，最早接触链式编程应该是在学习jquery的时候，jquery的特性之一就是链式编程。<br>用了这么久终于想起来要了解一下链式编程原理，下面就说一下我对链式编程的理解，如果有不正确的地方，望指正，共同进步。<br>其实链式编程的原理很简单，相信你看了下面这个demo后，一定会恍然大悟，啊，原来链式编程这么简单。</p>
-<h3 id="eg"><a href="#eg" class="headerlink" title="eg:"></a>eg:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;&#125;;</span><br><span class="line">obj.a = <span class="keyword">function</span>(params1)&#123;</span><br><span class="line">    console.log(params1);</span><br><span class="line">    <span class="built_in">return</span> this;</span><br><span class="line">&#125;</span><br><span class="line">obj.b = <span class="keyword">function</span>(params2)&#123;</span><br><span class="line">    console.log(params2);</span><br><span class="line">    <span class="built_in">return</span> this;</span><br><span class="line">&#125;</span><br><span class="line">obj.a(<span class="string">'这是a'</span>).b(<span class="string">'这是b'</span>);</span><br></pre></td></tr></table></figure>
-<p>对吧，其实就是这么简单，在每个方法内部进行了一系列的处理之后，最后return this，这样就能保证进行下一步操作的时候，this还是指向obj,因此就实现了链式编程。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/07/chain-program/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 

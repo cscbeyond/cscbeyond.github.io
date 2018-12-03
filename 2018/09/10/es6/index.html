@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="码农阿成的个人博客">
 <meta property="og:description" content="解构赋值：左右两边结构格式要一致12let [a,b,c] = [12,[5,6]];console.log(a,b,c) 结构的时候可以给默认值 1let [a,b,c=默认值] = [&apos;aa&apos;,&apos;bb&apos;] 字符串的查找includesstr.indexOf(要找的东西)  返回的是位置str.indexOf(要找的东西)  返回的是true/falsestartsWithendsWithlet">
 <meta property="og:locale" content="Chinese/English">
-<meta property="og:updated_time" content="2018-09-10T03:23:08.000Z">
+<meta property="og:updated_time" content="2018-12-03T08:50:28.642Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="es6">
 <meta name="twitter:description" content="解构赋值：左右两边结构格式要一致12let [a,b,c] = [12,[5,6]];console.log(a,b,c) 结构的时候可以给默认值 1let [a,b,c=默认值] = [&apos;aa&apos;,&apos;bb&apos;] 字符串的查找includesstr.indexOf(要找的东西)  返回的是位置str.indexOf(要找的东西)  返回的是true/falsestartsWithendsWithlet">
@@ -196,7 +196,17 @@
 <p>字符串的查找<br>includes<br>str.indexOf(要找的东西)  返回的是位置<br>str.indexOf(要找的东西)  返回的是true/false<br>startsWith<br>endsWith<br>let str = ‘222ww.ll–’;<br>console.log(str.repeat(3));</p>
 <p>参数可以给默认值</p>
 <p>函数的参数默认是已经定义的<br>不能再使用let const声明</p>
-<p>扩展运算符</p>
+<p>扩展运算符<br>…</p>
+<p>在es6之前，js中的模块没有官方规范，民间自定的，客户端两种—-AMD和CMD，服务端一种—-CommonJS<br>es6中对模块进行了规范<br>引入模块使用import<br>导出模块用export<br>import 和 export<br>首先我们定义一个模块：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// a.js</span><br><span class="line">const a = 23;</span><br><span class="line"><span class="built_in">export</span> &#123;a&#125;;</span><br><span class="line"><span class="built_in">export</span> const b = 24;</span><br></pre></td></tr></table></figure></p>
+<p>在导出时，可以导出多个。<br>引入：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import &#123; a, b &#125; from <span class="string">'./a.js'</span>;</span><br><span class="line">console.log(a);  //23</span><br><span class="line">console.log(b);  //24</span><br></pre></td></tr></table></figure></p>
+<p>还有其他情况</p>
+<p>定义一个模块：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const a = 12;</span><br><span class="line"><span class="built_in">export</span> default a</span><br></pre></td></tr></table></figure></p>
+<p>引入：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import a from <span class="string">'./a.js'</span></span><br></pre></td></tr></table></figure></p>
+<p>总结：<br>1.当用export default a 导出时，就用 import a 导入（不带大括号）</p>
+<p>2.一个文件里，有且只能有一个export default。但可以有多个export。</p>
+<p>3.当用export { name } 时，就用import { name }导入（记得带上大括号）</p>
+<p>4.当一个文件里，既有一个export default people, 又有多个export name 或者 export age时，导入就用 import people, { name, age } </p>
+<p>5.当一个文件里出现n多个 export 导出很多模块，导入时除了一个一个导入，也可以用import * as example</p>
 
       
 
