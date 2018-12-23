@@ -171,6 +171,137 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-alipay" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/21/alipay/">支付宝小程序开发手记</a>
+    </h1>
+  
+
+        
+        <a href="/2018/12/21/alipay/" class="archive-article-date">
+  	<time datetime="2018-12-21T09:29:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">this.setData(&#123;</span><br><span class="line">	myData: res;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>要setdata才能更新视图。<br>如果不setData，在data中存在这个值，但是视图不会更新。<br>今天又发现一个坑的地方</p>
+<h2 id="使用my-alert方法的时候，我遇到的情况是这样的，在app-js里面alert内容，再在首页alert，顺序是相反的，多个alert，如果是初始化页面时候，顺序是相反的。就这样。"><a href="#使用my-alert方法的时候，我遇到的情况是这样的，在app-js里面alert内容，再在首页alert，顺序是相反的，多个alert，如果是初始化页面时候，顺序是相反的。就这样。" class="headerlink" title="使用my.alert方法的时候，我遇到的情况是这样的，在app.js里面alert内容，再在首页alert，顺序是相反的，多个alert，如果是初始化页面时候，顺序是相反的。就这样。"></a>使用my.alert方法的时候，我遇到的情况是这样的，在app.js里面alert内容，再在首页alert，顺序是相反的，多个alert，如果是初始化页面时候，顺序是相反的。就这样。</h2>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/12/21/alipay/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-mobile" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/20/mobile/">移动端遇到的各种小问题</a>
+    </h1>
+  
+
+        
+        <a href="/2018/12/20/mobile/" class="archive-article-date">
+  	<time datetime="2018-12-20T11:13:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-webkit-overflow-scrolling: touch</span><br></pre></td></tr></table></figure>
+<p>WebKit私有的属性“-webkit-overflow-scrolling: touch”（允许独立的滚动区域和触摸回弹）</p>
+<p>ios移动端输入内容，软键盘弹出，页面内容整体上移。<br>但是键盘收起，页面内容不下滑。<br>安卓没问题。</p>
+<p>用一下代码解决：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'input,textarea'</span>).on(<span class="string">'blur'</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	window.scroll(0,0);</span><br><span class="line">&#125;);</span><br><span class="line">$(<span class="string">'select'</span>).on(<span class="string">'change'</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	window.scroll(0,0);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>原理就是输入框失去光标，手动控制一下页面滚动就恢复正常了。<br>本以为如果页面很长，输入框很多 会出问题，因为会滚动到最上顶，但实际情况并没有。<br>疑惑中。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/12/20/mobile/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-继承" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -317,21 +448,14 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>前端工程师每天都在与这两个对象接触，可是他们之间到底是什么关系呢？</p>
-<h3 id="document对象"><a href="#document对象" class="headerlink" title="document对象"></a>document对象</h3><p>每个载入浏览器的html文档都会成为document对象<br>document对象使我们可以从脚本中对html页面中的所有元素进行访问<br>document是window的一部分，可以用window.document对其进行访问</p>
-<h3 id="document对象描述"><a href="#document对象描述" class="headerlink" title="document对象描述"></a>document对象描述</h3><p>HTMLDocument 接口对 DOM Document 接口进行了扩展，定义 HTML 专用的属性和方法。<br>很多属性和方法都是 HTMLCollection 对象（实际上是可以用数组或名称索引的只读数组），其中保存了对锚、表单、链接以及其他可脚本元素的引用。<br>这些集合属性都源自于 0 级 DOM。它们已经被 Document.getElementsByTagName() 所取代，但是仍然常常使用，因为他们很方便。<br>write() 方法值得注意，在文档载入和解析的时候，它允许一个脚本向文档中插入动态生成的内容。<br>注意，在 1 级 DOM 中，HTMLDocument 定义了一个名为 getElementById() 的非常有用的方法。在 2 级 DOM 中，<br>该方法已经被转移到了 document 接口，它现在由 HTMLDocument 继承而不是由它定义了。</p>
-<h3 id="Window-对象"><a href="#Window-对象" class="headerlink" title="Window 对象"></a>Window 对象</h3><p>Window 对象表示浏览器中打开的窗口。<br>如果文档包含框架（frame 或 iframe 标签），浏览器会为 HTML 文档创建一个 window 对象，并为每个框架创建一个额外的 window 对象。<br>注释：没有应用于 window 对象的公开标准，不过所有浏览器都支持该对象</p>
-<h3 id="Window-对象描述"><a href="#Window-对象描述" class="headerlink" title="Window 对象描述"></a>Window 对象描述</h3><p>Window 对象表示一个浏览器窗口或一个框架。在客户端 JavaScript 中，Window 对象是全局对象，所有的表达式都在当前的环境中计算。也就是说，要引用当前窗口根本不需要特殊的语法，可以把那个窗口的属性作为全局变量来使用。例如，可以只写document，而不必写 window.document。</p>
-<p>同样，可以把当前窗口对象的方法当作函数来使用，如只写 alert()，而不必写 Window.alert()。</p>
-<p>除了上面列出的属性和方法，Window 对象还实现了核心 JavaScript 所定义的所有全局属性和方法。</p>
-<p>Window 对象的 window 属性和 self 属性引用的都是它自己。当你想明确地引用当前窗口，而不仅仅是隐式地引用它时，可以使用这两个属性。除了这两个属性之外，parent 属性、top 属性以及 frame[] 数组都引用了与当前 Window 对象相关的其他 Window 对象。</p>
-<h3 id="再说说我们平时常用的入口函数异同："><a href="#再说说我们平时常用的入口函数异同：" class="headerlink" title="再说说我们平时常用的入口函数异同："></a>再说说我们平时常用的入口函数异同：</h3><p>1.执行时间上：<br>window.onload必须等到页面内包括图片的所有元素加载完成后才执行<br>$(document).ready() 是DOM结构绘制完成后就执行，不必等到加载完毕，这种情况，适用于dDOM加载完成后绑定事件，第一种也可以，页面加载时间过长的话，再去绑定事件，这种体验是比较差的。</p>
-<p>2.编写个数：<br>window.onload不能同时编写多个，如果有多个window.onload，只会执行一个。<br>$(document).ready()可以同时编写多个，并且都可以执行。</p>
-<p>3.简化写法：<br>window.onload   无<br>$(document).ready(function(){}) 可以简化成$(function(){});</p>
-
+<h3 id="document对象"><a href="#document对象" class="headerlink" title="document对象"></a>document对象</h3><p>每个载入浏览器的html文档都会成为document对象<br>document对象使我们可以从脚本中对html页面中的所有元素进行访问<br>document是window的一部分，可以用window.document对其进行访问<br>
+        
+          <a class="article-more-a" href="/2018/11/30/document&window/#more">more >></a>
+        
       
 
       
-    </div>
+    </p></div>
     <div class="article-info article-info-index">
       
       
@@ -518,6 +642,9 @@
 <h3 id="mpvue-（github-地址请参见）是一个使用-Vue-js-开发小程序的前端框架。框架基于-Vue-js-核心，mpvue-修改了-Vue-js-的-runtime-和-compiler-实现，使其可以运行在小程序环境中，从而为小程序开发引入了整套-Vue-js-开发体验。"><a href="#mpvue-（github-地址请参见）是一个使用-Vue-js-开发小程序的前端框架。框架基于-Vue-js-核心，mpvue-修改了-Vue-js-的-runtime-和-compiler-实现，使其可以运行在小程序环境中，从而为小程序开发引入了整套-Vue-js-开发体验。" class="headerlink" title="mpvue （github 地址请参见）是一个使用 Vue.js 开发小程序的前端框架。框架基于 Vue.js 核心，mpvue 修改了 Vue.js 的 runtime 和 compiler 实现，使其可以运行在小程序环境中，从而为小程序开发引入了整套 Vue.js 开发体验。"></a>mpvue （github 地址请参见）是一个使用 Vue.js 开发小程序的前端框架。框架基于 Vue.js 核心，mpvue 修改了 Vue.js 的 runtime 和 compiler 实现，使其可以运行在小程序环境中，从而为小程序开发引入了整套 Vue.js 开发体验。</h3><p>然而，当我想自定义一个底部导航的时候，把底部导航提出来作为一个组件，试了半天发现无法实现跳转，不能响应click事件，后来查了下文档才知道，在组件上面是无法绑定click事件的，原文这样解释：</p>
 <h3 id="暂不支持在组件引用时，在组件上定义-click-等原生事件、v-show（可用-v-if-代替）和-class-style-等样式属性-例：-样式是不会生效的-，因为编译到-wxml，小程序不会生成节点，建议写在内部顶级元素上。"><a href="#暂不支持在组件引用时，在组件上定义-click-等原生事件、v-show（可用-v-if-代替）和-class-style-等样式属性-例：-样式是不会生效的-，因为编译到-wxml，小程序不会生成节点，建议写在内部顶级元素上。" class="headerlink" title="暂不支持在组件引用时，在组件上定义 click 等原生事件、v-show（可用 v-if 代替）和 class style 等样式属性(例：  样式是不会生效的)，因为编译到 wxml，小程序不会生成节点，建议写在内部顶级元素上。"></a>暂不支持在组件引用时，在组件上定义 click 等原生事件、v-show（可用 v-if 代替）和 class style 等样式属性(例：<card class="class-name"> </card> 样式是不会生效的)，因为编译到 wxml，小程序不会生成节点，建议写在内部顶级元素上。</h3><p>组件不支持click事件，难道要我每个页面再复制一遍？？</p>
 <p>所以，组件存在的意义是什么？静态的展示吗？O**K</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">getUserInfoFormStorage: <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	<span class="built_in">let</span> that = this;</span><br><span class="line">	wx.getStorage(&#123;</span><br><span class="line">		key: <span class="string">'userInfo'</span>,</span><br><span class="line">		success(res) &#123;</span><br><span class="line">			// console.log(<span class="string">'从storage取数据'</span>);</span><br><span class="line">			that.userInfo = JSON.parse(res.data);</span><br><span class="line">			console.log(that.userInfo);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>为什么要 let that = this呢？ 我明明用了箭头函数啊！<br>看一下编译后的代码就知道了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">getUserInfoFormStorage: <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	<span class="built_in">let</span> that = this;</span><br><span class="line">	wx.getStorage(&#123;</span><br><span class="line">		key: <span class="string">'userInfo'</span>,</span><br><span class="line">		success: <span class="keyword">function</span> (res) &#123;</span><br><span class="line">			// console.log(<span class="string">'从storage取数据'</span>);</span><br><span class="line">			that.userInfo = JSON.parse(res.data);</span><br><span class="line">			console.log(that.userInfo);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></p>
+<p>因此我们自己修改一下就可以了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">wx.getStorage(&#123;</span><br><span class="line">	key: <span class="string">'userInfo'</span>,</span><br><span class="line">	success: (res)=&gt; &#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -658,136 +785,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/10/26/vue/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-closure" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/26/closure/">闭包</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/26/closure/" class="archive-article-date">
-  	<time datetime="2018-10-26T05:38:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>老生常谈的问题，几乎所有的前端面试中都会被问到。<br>而我对这个问题的理解始终不是很透彻，今天好好整理一下。</p>
-<h6 id="一、闭包产生的原因"><a href="#一、闭包产生的原因" class="headerlink" title="一、闭包产生的原因"></a>一、闭包产生的原因</h6>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/26/closure/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-centos" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/22/centos/">centOS初体验</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/22/centos/" class="archive-article-date">
-  	<time datetime="2018-10-22T08:32:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>大概是一瓶不满半瓶晃，前端这么多乱七八糟的东西还没学好，非要学linux。<br>好吧，其实我是为了fan墙才想起来要搞一下linux。<br>最近买了个搬瓦工的vps,方便科学上网，但是光用来科学上网有些奢侈，索性了解了一下linux，搭建了一个服务，并且配置了node环境，服务布上去发现，嘿，真好玩，我竟然有了自己的第一个网站！<br>好了，言归正传，我使用的是搬瓦工一年19.99美元的最低配，自己搞着玩足够了。</p>
-<p>#配置node环境<br>开始时候，我是纯手动配置了一遍node环境，还有nginx做反向代理，因为平时工作中有一丢丢nginx的配置经验，所以配置起来感觉并不难。<br>方法一：<br>中间可能会出现gcc未安装或版本过低的情况，先进行升级。<br>1.安装wget命令<br>2.安装解压工具<br>3.下载node压缩包<br>4.解压<br>5.配置软连接，达到全局都可以使用node和npm的目的<br>nginx的配置也大体相同，下载，安装，配置反向代理。<br>方法二：<br>使用宝塔一键配置<br>很好用的一个可视化工具，安装完成后nginx，mysql以及php环境就都配置好了。<br>然后再按照上面步骤安装node。</p>
-<p>#如果让node服务一直在服务器上运行<br>写过node服务的都知道，要想让服务运行，就不能关掉命令窗口，一旦关闭，服务也就随即停止。<br>forever这个插件，可以让你的node服务一直运行，即使退出了xshell也不会关闭服务。<br>我是按照这个教程安装并使用的， 里面提供的几个命令都测试过，都没问题，很不错。<br><a href="https://blog.csdn.net/zhiyual/article/details/79774225" target="_blank" rel="noopener">传送门</a><br>我遇到的情况是使用express-generator搭建的项目，要使用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm start</span><br></pre></td></tr></table></figure></p>
-<p>才可以让项目运行起来，网上有人说可以使用<br>forever start “npm start”，但是我使用的时候报错了，所以最后我干脆在项目目录下运行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">forever start ./bin/www</span><br></pre></td></tr></table></figure></p>
-<p>也就是在bin下找到www文件，运行，就ok了。我们运行npm start的时候，在package.json中可以看到，实际上运行的就是这一个文件。<br>pm2包管理器似乎更强大一些，免去了很多安装带来的问题。还未尝试</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/22/centos/">展开全文 >></a>
         </p>
       
 
