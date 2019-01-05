@@ -171,6 +171,78 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-shallowCopeAndDeepCopy" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/18/shallowCopeAndDeepCopy/">深拷贝对象的技巧</a>
+    </h1>
+  
+
+        
+        <a href="/2018/09/18/shallowCopeAndDeepCopy/" class="archive-article-date">
+  	<time datetime="2018-09-18T10:15:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="主要介绍两种方法"><a href="#主要介绍两种方法" class="headerlink" title="主要介绍两种方法"></a>主要介绍两种方法</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//浅拷贝</span><br><span class="line"><span class="built_in">let</span> obj1 = &#123;<span class="string">"name"</span>:<span class="string">"c1"</span>,<span class="string">"age"</span>:18,<span class="string">"job"</span>:<span class="string">"coder"</span>&#125;;</span><br><span class="line"><span class="built_in">let</span> obj2 = obj1;</span><br><span class="line">console.log(obj1);//  &#123;<span class="string">"name"</span>:<span class="string">"c1"</span>,<span class="string">"age"</span>:18,<span class="string">"job"</span>:<span class="string">"coder"</span>&#125;</span><br><span class="line">console.log(obj2);//  &#123;<span class="string">"name"</span>:<span class="string">"c1"</span>,<span class="string">"age"</span>:18,<span class="string">"job"</span>:<span class="string">"coder"</span>&#125;</span><br><span class="line">obj2.name = <span class="string">"c2"</span>;</span><br><span class="line">console.log(obj1); //  &#123;name: <span class="string">"c2"</span>, age: 18, job: <span class="string">"coder"</span>&#125;</span><br><span class="line">console.log(obj2); //  &#123;name: <span class="string">"c2"</span>, age: 18, job: <span class="string">"coder"</span>&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="1-利用JSON-stringify和JSON-parse"><a href="#1-利用JSON-stringify和JSON-parse" class="headerlink" title="1.利用JSON.stringify和JSON.parse"></a>1.利用JSON.stringify和JSON.parse</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//深拷贝</span><br><span class="line">    <span class="built_in">let</span> obj1 = &#123;name:<span class="string">'c1'</span>,age:18,job:<span class="string">'coder'</span>&#125;;</span><br><span class="line">    console.log(obj1);//  &#123;<span class="string">"name"</span>:<span class="string">"c1"</span>,<span class="string">"age"</span>:18,<span class="string">"job"</span>:<span class="string">"coder"</span>&#125;</span><br><span class="line">    <span class="built_in">let</span> obj2 = JSON.parse(JSON.stringify(obj1));</span><br><span class="line">    obj2.name = <span class="string">"c2"</span>;</span><br><span class="line">    console.log(obj1); //  &#123;name: <span class="string">"c1"</span>, age: 18, job: <span class="string">"coder"</span>&#125;</span><br><span class="line">    console.log(obj2); //  &#123;name: <span class="string">"c2"</span>, age: 18, job: <span class="string">"coder"</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>原理就是先将对象转换成js的基本数据类型（字符串），存在于栈中。<br>再将字符串通过JSON.parse()这个api转换为js对象，并且内存地址不会指向之前的obj1。这样就实现了深拷贝。</p>
+<h2 id="2-利用Object-assign"><a href="#2-利用Object-assign" class="headerlink" title="2.利用Object.assign()"></a>2.利用Object.assign()</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//深拷贝</span><br><span class="line"><span class="built_in">let</span> obj1 = &#123;<span class="string">"name"</span>:<span class="string">"c1"</span>,<span class="string">"age"</span>:18,<span class="string">"job"</span>:<span class="string">"coder"</span>&#125;;</span><br><span class="line">console.log(obj1);//  &#123;<span class="string">"name"</span>:<span class="string">"c1"</span>,<span class="string">"age"</span>:18,<span class="string">"job"</span>:<span class="string">"coder"</span>&#125;</span><br><span class="line"><span class="built_in">let</span> obj2 = Object.assign(&#123;&#125;,obj1);</span><br><span class="line">obj2.name = <span class="string">"c2"</span>;</span><br><span class="line">console.log(obj1); //  &#123;name: <span class="string">"c1"</span>, age: 18, job: <span class="string">"coder"</span>&#125;</span><br><span class="line">console.log(obj2); //  &#123;name: <span class="string">"c2"</span>, age: 18, job: <span class="string">"coder"</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>Object.assign()的使用方法<br>（不全，请自行百度）</p>
+<p>语法<br>Object.assign(target, …sources)<br>参数<br>target<br>目标对象。<br>sources<br>源对象。<br>返回值<br>目标对象。</p>
+<p>复制一个对象<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;a:1&#125;;</span><br><span class="line">var copy = Object.assign(&#123;&#125;,obj);</span><br><span class="line">console.log(copy); // &#123;a:1&#125;</span><br></pre></td></tr></table></figure></p>
+<p>合并对象<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var o1 = &#123;a:1&#125;;</span><br><span class="line">var o2 = &#123;b:2&#125;;</span><br><span class="line">var o3 = &#123;c:3&#125;;</span><br><span class="line"></span><br><span class="line">var obj = Object.assign(o1,o2,o3);</span><br><span class="line">console.log(obj);  // &#123;a:1,b:2,c:3&#125;</span><br><span class="line">console.log(o1);   // &#123;a:1,b:2,c:3&#125;  ---&gt;目标对象自身也会发生变化</span><br><span class="line">console.log(o2);   // &#123;b:2&#125;</span><br></pre></td></tr></table></figure></p>
+<p>合并具有相同属性的对象<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var o1 = &#123; a: 1, b: 1, c: 1 &#125;;</span><br><span class="line">var o2 = &#123; b: 2, c: 2 &#125;;</span><br><span class="line">var o3 = &#123; c: 3 &#125;;</span><br><span class="line">var obj = Object.assign(&#123;&#125;, o1, o2, o3);</span><br><span class="line">console.log(obj); // &#123; a: 1, b: 2, c: 3 &#125;;  //属性被后面参数中具有相同属性的其他对象覆盖</span><br></pre></td></tr></table></figure></p>
+<p>继承属性和不可枚举属性是不能拷贝的</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/09/18/shallowCopeAndDeepCopy/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-chain-program" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
