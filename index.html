@@ -171,6 +171,531 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-alipay" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/04/alipay/">支付宝小程序开发手记</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/04/alipay/" class="archive-article-date">
+  	<time datetime="2019-01-04T03:19:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">this.setData(&#123;</span><br><span class="line">	myData: res;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>要setdata才能更新视图。<br>如果不setData，在data中存在这个值，但是视图不会更新。<br>今天又发现一个坑的地方</p>
+<h2 id="使用my-alert方法的时候，我遇到的情况是这样的，在app-js里面alert内容，再在首页alert，顺序是相反的，多个alert，如果是初始化页面时候，顺序是相反的"><a href="#使用my-alert方法的时候，我遇到的情况是这样的，在app-js里面alert内容，再在首页alert，顺序是相反的，多个alert，如果是初始化页面时候，顺序是相反的" class="headerlink" title="使用my.alert方法的时候，我遇到的情况是这样的，在app.js里面alert内容，再在首页alert，顺序是相反的，多个alert，如果是初始化页面时候，顺序是相反的"></a>使用my.alert方法的时候，我遇到的情况是这样的，在app.js里面alert内容，再在首页alert，顺序是相反的，多个alert，如果是初始化页面时候，顺序是相反的</h2><p>在生命周期函数onLaunch中，参数options.query.qrCode可以拿到二维码的信息。如果为空，说明不是通过扫码进入的。</p>
+<p>渲染富文本的方式:<br>使用wxParse插件<br>使用方法见<a href="https://github.com/yaoshanliang/wxParse">github</a></p>
+<h2 id="注意-app-json的生命周期函数onLaunch"><a href="#注意-app-json的生命周期函数onLaunch" class="headerlink" title="注意 app.json的生命周期函数onLaunch"></a>注意 app.json的生命周期函数onLaunch</h2><p>如果onLaunch中存在异步事件，比如获取用户身份，是异步的。用户扫描二维码后进入首页，首页中，在生命周期函数onLoad中，需要使用用户信息去获取数据，此时就会发生错误，因为在 app.js中 异步获取用户信息还未返回，就已经进入到了首页。<br>    解决办法：<br>    进入首页后再去调用app.js中的某方法。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//index.js</span><br><span class="line">const app = getApp();</span><br><span class="line">//此时的app就是app.js中App的实例</span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/01/04/alipay/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-mouse" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/04/mouse/">mouse事件</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/04/mouse/" class="archive-article-date">
+  	<time datetime="2019-01-04T02:13:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>mouseover和mouseout在父元素和其子元素都可以触发，当鼠标穿过一个元素时，触发次数得依子元素数量而言。<br>mouseenter和mouseleave只在父元素触发，当鼠标穿过一个元素时，只会触发一次。<br>mouseover和mouseout比mouseenter和mouseleave先触发<br>
+        
+          <a class="article-more-a" href="/2019/01/04/mouse/#more">more >></a>
+        
+      
+
+      
+    </p></div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/01/04/mouse/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-call-apply-bind" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/04/call-apply-bind/">call apply bind 的使用方法及使用场景</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/04/call-apply-bind/" class="archive-article-date">
+  	<time datetime="2019-01-04T02:09:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>三者在功能上没有区别，都是改变this的指向。<br>主要区别在于 方法的实现形式和参数传递的不同<br>1.fun.call(obj,arg1,arg2…);<br>2.fun.apply(obj,[arg1,arg2,…]);<br>3.fun.bind(obj,arg1,arg2,…)();  bind返回的是一个函数体，并不会直接执行函数<br>
+        
+          <a class="article-more-a" href="/2019/01/04/call-apply-bind/#more">more >></a>
+        
+      
+
+      
+    </p></div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/01/04/call-apply-bind/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-jsstandard" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/04/jsstandard/">JS规范（CommonJS/CMD/AMD）</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/04/jsstandard/" class="archive-article-date">
+  	<time datetime="2019-01-04T01:48:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="JS模块化"><a href="#JS模块化" class="headerlink" title="JS模块化"></a>JS模块化</h3><p>有了模块，我们就可以方便的使用别人的代码，想要什么需求，就加载什么模块，但这样做有个前提，就是大家必须用同样的方式编写模块，因此就出现了这三个模块规范。</p>
+<h2 id="一、CommonJS"><a href="#一、CommonJS" class="headerlink" title="一、CommonJS"></a>一、CommonJS</h2><p>在兼容CommonJS的系统中，可以使用js开发以下程序：<br>1、服务器端js应用程序<br>2.命令行工具<br>3.图形界面应用程序<br>4.混合应用程序<br>
+        
+          <a class="article-more-a" href="/2019/01/04/jsstandard/#more">more >></a>
+        
+      
+
+      
+    </p></div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/01/04/jsstandard/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-font" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/03/font/">常用的字体图标库</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/03/font/" class="archive-article-date">
+  	<time datetime="2019-01-03T09:18:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-阿里巴巴矢量图标"><a href="#1-阿里巴巴矢量图标" class="headerlink" title="1.阿里巴巴矢量图标"></a>1.阿里巴巴矢量图标</h2><p><a href="https://www.iconfont.cn/" target="_blank" rel="noopener">https://www.iconfont.cn/</a><br>这个也是我一直都在使用的，图标很齐全，并且支持在线将图标字体转成图片，颜色自定义。<br>协同合作也很方便<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;i class=<span class="string">"iconfont icon-arrow"</span>&gt;  //iconfont是固定写法，第二个类名就是你想用的图标</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-Font-Awesome"><a href="#2-Font-Awesome" class="headerlink" title="2.Font Awesome"></a>2.Font Awesome</h2>
+        
+          <a class="article-more-a" href="/2019/01/03/font/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/01/03/font/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-this" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/28/this/">关于this的一点理解</a>
+    </h1>
+  
+
+        
+        <a href="/2018/12/28/this/" class="archive-article-date">
+  	<time datetime="2018-12-28T09:03:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>this永远指向的是最后调用它的对象，也就是看它执行的时候是谁调用的<br>谁调用，就指向谁，但以下情况特殊：<br>    情况1：如果一个函数中有this，但是它没有被上一级的对象所调用，那么this指向的就是window，<br>           这里需要说明的是在js的严格模式中this指向的不是window。<br>
+        
+          <a class="article-more-a" href="/2018/12/28/this/#more">more >></a>
+        
+      
+
+      
+    </p></div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/12/28/this/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-instanceof-hasOwnProperty" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/28/instanceof-hasOwnProperty/">js中 判断对象中是否有某属性 的常用方法</a>
+    </h1>
+  
+
+        
+        <a href="/2018/12/28/instanceof-hasOwnProperty/" class="archive-article-date">
+  	<time datetime="2018-12-28T09:02:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="根据-Obj-x-undefined-的返回值-来判断Obj是否有x属性"><a href="#根据-Obj-x-undefined-的返回值-来判断Obj是否有x属性" class="headerlink" title="根据 Obj.x !== undefined 的返回值 来判断Obj是否有x属性"></a>根据 Obj.x !== undefined 的返回值 来判断Obj是否有x属性</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// 创建对象</span><br><span class="line"><span class="built_in">let</span> <span class="built_in">test</span> = &#123;name : <span class="string">'lei'</span>&#125;</span><br><span class="line">// 获取对象的自身的属性</span><br><span class="line">test.name   //<span class="string">"lei"</span></span><br><span class="line"><span class="built_in">test</span>[<span class="string">"name"</span>]   //<span class="string">"lei"</span></span><br><span class="line"> </span><br><span class="line">// 获取不存在的属性</span><br><span class="line">test.age    //undefined</span><br><span class="line"> </span><br><span class="line">// 获取原型上的属性</span><br><span class="line"><span class="built_in">test</span>[<span class="string">"toString"</span>]  //<span class="function"><span class="title">toString</span></span>() &#123; [native code] &#125;</span><br><span class="line"> </span><br><span class="line">// 新增一个值为undefined的属性</span><br><span class="line">test.un = undefined</span><br><span class="line"> </span><br><span class="line">test.un    //undefined 不能用在属性值存在，但可能为 undefined的场景</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2018/12/28/instanceof-hasOwnProperty/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/12/28/instanceof-hasOwnProperty/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-defineProperty" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/28/defineProperty/">关于defineProperty</a>
+    </h1>
+  
+
+        
+        <a href="/2018/12/28/defineProperty/" class="archive-article-date">
+  	<time datetime="2018-12-28T06:35:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>我是在了解vue原理的时候看到的这个源于ES5的属性,所以想深入理解一下<br>对象是对个键值对的集合。每个属性对应任意类型的值<br>定义对象最常用的方法是使用构造函数或字面量的形式<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var obj = new Object();</span><br><span class="line">obj.name = <span class="string">'zhangsan'</span>;</span><br><span class="line">obj.say = <span class="function"><span class="title">function</span></span>()&#123;&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>#我们还可以使用Object.defineProperty定义新属性或修改原有的属性。</p>
+        
+          <a class="article-more-a" href="/2018/12/28/defineProperty/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/12/28/defineProperty/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-urlParams" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -178,13 +703,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/26/urlParams/">获取url中参数的方法</a>
+      <a class="article-title" href="/2018/12/28/urlParams/">获取url中参数的方法</a>
     </h1>
   
 
         
-        <a href="/2018/12/26/urlParams/" class="archive-article-date">
-  	<time datetime="2018-12-26T15:38:42.765Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-26</time>
+        <a href="/2018/12/28/urlParams/" class="archive-article-date">
+  	<time datetime="2018-12-28T02:27:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-28</time>
 </a>
         
       </header>
@@ -203,529 +728,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/12/26/urlParams/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-mpvue" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/25/mpvue/">mpvue开发手记</a>
-    </h1>
-  
-
-        
-        <a href="/2018/12/25/mpvue/" class="archive-article-date">
-  	<time datetime="2018-12-25T14:34:25.883Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>开发微信小程序过程中遇到的在vue中支持，但在mpvue中不支持的地方：</p>
-<p>（1）不支持v-html。因为小程序没有dom的概念。</p>
-<p>（2）不支持部分javascript渲染表达式，</p>
-<p>（3）不支持直接绑定一个对象到style或class属性上</p>
-<p>（4）img标签中，不能设置宽度高度，例如：width=”200”  height=”200”</p>
-<p>（5）css中background-image里的url只能是服务器上的地址，不能是本地图片地址。</p>
-<p>（6）在跳转之后进入的页面，或者pages目录下的vue文件，不要使用created()。会获取不到mapGetters数据。用async onLoad()代替。</p>
-<p>（7）不支持的插件：jsonp / vue-lazyload / better-scroll / vue-awesome-swiper 等等</p>
-<p>（8）不支持</p>
-<p>v-show（可用v-if代替）</p>
-<p>transition</p>
-<p>keep-alive</p>
-<p>（9）组件命名与小程序的冲突，例如：<loading></loading></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/12/25/mpvue/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-alipay" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/21/alipay/">支付宝小程序开发手记</a>
-    </h1>
-  
-
-        
-        <a href="/2018/12/21/alipay/" class="archive-article-date">
-  	<time datetime="2018-12-21T09:29:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">this.setData(&#123;</span><br><span class="line">	myData: res;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>要setdata才能更新视图。<br>如果不setData，在data中存在这个值，但是视图不会更新。<br>今天又发现一个坑的地方</p>
-<h2 id="使用my-alert方法的时候，我遇到的情况是这样的，在app-js里面alert内容，再在首页alert，顺序是相反的，多个alert，如果是初始化页面时候，顺序是相反的。就这样。"><a href="#使用my-alert方法的时候，我遇到的情况是这样的，在app-js里面alert内容，再在首页alert，顺序是相反的，多个alert，如果是初始化页面时候，顺序是相反的。就这样。" class="headerlink" title="使用my.alert方法的时候，我遇到的情况是这样的，在app.js里面alert内容，再在首页alert，顺序是相反的，多个alert，如果是初始化页面时候，顺序是相反的。就这样。"></a>使用my.alert方法的时候，我遇到的情况是这样的，在app.js里面alert内容，再在首页alert，顺序是相反的，多个alert，如果是初始化页面时候，顺序是相反的。就这样。</h2>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/12/21/alipay/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-mobile" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/20/mobile/">移动端遇到的各种小问题</a>
-    </h1>
-  
-
-        
-        <a href="/2018/12/20/mobile/" class="archive-article-date">
-  	<time datetime="2018-12-20T11:13:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-webkit-overflow-scrolling: touch</span><br></pre></td></tr></table></figure>
-<p>WebKit私有的属性“-webkit-overflow-scrolling: touch”（允许独立的滚动区域和触摸回弹）</p>
-<p>ios移动端输入内容，软键盘弹出，页面内容整体上移。<br>但是键盘收起，页面内容不下滑。<br>安卓没问题。</p>
-<p>用一下代码解决：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'input,textarea'</span>).on(<span class="string">'blur'</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	window.scroll(0,0);</span><br><span class="line">&#125;);</span><br><span class="line">$(<span class="string">'select'</span>).on(<span class="string">'change'</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	window.scroll(0,0);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>原理就是输入框失去光标，手动控制一下页面滚动就恢复正常了。<br>本以为如果页面很长，输入框很多 会出问题，因为会滚动到最上顶，但实际情况并没有。<br>疑惑中。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/12/20/mobile/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-继承" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/03/继承/">继承</a>
-    </h1>
-  
-
-        
-        <a href="/2018/12/03/继承/" class="archive-article-date">
-  	<time datetime="2018-12-03T03:03:49.162Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>原型对象主要用来继承，eg：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var Person = <span class="keyword">function</span>(name)&#123;</span><br><span class="line">	this.name = name; </span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.getName = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	<span class="built_in">return</span> this.name;</span><br><span class="line">&#125;</span><br><span class="line">var person1 = new Person(<span class="string">'chen'</span>);</span><br><span class="line">person1.getName(); // chen</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/12/03/继承/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-js获取屏幕信息" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/03/js获取屏幕信息/">js获取屏幕大小</a>
-    </h1>
-  
-
-        
-        <a href="/2018/12/03/js获取屏幕信息/" class="archive-article-date">
-  	<time datetime="2018-12-02T16:37:56.543Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">a</span></span>()&#123;</span><br><span class="line">document.write(</span><br><span class="line"><span class="string">"屏幕分辨率为："</span>+screen.width+<span class="string">"*"</span>+screen.height</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"屏幕可用大小："</span>+screen.availWidth+<span class="string">"*"</span>+screen.availHeight</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"网页可见区域宽："</span>+document.body.clientWidth</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"网页可见区域高："</span>+document.body.clientHeight</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"网页可见区域宽(包括边线的宽)："</span>+document.body.offsetWidth </span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"网页可见区域高(包括边线的宽)："</span>+document.body.offsetHeight </span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"网页正文全文宽："</span>+document.body.scrollWidth</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"网页正文全文高："</span>+document.body.scrollHeight</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"网页被卷去的高："</span>+document.body.scrollTop</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"网页被卷去的左："</span>+document.body.scrollLeft</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"网页正文部分上："</span>+window.screenTop</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"网页正文部分左："</span>+window.screenLeft</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"屏幕分辨率的高："</span>+window.screen.height</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"屏幕分辨率的宽："</span>+window.screen.width</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"屏幕可用工作区高度："</span>+window.screen.availHeight</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"屏幕可用工作区宽度："</span>+window.screen.availWidth</span><br><span class="line">);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/12/03/js获取屏幕信息/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-document&amp;window" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/30/document&window/">document和window的区别及联系</a>
-    </h1>
-  
-
-        
-        <a href="/2018/11/30/document&window/" class="archive-article-date">
-  	<time datetime="2018-11-30T06:00:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>前端工程师每天都在与这两个对象接触，可是他们之间到底是什么关系呢？</p>
-<h3 id="document对象"><a href="#document对象" class="headerlink" title="document对象"></a>document对象</h3><p>每个载入浏览器的html文档都会成为document对象<br>document对象使我们可以从脚本中对html页面中的所有元素进行访问<br>document是window的一部分，可以用window.document对其进行访问<br>
-        
-          <a class="article-more-a" href="/2018/11/30/document&window/#more">more >></a>
-        
-      
-
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/30/document&window/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-事件冒泡及捕获" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/30/事件冒泡及捕获/">事件冒泡及捕获</a>
-    </h1>
-  
-
-        
-        <a href="/2018/11/30/事件冒泡及捕获/" class="archive-article-date">
-  	<time datetime="2018-11-30T02:50:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 冒泡</span></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">    &lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span><br><span class="line">    &lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"ie=edge"</span>&gt;</span><br><span class="line">    &lt;title&gt;捕获和冒泡&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        .out&#123;</span><br><span class="line">            width: 500px;</span><br><span class="line">            height: 500px;</span><br><span class="line">            background-color: lightblue;</span><br><span class="line">            overflow: hidden;</span><br><span class="line">        &#125;</span><br><span class="line">        .mid&#123;</span><br><span class="line">            width: 300px;</span><br><span class="line">            height: 300px;</span><br><span class="line">            background-color: lightcoral;</span><br><span class="line">            margin: 100px auto;</span><br><span class="line">            overflow: hidden;</span><br><span class="line">        &#125;</span><br><span class="line">        .inner&#123;</span><br><span class="line">            width: 100x;</span><br><span class="line">            height: 100px;</span><br><span class="line">            background-color: lightgreen;</span><br><span class="line">            margin: 100px auto;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class=<span class="string">"out"</span>&gt;</span><br><span class="line">        &lt;div class=<span class="string">"mid"</span>&gt;</span><br><span class="line">            &lt;div class=<span class="string">"inner"</span>&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        window.onload = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">            <span class="built_in">let</span> out = document.querySelector(<span class="string">'.out'</span>);</span><br><span class="line">            <span class="built_in">let</span> mid = document.querySelector(<span class="string">'.mid'</span>);</span><br><span class="line">            <span class="built_in">let</span> inner = document.querySelector(<span class="string">'.inner'</span>);</span><br><span class="line">            out.addEventListener(<span class="string">'click'</span>,<span class="keyword">function</span>(e)&#123;</span><br><span class="line">                alert(<span class="string">'out'</span>);</span><br><span class="line">            &#125;)</span><br><span class="line">            mid.addEventListener(<span class="string">'click'</span>,<span class="keyword">function</span>(e)&#123;</span><br><span class="line">                e.stopPropagation();  //这里阻止事件继续向上冒泡，因此，在点击了inner后，弹出inner mid，不会有out</span><br><span class="line">                alert(<span class="string">'mid'</span>);</span><br><span class="line">            &#125;)</span><br><span class="line">            inner.addEventListener(<span class="string">'click'</span>,<span class="keyword">function</span>(e)&#123;</span><br><span class="line">                e.stopPropagation();  </span><br><span class="line">                alert(<span class="string">'inner'</span>);</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">        //冒泡，是从小的元素向大的元素传递，子元素使用e.stopPropagation()阻止冒泡后，事件无法向上传递，因此，父级元素无法监听到子元素事件。</span><br><span class="line">        // 以上是事件冒泡</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/30/事件冒泡及捕获/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-event" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/30/event/">关于js中的事件问题</a>
-    </h1>
-  
-
-        
-        <a href="/2018/11/30/event/" class="archive-article-date">
-  	<time datetime="2018-11-30T01:52:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>使用js原生来书写代码时，我们通常用addEventListener来为元素添加事件，<br>使用removeEventListener来移除事件。<br>注意，removeEventListener无法移除匿名函数的事件。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/30/event/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/12/28/urlParams/">展开全文 >></a>
         </p>
       
 
@@ -762,13 +765,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/28/bad-mpvue/">mpvue踩坑记</a>
+      <a class="article-title" href="/2018/12/28/bad-mpvue/">mpvue踩坑记</a>
     </h1>
   
 
         
-        <a href="/2018/11/28/bad-mpvue/" class="archive-article-date">
-  	<time datetime="2018-11-28T09:23:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-28</time>
+        <a href="/2018/12/28/bad-mpvue/" class="archive-article-date">
+  	<time datetime="2018-12-28T02:13:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-28</time>
 </a>
         
       </header>
@@ -777,16 +780,14 @@
       
         <p>以下引自官方文档：</p>
 <h3 id="mpvue-（github-地址请参见）是一个使用-Vue-js-开发小程序的前端框架。框架基于-Vue-js-核心，mpvue-修改了-Vue-js-的-runtime-和-compiler-实现，使其可以运行在小程序环境中，从而为小程序开发引入了整套-Vue-js-开发体验。"><a href="#mpvue-（github-地址请参见）是一个使用-Vue-js-开发小程序的前端框架。框架基于-Vue-js-核心，mpvue-修改了-Vue-js-的-runtime-和-compiler-实现，使其可以运行在小程序环境中，从而为小程序开发引入了整套-Vue-js-开发体验。" class="headerlink" title="mpvue （github 地址请参见）是一个使用 Vue.js 开发小程序的前端框架。框架基于 Vue.js 核心，mpvue 修改了 Vue.js 的 runtime 和 compiler 实现，使其可以运行在小程序环境中，从而为小程序开发引入了整套 Vue.js 开发体验。"></a>mpvue （github 地址请参见）是一个使用 Vue.js 开发小程序的前端框架。框架基于 Vue.js 核心，mpvue 修改了 Vue.js 的 runtime 和 compiler 实现，使其可以运行在小程序环境中，从而为小程序开发引入了整套 Vue.js 开发体验。</h3><p>然而，当我想自定义一个底部导航的时候，把底部导航提出来作为一个组件，试了半天发现无法实现跳转，不能响应click事件，后来查了下文档才知道，在组件上面是无法绑定click事件的，原文这样解释：</p>
-<h3 id="暂不支持在组件引用时，在组件上定义-click-等原生事件、v-show（可用-v-if-代替）和-class-style-等样式属性-例：-样式是不会生效的-，因为编译到-wxml，小程序不会生成节点，建议写在内部顶级元素上。"><a href="#暂不支持在组件引用时，在组件上定义-click-等原生事件、v-show（可用-v-if-代替）和-class-style-等样式属性-例：-样式是不会生效的-，因为编译到-wxml，小程序不会生成节点，建议写在内部顶级元素上。" class="headerlink" title="暂不支持在组件引用时，在组件上定义 click 等原生事件、v-show（可用 v-if 代替）和 class style 等样式属性(例：  样式是不会生效的)，因为编译到 wxml，小程序不会生成节点，建议写在内部顶级元素上。"></a>暂不支持在组件引用时，在组件上定义 click 等原生事件、v-show（可用 v-if 代替）和 class style 等样式属性(例：<card class="class-name"> </card> 样式是不会生效的)，因为编译到 wxml，小程序不会生成节点，建议写在内部顶级元素上。</h3><p>组件不支持click事件，难道要我每个页面再复制一遍？？</p>
-<p>所以，组件存在的意义是什么？静态的展示吗？O**K</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">getUserInfoFormStorage: <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	<span class="built_in">let</span> that = this;</span><br><span class="line">	wx.getStorage(&#123;</span><br><span class="line">		key: <span class="string">'userInfo'</span>,</span><br><span class="line">		success(res) &#123;</span><br><span class="line">			// console.log(<span class="string">'从storage取数据'</span>);</span><br><span class="line">			that.userInfo = JSON.parse(res.data);</span><br><span class="line">			console.log(that.userInfo);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-<p>为什么要 let that = this呢？ 我明明用了箭头函数啊！<br>看一下编译后的代码就知道了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">getUserInfoFormStorage: <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	<span class="built_in">let</span> that = this;</span><br><span class="line">	wx.getStorage(&#123;</span><br><span class="line">		key: <span class="string">'userInfo'</span>,</span><br><span class="line">		success: <span class="keyword">function</span> (res) &#123;</span><br><span class="line">			// console.log(<span class="string">'从storage取数据'</span>);</span><br><span class="line">			that.userInfo = JSON.parse(res.data);</span><br><span class="line">			console.log(that.userInfo);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></p>
-<p>因此我们自己修改一下就可以了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">wx.getStorage(&#123;</span><br><span class="line">	key: <span class="string">'userInfo'</span>,</span><br><span class="line">	success: (res)=&gt; &#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-
+<h3 id="暂不支持在组件引用时，在组件上定义-click-等原生事件、v-show（可用-v-if-代替）和-class-style-等样式属性-例：-样式是不会生效的-，因为编译到-wxml，小程序不会生成节点，建议写在内部顶级元素上。"><a href="#暂不支持在组件引用时，在组件上定义-click-等原生事件、v-show（可用-v-if-代替）和-class-style-等样式属性-例：-样式是不会生效的-，因为编译到-wxml，小程序不会生成节点，建议写在内部顶级元素上。" class="headerlink" title="暂不支持在组件引用时，在组件上定义 click 等原生事件、v-show（可用 v-if 代替）和 class style 等样式属性(例：  样式是不会生效的)，因为编译到 wxml，小程序不会生成节点，建议写在内部顶级元素上。"></a>暂不支持在组件引用时，在组件上定义 click 等原生事件、v-show（可用 v-if 代替）和 class style 等样式属性(例：<card class="class-name"> </card> 样式是不会生效的)，因为编译到 wxml，小程序不会生成节点，建议写在内部顶级元素上。</h3><p>组件不支持click事件，难道要我每个页面再复制一遍？？<br>所以，组件存在的意义是什么？静态的展示吗？O**K<br>
+        
+          <a class="article-more-a" href="/2018/12/28/bad-mpvue/#more">more >></a>
+        
       
 
       
-    </div>
+    </p></div>
     <div class="article-info article-info-index">
       
       
@@ -794,7 +795,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/28/bad-mpvue/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/12/28/bad-mpvue/">展开全文 >></a>
         </p>
       
 
@@ -826,7 +827,7 @@
   
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -838,7 +839,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 Geek-Chen
+    		&copy; 2019 Geek-Chen
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

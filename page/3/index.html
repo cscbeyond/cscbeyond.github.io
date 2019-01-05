@@ -171,29 +171,29 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-chain-program" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-vue" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/07/chain-program/">关于链式编程的一点理解</a>
+      <a class="article-title" href="/2018/12/03/vue/">vue开发手记</a>
     </h1>
   
 
         
-        <a href="/2018/09/07/chain-program/" class="archive-article-date">
-  	<time datetime="2018-09-07T01:10:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-07</time>
+        <a href="/2018/12/03/vue/" class="archive-article-date">
+  	<time datetime="2018-12-02T16:25:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>对于前端来说，最早接触链式编程应该是在学习jquery的时候，jquery的特性之一就是链式编程。<br>用了这么久终于想起来要了解一下链式编程原理，下面就说一下我对链式编程的理解，如果有不正确的地方，望指正，共同进步。<br>其实链式编程的原理很简单，相信你看了下面这个demo后，一定会恍然大悟，啊，原来链式编程这么简单。</p>
-<h3 id="eg"><a href="#eg" class="headerlink" title="eg:"></a>eg:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;&#125;;</span><br><span class="line">obj.a = <span class="keyword">function</span>(params1)&#123;</span><br><span class="line">    console.log(params1);</span><br><span class="line">    <span class="built_in">return</span> this;</span><br><span class="line">&#125;</span><br><span class="line">obj.b = <span class="keyword">function</span>(params2)&#123;</span><br><span class="line">    console.log(params2);</span><br><span class="line">    <span class="built_in">return</span> this;</span><br><span class="line">&#125;</span><br><span class="line">obj.a(<span class="string">'这是a'</span>).b(<span class="string">'这是b'</span>);</span><br></pre></td></tr></table></figure>
-<p>对吧，其实就是这么简单，在每个方法内部进行了一系列的处理之后，最后return this，这样就能保证进行下一步操作的时候，this还是指向obj,因此就实现了链式编程。</p>
+        <h1 id="mixins"><a href="#mixins" class="headerlink" title="mixins"></a>mixins</h1><p>在文件中导出一个方法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> <span class="built_in">let</span> myMixins = &#123;</span><br><span class="line">    created: <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        this.hello()</span><br><span class="line">    &#125;,</span><br><span class="line">    methosd: &#123;</span><br><span class="line">        <span class="function"><span class="title">hello</span></span>()&#123;</span><br><span class="line">            console.log(<span class="string">'hello'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在组件中使用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import &#123;myMixins&#125; from <span class="string">'mixin'</span>;</span><br><span class="line">new Vue(&#123;</span><br><span class="line">    mixins:[myMixins],</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>—–not the end</p>
 
       
 
@@ -206,7 +206,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/07/chain-program/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/12/03/vue/">展开全文 >></a>
         </p>
       
 
@@ -236,81 +236,27 @@
 
 
   
-    <article id="post-jsstandard" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-事件冒泡及捕获" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/06/jsstandard/">JS规范（CommonJS/CMD/AMD）</a>
+      <a class="article-title" href="/2018/11/30/事件冒泡及捕获/">事件冒泡及捕获</a>
     </h1>
   
 
         
-        <a href="/2018/09/06/jsstandard/" class="archive-article-date">
-  	<time datetime="2018-09-06T07:20:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-06</time>
+        <a href="/2018/11/30/事件冒泡及捕获/" class="archive-article-date">
+  	<time datetime="2018-11-30T02:50:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-30</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="JS模块化很重要？是的，很重要。"><a href="#JS模块化很重要？是的，很重要。" class="headerlink" title="JS模块化很重要？是的，很重要。"></a>JS模块化很重要？是的，很重要。</h3><p>有了模块，我们就可以方便的使用别人的代码，想要什么需求，就加载什么模块，但这样做有个前提，就是大家必须用同样的方式编写模块，因此就出现了这三个模块规范。</p>
-<h2 id="一、CommonJS"><a href="#一、CommonJS" class="headerlink" title="一、CommonJS"></a>一、CommonJS</h2><p>在兼容CommonJS的系统中，可以使用js开发以下程序：<br>1、服务器端js应用程序<br>2.命令行工具<br>3.图形界面应用程序<br>4.混合应用程序</p>
-<p>在浏览器环境下，没有模块也不是特别大的问题，毕竟网页程序的复杂性有限；但是在服务器端，一定要有模块，与操作系统和其他应用程序互动，否则根本没法编程。NodeJS是CommonJS规范的实现，webpack 也是以CommonJS的形式来书写。</p>
-<p>node.js的模块系统，就是参照CommonJS规范实现的。在CommonJS中，有一个全局性方法 require()，用于加载模块。<br>假定有一个数学模块math.js，就可以像下面这样加载：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var math = require(<span class="string">'math'</span>);</span><br></pre></td></tr></table></figure></p>
-<p>然后就可以调用模块提供的方法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var math = require(<span class="string">'mathh'</span>);</span><br><span class="line">math.add(1,2);</span><br></pre></td></tr></table></figure></p>
-<p>CommonJS定义的模块分为：<br>{模块引用（require）}<br>{模块定义（exports）}<br>{模块标识（module）}</p>
-<p>require()用来引入外部模块；<br>exports对象用于导出当前模块的方法或变量，唯一的导出口<br>module对象就代表模块本身。<br>node遵循CommonJS规范，但也做了取舍，填了新东西。<br>npm所谓node的包管理器，是为了帮助node解决依赖包的安装问题，也遵循CommonJS规范。</p>
-<h2 id="CommonJS的原理以及简单实现"><a href="#CommonJS的原理以及简单实现" class="headerlink" title="CommonJS的原理以及简单实现"></a>CommonJS的原理以及简单实现</h2><h3 id="1-原理"><a href="#1-原理" class="headerlink" title="1.原理"></a>1.原理</h3><p>浏览器不兼容CommonJS的根本原因，是因为缺少4个node的环境变量</p>
-<ul>
-<li>module</li>
-<li>exports</li>
-<li>require</li>
-<li>global</li>
-</ul>
-<p>只要能够提供这4个变量，浏览器就能加载CommonJS模块</p>
-<h1 id="eg："><a href="#eg：" class="headerlink" title="eg："></a>eg：</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var module =&#123;</span><br><span class="line">    exports:&#123; &#125;</span><br><span class="line">&#125;;</span><br><span class="line">(<span class="keyword">function</span>(module,exports)&#123;</span><br><span class="line">    exports.multiply = <span class="keyword">function</span> (n)&#123;</span><br><span class="line">        <span class="built_in">return</span> n * 1000</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;(module,module.exports))</span><br><span class="line"></span><br><span class="line">var f = module.exports.multiply;</span><br><span class="line">f(5); // 5000</span><br></pre></td></tr></table></figure>
-<p>向一个立即执行函数提供module和exports两个外部变量，模块就放在这个立即执行函数里面。模块的输出值放在module.exports中，实现了模块的加载。</p>
-<h3 id="2-Browserify的实现"><a href="#2-Browserify的实现" class="headerlink" title="2.Browserify的实现"></a>2.Browserify的实现</h3><p><a href="http://browserify.org/" target="_blank" rel="noopener">Broeserify</a>是目前最常用的CommonJS格式转换工具。</p>
-<h2 id="eg-main-js模块加载foo-js模块"><a href="#eg-main-js模块加载foo-js模块" class="headerlink" title="eg:main.js模块加载foo.js模块"></a>eg:main.js模块加载foo.js模块</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//foo.js</span><br><span class="line">mudule.exports = <span class="keyword">function</span>(x)&#123;</span><br><span class="line">    console.log(x);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">main.js</span><br><span class="line">var foo = require(<span class="string">'./foo'</span>);</span><br><span class="line">foo(<span class="string">'Hi'</span>);</span><br></pre></td></tr></table></figure>
-<p>使用以下命令:就能将main.js转为浏览器可用的格式<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ browserify main.js &gt; compiled.js</span><br></pre></td></tr></table></figure></p>
-<h2 id="二、AMD"><a href="#二、AMD" class="headerlink" title="二、AMD"></a>二、AMD</h2><p>基于CommonJS规范的nodeJS出来以后，服务端的模块概念已经形成，很自然的，大家就想要客户端模块，而且最好两者能够兼容，一个模块不用修改，在服务器和浏览器都可以运行。但是由于一个重大的局限，使得commonjs规范不适用于浏览器环境。还是上面的代码， 如果在浏览器中运行，会有很大的问题<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var math = require(<span class="string">'math'</span>);</span><br><span class="line">math.add(1,2);</span><br></pre></td></tr></table></figure></p>
-<p>第二行math.add(1,2),在第一行require(‘math’)之后运行，因此必须等math.js加载完成。也就是说，如果加载时间很长，整个应用就会停在这。 【require是同步的】<br>这对服务端不是问题，因为所有模块都存在本地硬盘，可以同步加载完成，等待时间就是i/o时间。但对浏览器来说却是个问题，因为模块都放在服务端，等待时间取决于网速的快慢，可能要等很长时间，浏览器处于假死状态。<br>因此，浏览器端的模块，不能采用”同步加载”（synchronous），只能采用”异步加载”（asynchronous）。这就是AMD规范诞生的背景。<br>CommonJS主要是为了js在后端的表现制定的，并不适合前端。<br>AMD异步加载定义出现了，主要为前端JS的表现制定规范。<br>AMD（Asynchronous Module Definition）异步模块定义。它采用异步方式加载模块，模块的加载不影响他后面语句的运行。所有以来这个模块的语句，都定义在一个回调函数中，等到加载完成后，这个回调函数才会运行。<br>AMD也采用require()语句加载模块，但不同于CommonJS，他要有两个参数：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">require([module],callback);</span><br></pre></td></tr></table></figure></p>
-<p>第一个参数[module]是一个数组，里面的成员就是要加载的模块；第二个参数callback则是加载成功后的回调函数。将之前的代码改写成AMD形式:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">require([<span class="string">'math'</span>],<span class="keyword">function</span>(math)&#123;</span><br><span class="line">    math.add(1,2);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>math.add()与math模块加载不是同步的，浏览器不会发生假死。so AMD适合浏览器环境。目前主要由两个js库实现了AMD规范： <a href="http://requirejs.org/" target="_blank" rel="noopener">require.js</a>和<a href="https://github.com/cujojs/curl">curl.js</a><br>requirejs就是实现了AMD规范</p>
-<h1 id="为什么要使用require-js"><a href="#为什么要使用require-js" class="headerlink" title="为什么要使用require.js"></a>为什么要使用require.js</h1><p>最早的时候，js代码都写在一个文件里，只要加载这一个文件就够了。后来代码增多，分成多个文件依次加载。<br>类似于以下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">　  &lt;script src=<span class="string">"1.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">　　&lt;script src=<span class="string">"2.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">　　&lt;script src=<span class="string">"3.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">　　&lt;script src=<span class="string">"4.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">　　&lt;script src=<span class="string">"5.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">　　&lt;script src=<span class="string">"6.js"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
-<p>这段代码依次加载多个js文件<br>这样写的缺点：<br>1.加载的时候，浏览器会停止页面渲染，加载文件越多，网页失去响应的时间就会越长<br>2，js文件之间存在依赖关系，必须严格保证加载顺序，依赖性最大的模块要放在最后加载，当依赖关系很复杂的时候，代码的编写和维护都很难。</p>
-<p>require.js<br>实现js文件异步加载，避免网页失去响应<br>管理模块之间的依赖性，便于 代码的编写和维护</p>
-<p>二、require.js的加载<br>到require<a href="https://requirejs.org/docs/download.html" target="_blank" rel="noopener">官网</a>下载<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"require.js"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
-<p>加载这个文件也可能造成网页失去响应。解决办法有两个：<br>一个是把它放在网页底部加载<br>另一种是写成：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"require.js"</span> defer async=<span class="string">"true"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
-<p>async表明这个文件要异步加载，避免网页失去响应。IE不支持这个属性，支持defer，所以把defer也写上。<br>加载require.js后，下一步就要加载我们自己的代码了。假定我们自己的代码文件是main.js，也放在js目录下面。那么，只需要写成：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script scr=<span class="string">"require/js"</span> data-main=<span class="string">"js/main"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
-<p>data-main属性的作用是：指定网页程序的主模块。在上例中，就是js目录下面的main.js，这个文件会第一个被require.js加载。由于require.js默认的文件后缀是js，所以可以把main.js简写成main。</p>
-<p>三、主模块的写法<br>上一节的main.js，我们把它成为“主模块”，意思是整个网页的入口代码。<br>下面就来看，怎么写main.js<br>如果我们的代码不依赖任何其他模块，那么可以直接写入js代码。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//main.js</span><br><span class="line">alert(<span class="string">"load success"</span>)</span><br></pre></td></tr></table></figure></p>
-<p>这样就没必要使用require.js了。真正常见的情况是，主模块依赖于其他模块，这是就要使用AMD规范定义的require()函数。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//main.js</span><br><span class="line">require([<span class="string">'moduleA'</span>,<span class="string">'moduleB'</span>,<span class="string">'moduleC'</span>],<span class="keyword">function</span>(moduleA,moduleB,moduleC)&#123;</span><br><span class="line">    //doSomeThing</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>require()函数接受两个参数。第一个参数是一个数组，标识所依赖的模块，上例就是[‘moduleA’,’moduleB’,’moduleC’],即主模块依赖这三个模块；第二个参数是一个回调函数，当前面指定的模块都加载成功后，他将被调用。加载的模块会以参数的形式传入该函数，从而在回调函数内部就可以使用这些模块。<br>require()异步加载moduleA、moduleB、moduleC，浏览器不会失去响应；它指定的回调函数，只有前面的模块都加在成功后，才会运行。解决了依赖性问题。<br>eg:<br>假定主模块依赖jquery、underscore和backbone这三个模块，main.js就可以这样写:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">require([<span class="string">'jquery'</span>,<span class="string">'underscore'</span>,<span class="string">'backbone'</span>],<span class="keyword">function</span>($,_,Backbone)&#123;</span><br><span class="line">    //doSomeThing</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>require会先加载jq、underscore、backbone，然后再运行回调函数。主模块的代码就写在回调函数中。</p>
-<p>四、模块的加载<br>上一节的示例中，主模块的依赖模块是[‘jquery’,’underscore’,’backbone’]。默认情况下，require.js嘉定这三个模块与main.js在同一个目录，文件名分别为 jquery.js、underscore.js和backbone.js，然后自动加载。<br>使用reuqire.config()方法，我们可以对木块的加载行为进行自定义。require.config()就写在主模块(main.js)的头部。<br>参数就是一个对象，这个对象的paths属性指定各个模块的加载路径。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">require.config(&#123;</span><br><span class="line">    paths: &#123;</span><br><span class="line">        <span class="string">"jquery"</span>:<span class="string">"jquery.min"</span>,</span><br><span class="line">        <span class="string">"underscore"</span>:<span class="string">"underscore.min"</span>,</span><br><span class="line">        <span class="string">"backbone"</span>:<span class="string">"backbone.min"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>上面的代码给出了三个模块的文件名，路径默认与main.js在同一个目录（js子目录）。如果这些模块在其他目录，比如js/lib目录，则有两种写法：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//逐一指定路径</span><br><span class="line">require.config(&#123;</span><br><span class="line">    paths: &#123;</span><br><span class="line">　　    <span class="string">"jquery"</span>: <span class="string">"lib/jquery.min"</span>,</span><br><span class="line">　　　　 <span class="string">"underscore"</span>: <span class="string">"lib/underscore.min"</span>,</span><br><span class="line">　　　　 <span class="string">"backbone"</span>: <span class="string">"lib/backbone.min"</span></span><br><span class="line">　　　　&#125;</span><br><span class="line">　　&#125;);</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//直接改变基目录（baseUrl）</span><br><span class="line">require.config(&#123;</span><br><span class="line">    baseUrl: <span class="string">"js/lib"</span>,</span><br><span class="line"> 　　paths: &#123;</span><br><span class="line">        <span class="string">"jquery"</span>: <span class="string">"jquery.min"</span>,</span><br><span class="line">　　　　 <span class="string">"underscore"</span>: <span class="string">"underscore.min"</span>,</span><br><span class="line">　　　　 <span class="string">"backbone"</span>: <span class="string">"backbone.min"</span></span><br><span class="line">　　&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>如果某个模块在另一台主机上，也可以直接指定它的网址，比如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">require.config(&#123;</span><br><span class="line">    paths: &#123;</span><br><span class="line">        <span class="string">"jquery"</span>: <span class="string">"https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>require.js要求，每个模块是一个单独的js文件。这样的话，如果加载多个模块，就会发出多次HTTP请求，会影响网页的加载速度。因此，require.js提供了一个优化工具，当模块部署完毕以后，可以用这个工具将多个模块合并在一个文件中，减少HTTP请求数。</p>
-<p>五、AMD模块的写法<br>require.js加载的模块，采用AMD规范。也就是说，模块必须按照AMD的规定来写。<br>具体来说，就是模块必须采用特定的define()函数来定义。如果一个模块不依赖其他模块，那么可以直接定义在defin()函数中。<br>eg: math.js定义了math模块，math.js要这样写：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//math.js</span><br><span class="line">define(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">    var add = <span class="keyword">function</span>(x,y)&#123;</span><br><span class="line">        <span class="built_in">return</span> x + y;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="built_in">return</span>&#123;</span><br><span class="line">        add: add</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>加载方法如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//main.js</span><br><span class="line">require([<span class="string">'math'</span>],<span class="keyword">function</span>(math)&#123;</span><br><span class="line">    alert(math.add(1,1))</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//如果这个模块还依赖其他模块，那么defin()函数的第一个参数，必须是一个数组，指明该模块的依赖性。</span><br><span class="line">define([<span class="string">'myLib'</span>],<span class="keyword">function</span>(myLib)&#123;</span><br><span class="line">    <span class="keyword">function</span> <span class="function"><span class="title">foo</span></span>()&#123;</span><br><span class="line">        myLib.doSomething();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span>&#123;</span><br><span class="line">        foo: foo</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>当require()函数加载上面这个模块的时候，就会先加载myLib.js文件。</p>
-<p>六、加载非规范的模块<br>理论上，require.js加载的模块，必须是按照AMD规范、用define()函数定义的模块。但是实际上，虽然已经有一部分流行的函数库（比如jQuery）符合AMD规范，更多的库并不符合。那么，require.js是否能够加载非规范的模块呢？<br>回答是可以的。<br>这样的模块在用require()加载之前，要先用require.config()方法，定义它们的一些特征。<br>eg: underscore和backbone这两个库，都没有采用AMD规范编写。如果要加载它们的话，必须先定义它们的特征。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">require.config(&#123;</span><br><span class="line">    shim: &#123;</span><br><span class="line">        <span class="string">'underscore'</span>:&#123;</span><br><span class="line">            exports: <span class="string">'_'</span></span><br><span class="line">        &#125;,</span><br><span class="line">　　　　　<span class="string">'backbone'</span>: &#123;</span><br><span class="line">　　　　　　　deps: [<span class="string">'underscore'</span>, <span class="string">'jquery'</span>],</span><br><span class="line">　　　　　　　exports: <span class="string">'Backbone'</span></span><br><span class="line">　　　　　&#125;</span><br><span class="line">　　&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>require.config()接收一个配置对象，这个对象除了有前面说过的paths属性外，还有一个shim属性，专门用来配置不兼容的模块。具体来说，么个模块要定义<br>1）exports值（输出的变量名），表明这个模块外部调用时的名称；<br>2）deps数组，表明该模块的依赖性。</p>
-<p>比如:jQuery插件也可以这样定义：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">shim:&#123;</span><br><span class="line">    <span class="string">'jquery.scroll'</span>:&#123;</span><br><span class="line">        deps:[<span class="string">'jquery'</span>],</span><br><span class="line">        exports:<span class="string">'jQuery.fn.scroll'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>七、require.js插件<br>require.js还提供了一系列的<a href="https://github.com/requirejs/requirejs/wiki/Plugins">插件</a>，实现一些特定的功能。<br>domoready插件，可以让回调函数在页面DOM结构接在完成后再运行。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">require([<span class="string">'domready!'</span>],<span class="keyword">function</span>(doc)&#123;</span><br><span class="line">    //called once the DOM is ready</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>text和image插件，则是允许require.js加载文本图图片文件。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">define([</span><br><span class="line">    <span class="string">'text!review.txt'</span>,</span><br><span class="line">    <span class="string">'image!cat.jpg'</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="keyword">function</span>(review,cat)&#123;</span><br><span class="line">        console.log(review);</span><br><span class="line">        document.body.appendChild(cat);</span><br><span class="line">    &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
-<p>类似的插件还有json和mdown，用于加载json文件和markdown文件。（完）</p>
-<h3 id="三、CMD"><a href="#三、CMD" class="headerlink" title="三、CMD"></a>三、CMD</h3><p>玉伯写的sea.js就是遵循他提出的CMD规范，与AMD相近，不过用起来感觉更方便，重要的是中文版。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">define(<span class="keyword">function</span>(require,exorts,module)&#123;...&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>用过sea.js的对这个一定不陌生<br>前面说AMD，说requirejs实现了AMD。CMD和AMD很像，那么requirejs和seajs像不像呢？<br>虽然CMD和AMD很像，但区别还是挺明显的，官方非官方都有阐述和理解<br><a href="https://github.com/seajs/seajs/issues/277">官方阐释seajs和requirejs异同</a><br><a href="https://www.douban.com/note/283566440/" target="_blank" rel="noopener">seajs与requirejs最大异同</a><br>SeaJS对模块的态度是懒执行, 而RequireJS对模块的态度是预执行</p>
-<p>完全copy了版主的写作，请见谅。写完这一遍感觉理解的深刻了一些。感谢原版主，站在了原版主的肩膀上行走，再次感谢。</p>
-<p>参考：<a href="https://www.cnblogs.com/chenguangliang/p/5856701.html" target="_blank" rel="noopener">https://www.cnblogs.com/chenguangliang/p/5856701.html</a></p>
-
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 冒泡</span></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">    &lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span><br><span class="line">    &lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"ie=edge"</span>&gt;</span><br><span class="line">    &lt;title&gt;捕获和冒泡&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        .out&#123;</span><br><span class="line">            width: 500px;</span><br><span class="line">            height: 500px;</span><br><span class="line">            background-color: lightblue;</span><br><span class="line">            overflow: hidden;</span><br><span class="line">        &#125;</span><br><span class="line">        .mid&#123;</span><br><span class="line">            width: 300px;</span><br><span class="line">            height: 300px;</span><br><span class="line">            background-color: lightcoral;</span><br><span class="line">            margin: 100px auto;</span><br><span class="line">            overflow: hidden;</span><br><span class="line">        &#125;</span><br><span class="line">        .inner&#123;</span><br><span class="line">            width: 100x;</span><br><span class="line">            height: 100px;</span><br><span class="line">            background-color: lightgreen;</span><br><span class="line">            margin: 100px auto;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class=<span class="string">"out"</span>&gt;</span><br><span class="line">        &lt;div class=<span class="string">"mid"</span>&gt;</span><br><span class="line">            &lt;div class=<span class="string">"inner"</span>&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        window.onload = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">            <span class="built_in">let</span> out = document.querySelector(<span class="string">'.out'</span>);</span><br><span class="line">            <span class="built_in">let</span> mid = document.querySelector(<span class="string">'.mid'</span>);</span><br><span class="line">            <span class="built_in">let</span> inner = document.querySelector(<span class="string">'.inner'</span>);</span><br><span class="line">            out.addEventListener(<span class="string">'click'</span>,<span class="keyword">function</span>(e)&#123;</span><br><span class="line">                alert(<span class="string">'out'</span>);</span><br><span class="line">            &#125;)</span><br><span class="line">            mid.addEventListener(<span class="string">'click'</span>,<span class="keyword">function</span>(e)&#123;</span><br><span class="line">                e.stopPropagation();  //这里阻止事件继续向上冒泡，因此，在点击了inner后，弹出inner mid，不会有out</span><br><span class="line">                alert(<span class="string">'mid'</span>);</span><br><span class="line">            &#125;)</span><br><span class="line">            inner.addEventListener(<span class="string">'click'</span>,<span class="keyword">function</span>(e)&#123;</span><br><span class="line">                e.stopPropagation();  </span><br><span class="line">                alert(<span class="string">'inner'</span>);</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">        //冒泡，是从小的元素向大的元素传递，子元素使用e.stopPropagation()阻止冒泡后，事件无法向上传递，因此，父级元素无法监听到子元素事件。</span><br><span class="line">        // 以上是事件冒泡</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -322,7 +268,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/06/jsstandard/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/11/30/事件冒泡及捕获/">展开全文 >></a>
         </p>
       
 
@@ -352,35 +298,27 @@
 
 
   
-    <article id="post-about-vue" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-event" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/29/about-vue/">vue双向绑定MVVM原理浅解</a>
+      <a class="article-title" href="/2018/11/30/event/">关于js中的事件问题</a>
     </h1>
   
 
         
-        <a href="/2018/08/29/about-vue/" class="archive-article-date">
-  	<time datetime="2018-08-29T05:45:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-29</time>
+        <a href="/2018/11/30/event/" class="archive-article-date">
+  	<time datetime="2018-11-30T01:52:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-30</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>数据劫持：vue.js采用数据劫持结合发布者-订阅者模式，通过Object.defineProperty()来劫持各个属性的setter、getter，在数据变动时发布消息给订阅者，出发相应的监听回调。</p>
-<p>1.实现一个数据监听的Observer，对数据对象的所有属性进行监听，如有变动可拿到最新值并通知订阅者<br>2.实现一个指令解析器Compile，对每个元素节点的指令进行扫描和解析，根据指令模板替换数据，一级绑定相应的更新函数<br>3.实现一个Watcher，作为连接Observer和Compile的桥梁，能够订阅并受到每个属性变动的通知，执行指令绑定的相应回调函数，从而更新视图<br>4.MVVM入口函数，整合以上三者</p>
-<h1 id="1-实现Observer"><a href="#1-实现Observer" class="headerlink" title="1.实现Observer"></a>1.实现Observer</h1><p>我们知道可以利用Obeject.defineProperty()来监听属性变动<br>那么将需要observe的数据对象进行递归遍历，包括子属性对象的属性，都加上 setter和getter<br>这样的话，给这个对象的某个值赋值，就会触发setter，那么就能监听到了数据变化。。相关代码可以是这样：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">var data = &#123;name: <span class="string">'kindeng'</span>&#125;;</span><br><span class="line">observe(data);</span><br><span class="line">data.name = <span class="string">'dmq'</span>; // 哈哈哈，监听到值变化了 kindeng --&gt; dmq</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> observe(data) &#123;</span><br><span class="line">    <span class="keyword">if</span> (!data || typeof data !== <span class="string">'object'</span>) &#123;</span><br><span class="line">        <span class="built_in">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    // 取出所有属性遍历</span><br><span class="line">    Object.keys(data).forEach(<span class="keyword">function</span>(key) &#123;</span><br><span class="line">        defineReactive(data, key, data[key]);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> defineReactive(data, key, val) &#123;</span><br><span class="line">    observe(val); // 监听子属性</span><br><span class="line">    Object.defineProperty(data, key, &#123;</span><br><span class="line">        enumerable: <span class="literal">true</span>, // 可枚举</span><br><span class="line">        configurable: <span class="literal">false</span>, // 不能再define</span><br><span class="line">        get: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">            <span class="built_in">return</span> val;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="built_in">set</span>: <span class="keyword">function</span>(newVal) &#123;</span><br><span class="line">            console.log(<span class="string">'哈哈哈，监听到值变化了 '</span>, val, <span class="string">' --&gt; '</span>, newVal);</span><br><span class="line">            val = newVal;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>这样我们已经可以监听每个数据的变化了，那么监听到变化之后就是怎么通知订阅者了，所以接下来我们需要实现一个消息订阅器，很简单，维护一个数组，用来收集订阅者，数据变动触发notify，再调用订阅者的update方法，代码改善之后是这样：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">// ... 省略</span><br><span class="line"><span class="keyword">function</span> defineReactive(data, key, val) &#123;</span><br><span class="line">    var dep = new Dep();</span><br><span class="line">    observe(val); // 监听子属性</span><br><span class="line"></span><br><span class="line">    Object.defineProperty(data, key, &#123;</span><br><span class="line">        // ... 省略</span><br><span class="line">        <span class="built_in">set</span>: <span class="keyword">function</span>(newVal) &#123;</span><br><span class="line">            <span class="keyword">if</span> (val === newVal) <span class="built_in">return</span>;</span><br><span class="line">            console.log(<span class="string">'哈哈哈，监听到值变化了 '</span>, val, <span class="string">' --&gt; '</span>, newVal);</span><br><span class="line">            val = newVal;</span><br><span class="line">            dep.notify(); // 通知所有订阅者</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">Dep</span></span>() &#123;</span><br><span class="line">    this.subs = [];</span><br><span class="line">&#125;</span><br><span class="line">Dep.prototype = &#123;</span><br><span class="line">    addSub: <span class="keyword">function</span>(sub) &#123;</span><br><span class="line">        this.subs.push(sub);</span><br><span class="line">    &#125;,</span><br><span class="line">    notify: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">        this.subs.forEach(<span class="keyword">function</span>(sub) &#123;</span><br><span class="line">            sub.update();</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<p>那么问题来了，谁是订阅者？怎么往订阅器添加订阅者？<br>没错，上面的思路整理中我们已经明确订阅者应该是Watcher, 而且var dep = new Dep();是在 defineReactive方法内部定义的，所以想通过dep添加订阅者，就必须要在闭包内操作，所以我们可以在 getter里面动手脚：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// Observer.js</span><br><span class="line">// ...省略</span><br><span class="line">Object.defineProperty(data, key, &#123;</span><br><span class="line">    get: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">        // 由于需要在闭包内添加watcher，所以通过Dep定义一个全局target属性，暂存watcher, 添加完移除</span><br><span class="line">        Dep.target &amp;&amp; dep.addDep(Dep.target);</span><br><span class="line">        <span class="built_in">return</span> val;</span><br><span class="line">    &#125;</span><br><span class="line">    // ... 省略</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// Watcher.js</span><br><span class="line">Watcher.prototype = &#123;</span><br><span class="line">    get: <span class="keyword">function</span>(key) &#123;</span><br><span class="line">        Dep.target = this;</span><br><span class="line">        this.value = data[key];    // 这里会触发属性的getter，从而添加订阅者</span><br><span class="line">        Dep.target = null;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h1 id="2-实现Compile"><a href="#2-实现Compile" class="headerlink" title="2.实现Compile"></a>2.实现Compile</h1><p>compile主要做的事情是解析模板指令，将模板中的变量替换成数据，然后初始化渲染页面视图，并将每个指令对应的节点绑定更新函数，添加监听数据的订阅者，一旦数据有变动，收到通知，更新视图。</p>
-<p>便利解析的过程有多次操作dom，为提高性能和效率，会先将根节点el转换成文档碎片fragment进行解析编译操作，解析完成，再讲fragment添加回原来的真实dom节点中<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> Compile(el)&#123;</span><br><span class="line">    this.<span class="variable">$el</span> = this.isElementNode(el)?el:document.querySelector(el);</span><br><span class="line">    <span class="keyword">if</span>(this.<span class="variable">$el</span>)&#123;</span><br><span class="line">        this.<span class="variable">$fragment</span> = this.node2Fragment(this.<span class="variable">$el</span>);</span><br><span class="line">        this.init();</span><br><span class="line">        this.<span class="variable">$el</span>.appendChild(this.<span class="variable">$fragment</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Compile.prototype = &#123;</span><br><span class="line">    init: <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        this.compileElement(this.<span class="variable">$el</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">    node2Fragment: <span class="keyword">function</span>(el)&#123;</span><br><span class="line">        var fragment = document.createDocumentFragment(),child;</span><br><span class="line">        将原生节点拷贝到fragment</span><br><span class="line">        <span class="keyword">while</span>(child = el.firshChild)&#123;</span><br><span class="line">            fragment.appendChild(child);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">return</span> fragment;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<p>compileElement方法将遍历所有节点及其子节点，进行扫描解析编译，调用对应的指令渲染函数进行数据渲染，并调用对应的指令更新函数进行绑定，详看代码及注释说明：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">Compile.prototype = &#123;</span><br><span class="line">    // ... 省略</span><br><span class="line">    compileElement: <span class="keyword">function</span>(el) &#123;</span><br><span class="line">        var childNodes = el.childNodes, me = this;</span><br><span class="line">        [].slice.call(childNodes).forEach(<span class="keyword">function</span>(node) &#123;</span><br><span class="line">            var text = node.textContent;</span><br><span class="line">            var reg = /\&#123;\&#123;(.*)\&#125;\&#125;/;    // 表达式文本</span><br><span class="line">            // 按元素节点方式编译</span><br><span class="line">            <span class="keyword">if</span> (me.isElementNode(node)) &#123;</span><br><span class="line">                me.compile(node);</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (me.isTextNode(node) &amp;&amp; reg.test(text)) &#123;</span><br><span class="line">                me.compileText(node, RegExp.<span class="variable">$1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            // 遍历编译子节点</span><br><span class="line">            <span class="keyword">if</span> (node.childNodes &amp;&amp; node.childNodes.length) &#123;</span><br><span class="line">                me.compileElement(node);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    compile: <span class="keyword">function</span>(node) &#123;</span><br><span class="line">        var nodeAttrs = node.attributes, me = this;</span><br><span class="line">        [].slice.call(nodeAttrs).forEach(<span class="keyword">function</span>(attr) &#123;</span><br><span class="line">            // 规定：指令以 v-xxx 命名</span><br><span class="line">            // 如 &lt;span v-text=<span class="string">"content"</span>&gt;&lt;/span&gt; 中指令为 v-text</span><br><span class="line">            var attrName = attr.name;    // v-text</span><br><span class="line">            <span class="keyword">if</span> (me.isDirective(attrName)) &#123;</span><br><span class="line">                var exp = attr.value; // content</span><br><span class="line">                var dir = attrName.substring(2);    // text</span><br><span class="line">                <span class="keyword">if</span> (me.isEventDirective(dir)) &#123;</span><br><span class="line">                    // 事件指令, 如 v-on:click</span><br><span class="line">                    compileUtil.eventHandler(node, me.<span class="variable">$vm</span>, exp, dir);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    // 普通指令</span><br><span class="line">                    compileUtil[dir] &amp;&amp; compileUtil[dir](node, me.<span class="variable">$vm</span>, exp);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 指令处理集合</span><br><span class="line">var compileUtil = &#123;</span><br><span class="line">    text: <span class="keyword">function</span>(node, vm, exp) &#123;</span><br><span class="line">        this.bind(node, vm, exp, <span class="string">'text'</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">    // ...省略</span><br><span class="line">    <span class="built_in">bind</span>: <span class="keyword">function</span>(node, vm, exp, dir) &#123;</span><br><span class="line">        var updaterFn = updater[dir + <span class="string">'Updater'</span>];</span><br><span class="line">        // 第一次初始化视图</span><br><span class="line">        updaterFn &amp;&amp; updaterFn(node, vm[exp]);</span><br><span class="line">        // 实例化订阅者，此操作会在对应的属性消息订阅器中添加了该订阅者watcher</span><br><span class="line">        new Watcher(vm, exp, <span class="keyword">function</span>(value, oldValue) &#123;</span><br><span class="line">            // 一旦属性值有变化，会收到通知执行此更新函数，更新视图</span><br><span class="line">            updaterFn &amp;&amp; updaterFn(node, value, oldValue);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 更新函数</span><br><span class="line">var updater = &#123;</span><br><span class="line">    textUpdater: <span class="keyword">function</span>(node, value) &#123;</span><br><span class="line">        node.textContent = typeof value == <span class="string">'undefined'</span> ? <span class="string">''</span> : value;</span><br><span class="line">    &#125;</span><br><span class="line">    // ...省略</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+        <p>使用js原生来书写代码时，我们通常用addEventListener来为元素添加事件，<br>使用removeEventListener来移除事件。<br>注意，removeEventListener无法移除匿名函数的事件。</p>
 
       
 
@@ -393,7 +331,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/08/29/about-vue/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/11/30/event/">展开全文 >></a>
         </p>
       
 
@@ -423,42 +361,27 @@
 
 
   
-    <article id="post-defineProperty" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-array" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/29/defineProperty/">关于defineProperty</a>
+      <a class="article-title" href="/2018/11/26/array/">数组</a>
     </h1>
   
 
         
-        <a href="/2018/08/29/defineProperty/" class="archive-article-date">
-  	<time datetime="2018-08-29T02:35:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-29</time>
+        <a href="/2018/11/26/array/" class="archive-article-date">
+  	<time datetime="2018-11-26T05:38:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>我是在了解vue原理的时候看到的这个源于ES5的属性,所以想深入理解一下<br>对象是对个键值对的集合。每个属性对应任意类型的值<br>定义对象最常用的方法是使用构造函数或字面量的形式<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var obj = new Object();</span><br><span class="line">obj.name = <span class="string">'zhangsan'</span>;</span><br><span class="line">obj.say = <span class="function"><span class="title">function</span></span>()&#123;&#125;;</span><br></pre></td></tr></table></figure></p>
-<p>#我们还可以使用Object.defineProperty定义新属性或修改原有的属性。</p>
-<p>Object.defineProperty(obj,prop,descriptor);<br>obj:必须。目标对象<br>prop: 必须。 要定义或修改的属性名<br>descriptor: 必须。目标属性所拥有的特性</p>
-<p>eg:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">    <span class="built_in">test</span>:<span class="string">'hello'</span></span><br><span class="line">&#125;</span><br><span class="line">//对象已有的属性添加特性描述</span><br><span class="line">Object.defineProperty(obj,<span class="string">'test'</span>,&#123;</span><br><span class="line">    configurable:<span class="literal">true</span> | <span class="literal">false</span>,</span><br><span class="line">    enumerable:<span class="literal">true</span> | <span class="literal">false</span>,</span><br><span class="line">    value:任意类型的值,</span><br><span class="line">    writable:<span class="literal">true</span> | <span class="literal">false</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">//对象新添加的属性的特性描述</span><br><span class="line">Object.defineProperty(obj,<span class="string">"newKey"</span>,&#123;</span><br><span class="line">    configurable:<span class="literal">true</span> | <span class="literal">false</span>,</span><br><span class="line">    enumerable:<span class="literal">true</span> | <span class="literal">false</span>,</span><br><span class="line">    value:任意类型的值,</span><br><span class="line">    writable:<span class="literal">true</span> | <span class="literal">false</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>属性详解：<br>value: 属性对应的值，可以是任意类型的值，默认为undefined<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;&#125;;</span><br><span class="line">//不设置value属性</span><br><span class="line">Object.defineProperty(obj,;<span class="string">'newKey'</span>,&#123;</span><br><span class="line">&#125;)</span><br><span class="line">console.log( obj.newKey );  //undefined</span><br><span class="line"></span><br><span class="line">设置value属性</span><br><span class="line">Object.defineProperty(obj,;<span class="string">'newKey'</span>,&#123;</span><br><span class="line">    value:<span class="string">'hello'</span></span><br><span class="line">&#125;)</span><br><span class="line">console.log( obj.newKey );  //hello</span><br></pre></td></tr></table></figure></p>
-<p>writable:属性的值是否可以被重写.默认false 不能被重写<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;&#125;</span><br><span class="line">//第一种情况：writable设置为<span class="literal">false</span>，不能重写。</span><br><span class="line">Object.defineProperty(obj,<span class="string">"newKey"</span>,&#123;</span><br><span class="line">    value:<span class="string">"hello"</span>,</span><br><span class="line">    writable:<span class="literal">false</span></span><br><span class="line">&#125;);</span><br><span class="line">//更改newKey的值</span><br><span class="line">obj.newKey = <span class="string">"change value"</span>;</span><br><span class="line">console.log( obj.newKey );  //hello</span><br><span class="line"></span><br><span class="line">//第二种情况：writable设置为<span class="literal">true</span>，可以重写</span><br><span class="line">Object.defineProperty(obj,<span class="string">"newKey"</span>,&#123;</span><br><span class="line">    value:<span class="string">"hello"</span>,</span><br><span class="line">    writable:<span class="literal">true</span></span><br><span class="line">&#125;);</span><br><span class="line">//更改newKey的值</span><br><span class="line">obj.newKey = <span class="string">"change value"</span>;</span><br><span class="line">console.log( obj.newKey );  //change value</span><br></pre></td></tr></table></figure></p>
-<p>enumerable：属性是否可被枚举（ 使用for…in 或Object.keys() ）。默认false</p>
-<p>configurable:是否可以删除目标属性或是否可以再次修改属性的特性（writable, configurable, enumerable）。设置为true可以被删除或可以重新设置特性；设置为false，不能被可以被删除或不可以重新设置特性。默认为false。</p>
-<h1 id="存取器描述"><a href="#存取器描述" class="headerlink" title="存取器描述"></a>存取器描述</h1><p>当使用存取器描述属性特性的时候，允许设置一下特性属性：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;&#125;;</span><br><span class="line">Object.defineProperty(obj,<span class="string">"newKey"</span>,&#123;</span><br><span class="line">    get:<span class="function"><span class="title">function</span></span> ()&#123;&#125; | undefined,</span><br><span class="line">    <span class="built_in">set</span>:<span class="keyword">function</span> (value)&#123;&#125; | undefined</span><br><span class="line">    configurable: <span class="literal">true</span> | <span class="literal">false</span></span><br><span class="line">    enumerable: <span class="literal">true</span> | <span class="literal">false</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>注:当使用了getter或setter方法，不允许使用writable和value这两个属性</p>
-<p>当设置或获取对象的某个属性的值的时候，可以提供getter/setter方法。</p>
-<p>getter 是一种获得属性值的方法<br>setter是一种设置属性值的方法。</p>
-<p>在特性中使用get/set属性来定义对应的方法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;&#125;;</span><br><span class="line">var initval = <span class="string">'hello'</span>;</span><br><span class="line">Object.defineProperty(obj,<span class="string">'newKey'</span>,&#123;</span><br><span class="line">    get: <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        <span class="built_in">return</span> initValue;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="built_in">set</span>: <span class="keyword">function</span>(value)&#123;</span><br><span class="line">        initValue = value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">//获取值</span><br><span class="line">console.log( obj.newKey );  //hello</span><br><span class="line">//设置值</span><br><span class="line">obj.newKey = <span class="string">'change value'</span>;</span><br><span class="line">console.log( obj.newKey ); //change value</span><br></pre></td></tr></table></figure></p>
-<h4 id="注：get或set不是必须成对出现，任写其一就可以。如果不设置方法，则get和set的默认值为undefined"><a href="#注：get或set不是必须成对出现，任写其一就可以。如果不设置方法，则get和set的默认值为undefined" class="headerlink" title="注：get或set不是必须成对出现，任写其一就可以。如果不设置方法，则get和set的默认值为undefined"></a>注：get或set不是必须成对出现，任写其一就可以。如果不设置方法，则get和set的默认值为undefined</h4><p>configurable和enumerable同上面的用法</p>
-<p>兼容性：在IE8下，只能在DOM对象上使用，尝试在原生对象使用Object.defineProperty()会报错。</p>
-
+        <h3 id="数组的长度是比数组最大索引值多一的数。"><a href="#数组的长度是比数组最大索引值多一的数。" class="headerlink" title="数组的长度是比数组最大索引值多一的数。"></a>数组的长度是比数组最大索引值多一的数。</h3>
       
 
       
@@ -470,7 +393,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/08/29/defineProperty/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/11/26/array/">展开全文 >></a>
         </p>
       
 
@@ -500,31 +423,28 @@
 
 
   
-    <article id="post-my-first-hexo" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-closure" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/29/my-first-hexo/">解决vue首页加载过慢问题</a>
+      <a class="article-title" href="/2018/10/26/closure/">闭包</a>
     </h1>
   
 
         
-        <a href="/2018/08/29/my-first-hexo/" class="archive-article-date">
-  	<time datetime="2018-08-29T01:46:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-29</time>
+        <a href="/2018/10/26/closure/" class="archive-article-date">
+  	<time datetime="2018-10-26T05:38:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>解决vue项目首页加载过慢的问题</p>
-<p>1.使用vue-router结合webapack的require异步加载，按需加载模块<br>2.使用异步组件，按需加载<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">components: &#123;</span><br><span class="line">    <span class="string">'my-component'</span>:()=&gt;import(<span class="string">'./my-async-component'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>3.vue-lazyload插件可以实现图片的懒加载<br>4.moment.js插件  外部引入一些插件，不要在vue中引入<br>项目中有用到moment.js这个插件，在vue内部引入后打包的项目大小要比在外部用src的方式引入打包的项目大个300k左右。下载好moment.min.js包，然后在vue项目的webpack.base.conf.js中添加：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">externals:&#123;</span><br><span class="line">    &apos;moment&apos;:&apos;moment&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>代码后是不会将moment.js给打包到js中的。<br>将刚才下载的moment.min.js包，手动引入到打包好的index.html 文件中</p>
-
+        <p>老生常谈的问题，几乎所有的前端面试中都会被问到。<br>而我对这个问题的理解始终不是很透彻，今天好好整理一下。</p>
+<h6 id="一、闭包产生的原因"><a href="#一、闭包产生的原因" class="headerlink" title="一、闭包产生的原因"></a>一、闭包产生的原因</h6>
       
 
       
@@ -536,7 +456,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/08/29/my-first-hexo/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/10/26/closure/">展开全文 >></a>
         </p>
       
 
@@ -566,35 +486,89 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-clearfix" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/29/hello-world/">Hello World</a>
+      <a class="article-title" href="/2018/10/22/clearfix/">css清除浮动相关</a>
     </h1>
   
 
         
-        <a href="/2018/08/29/hello-world/" class="archive-article-date">
-  	<time datetime="2018-08-29T01:23:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-29</time>
+        <a href="/2018/10/22/clearfix/" class="archive-article-date">
+  	<time datetime="2018-10-22T05:49:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-22</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/10/22/clearfix/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-node" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/22/node/">node学习笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2018/10/22/node/" class="archive-article-date">
+  	<time datetime="2018-10-22T05:30:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>比较流行的node框架是express和koa。<br>以前就听人讲，express很容易陷入回调地狱，但对我这个新手来说，好像还没涉及到这里。<br>koa的开发团队就是express的原班人马，这…<br>好吧，毕竟我写不出来框架，就不瞎哔哔了。<br>关于koa和express的区别，简单了解了一下，express是用es5书写的，最后到处的是一个函数。<br>koa中使用了大量的es6语法，最后导出的是一个类。<br>还有人说，从express转为koa觉得有点困难，我觉得应该是express还不熟练的原因吧。<br>最开始接触node，我是徒手撸原生，然后上手了express，后来又使用了express-generator这个框架，安装完成后项目目录就有了，不用自己再去构建。直接写接口就好。<br>想了解一下koa，发现koa的文档实在是简单到不能再简单，大概是我express还没用熟悉的原因吧。个人感觉express比较好上手，毕竟对于我这个菜鸟来说，太多东西都是看着文档进行开发的…   :·(</p>
 
       
 
@@ -607,7 +581,203 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/08/29/hello-world/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/10/22/node/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-hexoTheme" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/22/hexoTheme/">hexo更换主题</a>
+    </h1>
+  
+
+        
+        <a href="/2018/10/22/hexoTheme/" class="archive-article-date">
+  	<time datetime="2018-10-22T05:10:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/10/22/hexoTheme/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-pxAnddpi" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/25/pxAnddpi/">设备像素及CSS像素</a>
+    </h1>
+  
+
+        
+        <a href="/2018/09/25/pxAnddpi/" class="archive-article-date">
+  	<time datetime="2018-09-25T01:52:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/09/25/pxAnddpi/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-shallowCopeAndDeepCopy" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/18/shallowCopeAndDeepCopy/">深拷贝对象的技巧</a>
+    </h1>
+  
+
+        
+        <a href="/2018/09/18/shallowCopeAndDeepCopy/" class="archive-article-date">
+  	<time datetime="2018-09-18T10:15:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="主要介绍两种方法"><a href="#主要介绍两种方法" class="headerlink" title="主要介绍两种方法"></a>主要介绍两种方法</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//浅拷贝</span><br><span class="line"><span class="built_in">let</span> obj1 = &#123;<span class="string">"name"</span>:<span class="string">"c1"</span>,<span class="string">"age"</span>:18,<span class="string">"job"</span>:<span class="string">"coder"</span>&#125;;</span><br><span class="line"><span class="built_in">let</span> obj2 = obj1;</span><br><span class="line">console.log(obj1);//  &#123;<span class="string">"name"</span>:<span class="string">"c1"</span>,<span class="string">"age"</span>:18,<span class="string">"job"</span>:<span class="string">"coder"</span>&#125;</span><br><span class="line">console.log(obj2);//  &#123;<span class="string">"name"</span>:<span class="string">"c1"</span>,<span class="string">"age"</span>:18,<span class="string">"job"</span>:<span class="string">"coder"</span>&#125;</span><br><span class="line">obj2.name = <span class="string">"c2"</span>;</span><br><span class="line">console.log(obj1); //  &#123;name: <span class="string">"c2"</span>, age: 18, job: <span class="string">"coder"</span>&#125;</span><br><span class="line">console.log(obj2); //  &#123;name: <span class="string">"c2"</span>, age: 18, job: <span class="string">"coder"</span>&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="1-利用JSON-stringify和JSON-parse"><a href="#1-利用JSON-stringify和JSON-parse" class="headerlink" title="1.利用JSON.stringify和JSON.parse"></a>1.利用JSON.stringify和JSON.parse</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//深拷贝</span><br><span class="line">    <span class="built_in">let</span> obj1 = &#123;name:<span class="string">'c1'</span>,age:18,job:<span class="string">'coder'</span>&#125;;</span><br><span class="line">    console.log(obj1);//  &#123;<span class="string">"name"</span>:<span class="string">"c1"</span>,<span class="string">"age"</span>:18,<span class="string">"job"</span>:<span class="string">"coder"</span>&#125;</span><br><span class="line">    <span class="built_in">let</span> obj2 = JSON.parse(JSON.stringify(obj1));</span><br><span class="line">    obj2.name = <span class="string">"c2"</span>;</span><br><span class="line">    console.log(obj1); //  &#123;name: <span class="string">"c1"</span>, age: 18, job: <span class="string">"coder"</span>&#125;</span><br><span class="line">    console.log(obj2); //  &#123;name: <span class="string">"c2"</span>, age: 18, job: <span class="string">"coder"</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>原理就是先将对象转换成js的基本数据类型（字符串），存在于栈中。<br>再将字符串通过JSON.parse()这个api转换为js对象，并且内存地址不会指向之前的obj1。这样就实现了深拷贝。</p>
+<h2 id="2-利用Object-assign"><a href="#2-利用Object-assign" class="headerlink" title="2.利用Object.assign()"></a>2.利用Object.assign()</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//深拷贝</span><br><span class="line"><span class="built_in">let</span> obj1 = &#123;<span class="string">"name"</span>:<span class="string">"c1"</span>,<span class="string">"age"</span>:18,<span class="string">"job"</span>:<span class="string">"coder"</span>&#125;;</span><br><span class="line">console.log(obj1);//  &#123;<span class="string">"name"</span>:<span class="string">"c1"</span>,<span class="string">"age"</span>:18,<span class="string">"job"</span>:<span class="string">"coder"</span>&#125;</span><br><span class="line"><span class="built_in">let</span> obj2 = Object.assign(&#123;&#125;,obj1);</span><br><span class="line">obj2.name = <span class="string">"c2"</span>;</span><br><span class="line">console.log(obj1); //  &#123;name: <span class="string">"c1"</span>, age: 18, job: <span class="string">"coder"</span>&#125;</span><br><span class="line">console.log(obj2); //  &#123;name: <span class="string">"c2"</span>, age: 18, job: <span class="string">"coder"</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>Object.assign()的使用方法<br>（不全，请自行百度）</p>
+<p>语法<br>Object.assign(target, …sources)<br>参数<br>target<br>目标对象。<br>sources<br>源对象。<br>返回值<br>目标对象。</p>
+<p>复制一个对象<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;a:1&#125;;</span><br><span class="line">var copy = Object.assign(&#123;&#125;,obj);</span><br><span class="line">console.log(copy); // &#123;a:1&#125;</span><br></pre></td></tr></table></figure></p>
+<p>合并对象<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var o1 = &#123;a:1&#125;;</span><br><span class="line">var o2 = &#123;b:2&#125;;</span><br><span class="line">var o3 = &#123;c:3&#125;;</span><br><span class="line"></span><br><span class="line">var obj = Object.assign(o1,o2,o3);</span><br><span class="line">console.log(obj);  // &#123;a:1,b:2,c:3&#125;</span><br><span class="line">console.log(o1);   // &#123;a:1,b:2,c:3&#125;  ---&gt;目标对象自身也会发生变化</span><br><span class="line">console.log(o2);   // &#123;b:2&#125;</span><br></pre></td></tr></table></figure></p>
+<p>合并具有相同属性的对象<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var o1 = &#123; a: 1, b: 1, c: 1 &#125;;</span><br><span class="line">var o2 = &#123; b: 2, c: 2 &#125;;</span><br><span class="line">var o3 = &#123; c: 3 &#125;;</span><br><span class="line">var obj = Object.assign(&#123;&#125;, o1, o2, o3);</span><br><span class="line">console.log(obj); // &#123; a: 1, b: 2, c: 3 &#125;;  //属性被后面参数中具有相同属性的其他对象覆盖</span><br></pre></td></tr></table></figure></p>
+<p>继承属性和不可枚举属性是不能拷贝的</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/09/18/shallowCopeAndDeepCopy/">展开全文 >></a>
         </p>
       
 
@@ -639,7 +809,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
   
 
@@ -651,7 +821,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 Geek-Chen
+    		&copy; 2019 Geek-Chen
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

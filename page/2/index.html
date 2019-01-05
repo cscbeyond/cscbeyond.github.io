@@ -171,27 +171,29 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-array" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-promise" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/26/array/">数组</a>
+      <a class="article-title" href="/2018/12/28/promise/">Promise</a>
     </h1>
   
 
         
-        <a href="/2018/11/26/array/" class="archive-article-date">
-  	<time datetime="2018-11-26T05:38:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-26</time>
+        <a href="/2018/12/28/promise/" class="archive-article-date">
+  	<time datetime="2018-12-28T01:50:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-28</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="数组的长度是比数组最大索引值多一的数。"><a href="#数组的长度是比数组最大索引值多一的数。" class="headerlink" title="数组的长度是比数组最大索引值多一的数。"></a>数组的长度是比数组最大索引值多一的数。</h3>
+        <p>最近在看阮一峰大神的ES6教程<br>先说个跟promise关系不大的知识点<br>下面这段代码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> timeout(ms) &#123;</span><br><span class="line">  <span class="built_in">return</span> new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">    setTimeout(resolve, ms, <span class="string">'done'</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">timeout(100).<span class="keyword">then</span>((value) =&gt; &#123;</span><br><span class="line">  console.log(value);  // <span class="string">'done'</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>竟然打印出了’done’，查了资料才发现，经常用到的定时器，竟然存在第三个参数。<br>第三个参数可以是 基本数据类型，也可以是引用数据类型<br>定时器第三个参数之后的参数，都会作为定时器第一个参数的形参传进去。</p>
+
       
 
       
@@ -203,7 +205,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/26/array/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/12/28/promise/">展开全文 >></a>
         </p>
       
 
@@ -233,30 +235,32 @@
 
 
   
-    <article id="post-vue" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-heap-stack" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/26/vue/">vue开发手记</a>
+      <a class="article-title" href="/2018/12/28/heap-stack/">堆栈问题</a>
     </h1>
   
 
         
-        <a href="/2018/10/26/vue/" class="archive-article-date">
-  	<time datetime="2018-10-26T06:14:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-26</time>
+        <a href="/2018/12/28/heap-stack/" class="archive-article-date">
+  	<time datetime="2018-12-28T01:35:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-28</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="mixins"><a href="#mixins" class="headerlink" title="mixins"></a>mixins</h1><p>在文件中导出一个方法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> <span class="built_in">let</span> myMixins = &#123;</span><br><span class="line">    created: <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        this.hello()</span><br><span class="line">    &#125;,</span><br><span class="line">    methosd: &#123;</span><br><span class="line">        <span class="function"><span class="title">hello</span></span>()&#123;</span><br><span class="line">            console.log(<span class="string">'hello'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>在组件中使用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import &#123;myMixins&#125; from <span class="string">'mixin'</span>;</span><br><span class="line">new Vue(&#123;</span><br><span class="line">    mixins:[myMixins],</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>—–not the end</p>
-
+        <p>js中的堆(heap)与栈(stack)<br>js中有两种数据类型</p>
+<h2 id="基本类型、-引用类型"><a href="#基本类型、-引用类型" class="headerlink" title="基本类型、 引用类型"></a>基本类型、 引用类型</h2><h1 id="基本类型存在栈-stack-中"><a href="#基本类型存在栈-stack-中" class="headerlink" title="基本类型存在栈(stack)中"></a>基本类型存在栈(stack)中</h1><p>五种基本类型 undefined null boolean number string，直接按值存放，可以直接访问</p>
+<h1 id="引用类型存在堆-heap-中"><a href="#引用类型存在堆-heap-中" class="headerlink" title="引用类型存在堆(heap)中"></a>引用类型存在堆(heap)中</h1><p>存放在堆内存中的对象，变量实际保存的是一个指针，这个指针指向另一个位置。每个空间大小不一样，要根据情况进行特定的分配。</p>
+        
+          <a class="article-more-a" href="/2018/12/28/heap-stack/#more">more >></a>
+        
       
 
       
@@ -268,70 +272,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/26/vue/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-closure" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/26/closure/">闭包</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/26/closure/" class="archive-article-date">
-  	<time datetime="2018-10-26T05:38:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>老生常谈的问题，几乎所有的前端面试中都会被问到。<br>而我对这个问题的理解始终不是很透彻，今天好好整理一下。</p>
-<h6 id="一、闭包产生的原因"><a href="#一、闭包产生的原因" class="headerlink" title="一、闭包产生的原因"></a>一、闭包产生的原因</h6>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/26/closure/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/12/28/heap-stack/">展开全文 >></a>
         </p>
       
 
@@ -368,13 +309,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/22/centos/">centOS初体验</a>
+      <a class="article-title" href="/2018/12/26/centos/">centOS初体验</a>
     </h1>
   
 
         
-        <a href="/2018/10/22/centos/" class="archive-article-date">
-  	<time datetime="2018-10-22T08:32:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-22</time>
+        <a href="/2018/12/26/centos/" class="archive-article-date">
+  	<time datetime="2018-12-26T05:52:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-26</time>
 </a>
         
       </header>
@@ -405,7 +346,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/22/centos/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/12/26/centos/">展开全文 >></a>
         </p>
       
 
@@ -435,27 +376,40 @@
 
 
   
-    <article id="post-clearfix" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-mpvue" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/22/clearfix/">css清除浮动相关</a>
+      <a class="article-title" href="/2018/12/25/mpvue/">mpvue开发手记</a>
     </h1>
   
 
         
-        <a href="/2018/10/22/clearfix/" class="archive-article-date">
-  	<time datetime="2018-10-22T05:49:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-22</time>
+        <a href="/2018/12/25/mpvue/" class="archive-article-date">
+  	<time datetime="2018-12-25T14:34:25.883Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>开发微信小程序过程中遇到的在vue中支持，但在mpvue中不支持的地方：</p>
+<p>（1）不支持v-html。因为小程序没有dom的概念。</p>
+<p>（2）不支持部分javascript渲染表达式，</p>
+<p>（3）不支持直接绑定一个对象到style或class属性上</p>
+<p>（4）img标签中，不能设置宽度高度，例如：width=”200”  height=”200”</p>
+<p>（5）css中background-image里的url只能是服务器上的地址，不能是本地图片地址。</p>
+<p>（6）在跳转之后进入的页面，或者pages目录下的vue文件，不要使用created()。会获取不到mapGetters数据。用async onLoad()代替。</p>
+<p>（7）不支持的插件：jsonp / vue-lazyload / better-scroll / vue-awesome-swiper 等等</p>
+<p>（8）不支持</p>
+<p>v-show（可用v-if代替）</p>
+<p>transition</p>
+<p>keep-alive</p>
+<p>（9）组件命名与小程序的冲突，例如：<loading></loading></p>
+
       
 
       
@@ -467,7 +421,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/22/clearfix/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/12/25/mpvue/">展开全文 >></a>
         </p>
       
 
@@ -497,32 +451,35 @@
 
 
   
-    <article id="post-node" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-document&amp;window" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/22/node/">node学习笔记</a>
+      <a class="article-title" href="/2018/12/23/document&window/">document和window的区别及联系</a>
     </h1>
   
 
         
-        <a href="/2018/10/22/node/" class="archive-article-date">
-  	<time datetime="2018-10-22T05:30:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-22</time>
+        <a href="/2018/12/23/document&window/" class="archive-article-date">
+  	<time datetime="2018-12-23T13:48:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>比较流行的node框架是express和koa。<br>以前就听人讲，express很容易陷入回调地狱，但对我这个新手来说，好像还没涉及到这里。<br>koa的开发团队就是express的原班人马，这…<br>好吧，毕竟我写不出来框架，就不瞎哔哔了。<br>关于koa和express的区别，简单了解了一下，express是用es5书写的，最后到处的是一个函数。<br>koa中使用了大量的es6语法，最后导出的是一个类。<br>还有人说，从express转为koa觉得有点困难，我觉得应该是express还不熟练的原因吧。<br>最开始接触node，我是徒手撸原生，然后上手了express，后来又使用了express-generator这个框架，安装完成后项目目录就有了，不用自己再去构建。直接写接口就好。<br>想了解一下koa，发现koa的文档实在是简单到不能再简单，大概是我express还没用熟悉的原因吧。个人感觉express比较好上手，毕竟对于我这个菜鸟来说，太多东西都是看着文档进行开发的…   :·(</p>
-
+        <p>前端工程师每天都在与这两个对象接触，可是他们之间到底是什么关系呢？</p>
+<h3 id="document对象"><a href="#document对象" class="headerlink" title="document对象"></a>document对象</h3><p>每个载入浏览器的html文档都会成为document对象<br>document对象使我们可以从脚本中对html页面中的所有元素进行访问<br>document是window的一部分，可以用window.document对其进行访问<br>
+        
+          <a class="article-more-a" href="/2018/12/23/document&window/#more">more >></a>
+        
       
 
       
-    </div>
+    </p></div>
     <div class="article-info article-info-index">
       
       
@@ -530,7 +487,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/22/node/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/12/23/document&window/">展开全文 >></a>
         </p>
       
 
@@ -560,27 +517,32 @@
 
 
   
-    <article id="post-hexoTheme" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-mobile" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/22/hexoTheme/">hexo更换主题</a>
+      <a class="article-title" href="/2018/12/20/mobile/">移动端遇到的各种小问题</a>
     </h1>
   
 
         
-        <a href="/2018/10/22/hexoTheme/" class="archive-article-date">
-  	<time datetime="2018-10-22T05:10:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-22</time>
+        <a href="/2018/12/20/mobile/" class="archive-article-date">
+  	<time datetime="2018-12-20T11:13:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-20</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-webkit-overflow-scrolling: touch</span><br></pre></td></tr></table></figure>
+<p>WebKit私有的属性“-webkit-overflow-scrolling: touch”（允许独立的滚动区域和触摸回弹）</p>
+<p>ios移动端输入内容，软键盘弹出，页面内容整体上移。<br>但是键盘收起，页面内容不下滑。<br>安卓没问题。</p>
+<p>用一下代码解决：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'input,textarea'</span>).on(<span class="string">'blur'</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	window.scroll(0,0);</span><br><span class="line">&#125;);</span><br><span class="line">$(<span class="string">'select'</span>).on(<span class="string">'change'</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	window.scroll(0,0);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>原理就是输入框失去光标，手动控制一下页面滚动就恢复正常了。<br>本以为如果页面很长，输入框很多 会出问题，因为会滚动到最上顶，但实际情况并没有。<br>疑惑中。</p>
+
       
 
       
@@ -592,7 +554,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/22/hexoTheme/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/12/20/mobile/">展开全文 >></a>
         </p>
       
 
@@ -622,98 +584,35 @@
 
 
   
-    <article id="post-pxAnddpi" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-about-vue" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/25/pxAnddpi/">设备像素及CSS像素</a>
+      <a class="article-title" href="/2018/12/06/about-vue/">vue双向绑定MVVM原理浅解</a>
     </h1>
   
 
         
-        <a href="/2018/09/25/pxAnddpi/" class="archive-article-date">
-  	<time datetime="2018-09-25T01:52:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-25</time>
+        <a href="/2018/12/06/about-vue/" class="archive-article-date">
+  	<time datetime="2018-12-06T01:57:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-06</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/25/pxAnddpi/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-shallowCopeAndDeepCopy" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/18/shallowCopeAndDeepCopy/">深拷贝对象的技巧</a>
-    </h1>
-  
-
-        
-        <a href="/2018/09/18/shallowCopeAndDeepCopy/" class="archive-article-date">
-  	<time datetime="2018-09-18T10:15:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="主要介绍两种方法"><a href="#主要介绍两种方法" class="headerlink" title="主要介绍两种方法"></a>主要介绍两种方法</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//浅拷贝</span><br><span class="line"><span class="built_in">let</span> obj1 = &#123;<span class="string">"name"</span>:<span class="string">"c1"</span>,<span class="string">"age"</span>:18,<span class="string">"job"</span>:<span class="string">"coder"</span>&#125;;</span><br><span class="line"><span class="built_in">let</span> obj2 = obj1;</span><br><span class="line">console.log(obj1);//  &#123;<span class="string">"name"</span>:<span class="string">"c1"</span>,<span class="string">"age"</span>:18,<span class="string">"job"</span>:<span class="string">"coder"</span>&#125;</span><br><span class="line">console.log(obj2);//  &#123;<span class="string">"name"</span>:<span class="string">"c1"</span>,<span class="string">"age"</span>:18,<span class="string">"job"</span>:<span class="string">"coder"</span>&#125;</span><br><span class="line">obj2.name = <span class="string">"c2"</span>;</span><br><span class="line">console.log(obj1); //  &#123;name: <span class="string">"c2"</span>, age: 18, job: <span class="string">"coder"</span>&#125;</span><br><span class="line">console.log(obj2); //  &#123;name: <span class="string">"c2"</span>, age: 18, job: <span class="string">"coder"</span>&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="1-利用JSON-stringify和JSON-parse"><a href="#1-利用JSON-stringify和JSON-parse" class="headerlink" title="1.利用JSON.stringify和JSON.parse"></a>1.利用JSON.stringify和JSON.parse</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//深拷贝</span><br><span class="line">    <span class="built_in">let</span> obj1 = &#123;name:<span class="string">'c1'</span>,age:18,job:<span class="string">'coder'</span>&#125;;</span><br><span class="line">    console.log(obj1);//  &#123;<span class="string">"name"</span>:<span class="string">"c1"</span>,<span class="string">"age"</span>:18,<span class="string">"job"</span>:<span class="string">"coder"</span>&#125;</span><br><span class="line">    <span class="built_in">let</span> obj2 = JSON.parse(JSON.stringify(obj1));</span><br><span class="line">    obj2.name = <span class="string">"c2"</span>;</span><br><span class="line">    console.log(obj1); //  &#123;name: <span class="string">"c1"</span>, age: 18, job: <span class="string">"coder"</span>&#125;</span><br><span class="line">    console.log(obj2); //  &#123;name: <span class="string">"c2"</span>, age: 18, job: <span class="string">"coder"</span>&#125;</span><br></pre></td></tr></table></figure>
-<p>原理就是先将对象转换成js的基本数据类型（字符串），存在于栈中。<br>再将字符串通过JSON.parse()这个api转换为js对象，并且内存地址不会指向之前的obj1。这样就实现了深拷贝。</p>
-<h2 id="2-利用Object-assign"><a href="#2-利用Object-assign" class="headerlink" title="2.利用Object.assign()"></a>2.利用Object.assign()</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//深拷贝</span><br><span class="line"><span class="built_in">let</span> obj1 = &#123;<span class="string">"name"</span>:<span class="string">"c1"</span>,<span class="string">"age"</span>:18,<span class="string">"job"</span>:<span class="string">"coder"</span>&#125;;</span><br><span class="line">console.log(obj1);//  &#123;<span class="string">"name"</span>:<span class="string">"c1"</span>,<span class="string">"age"</span>:18,<span class="string">"job"</span>:<span class="string">"coder"</span>&#125;</span><br><span class="line"><span class="built_in">let</span> obj2 = Object.assign(&#123;&#125;,obj1);</span><br><span class="line">obj2.name = <span class="string">"c2"</span>;</span><br><span class="line">console.log(obj1); //  &#123;name: <span class="string">"c1"</span>, age: 18, job: <span class="string">"coder"</span>&#125;</span><br><span class="line">console.log(obj2); //  &#123;name: <span class="string">"c2"</span>, age: 18, job: <span class="string">"coder"</span>&#125;</span><br></pre></td></tr></table></figure>
-<p>Object.assign()的使用方法<br>（不全，请自行百度）</p>
-<p>语法<br>Object.assign(target, …sources)<br>参数<br>target<br>目标对象。<br>sources<br>源对象。<br>返回值<br>目标对象。</p>
-<p>复制一个对象<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;a:1&#125;;</span><br><span class="line">var copy = Object.assign(&#123;&#125;,obj);</span><br><span class="line">console.log(copy); // &#123;a:1&#125;</span><br></pre></td></tr></table></figure></p>
-<p>合并对象<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var o1 = &#123;a:1&#125;;</span><br><span class="line">var o2 = &#123;b:2&#125;;</span><br><span class="line">var o3 = &#123;c:3&#125;;</span><br><span class="line"></span><br><span class="line">var obj = Object.assign(o1,o2,o3);</span><br><span class="line">console.log(obj);  // &#123;a:1,b:2,c:3&#125;</span><br><span class="line">console.log(o1);   // &#123;a:1,b:2,c:3&#125;  ---&gt;目标对象自身也会发生变化</span><br><span class="line">console.log(o2);   // &#123;b:2&#125;</span><br></pre></td></tr></table></figure></p>
-<p>合并具有相同属性的对象<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var o1 = &#123; a: 1, b: 1, c: 1 &#125;;</span><br><span class="line">var o2 = &#123; b: 2, c: 2 &#125;;</span><br><span class="line">var o3 = &#123; c: 3 &#125;;</span><br><span class="line">var obj = Object.assign(&#123;&#125;, o1, o2, o3);</span><br><span class="line">console.log(obj); // &#123; a: 1, b: 2, c: 3 &#125;;  //属性被后面参数中具有相同属性的其他对象覆盖</span><br></pre></td></tr></table></figure></p>
-<p>继承属性和不可枚举属性是不能拷贝的</p>
+        <p>数据劫持：vue.js采用数据劫持结合发布者-订阅者模式，通过Object.defineProperty()来劫持各个属性的setter、getter，在数据变动时发布消息给订阅者，出发相应的监听回调。</p>
+<p>1.实现一个数据监听的Observer，对数据对象的所有属性进行监听，如有变动可拿到最新值并通知订阅者<br>2.实现一个指令解析器Compile，对每个元素节点的指令进行扫描和解析，根据指令模板替换数据，一级绑定相应的更新函数<br>3.实现一个Watcher，作为连接Observer和Compile的桥梁，能够订阅并受到每个属性变动的通知，执行指令绑定的相应回调函数，从而更新视图<br>4.MVVM入口函数，整合以上三者</p>
+<h1 id="1-实现Observer"><a href="#1-实现Observer" class="headerlink" title="1.实现Observer"></a>1.实现Observer</h1><p>我们知道可以利用Obeject.defineProperty()来监听属性变动<br>那么将需要observe的数据对象进行递归遍历，包括子属性对象的属性，都加上 setter和getter<br>这样的话，给这个对象的某个值赋值，就会触发setter，那么就能监听到了数据变化。。相关代码可以是这样：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">var data = &#123;name: <span class="string">'kindeng'</span>&#125;;</span><br><span class="line">observe(data);</span><br><span class="line">data.name = <span class="string">'dmq'</span>; // 哈哈哈，监听到值变化了 kindeng --&gt; dmq</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> observe(data) &#123;</span><br><span class="line">    <span class="keyword">if</span> (!data || typeof data !== <span class="string">'object'</span>) &#123;</span><br><span class="line">        <span class="built_in">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    // 取出所有属性遍历</span><br><span class="line">    Object.keys(data).forEach(<span class="keyword">function</span>(key) &#123;</span><br><span class="line">        defineReactive(data, key, data[key]);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> defineReactive(data, key, val) &#123;</span><br><span class="line">    observe(val); // 监听子属性</span><br><span class="line">    Object.defineProperty(data, key, &#123;</span><br><span class="line">        enumerable: <span class="literal">true</span>, // 可枚举</span><br><span class="line">        configurable: <span class="literal">false</span>, // 不能再define</span><br><span class="line">        get: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">            <span class="built_in">return</span> val;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="built_in">set</span>: <span class="keyword">function</span>(newVal) &#123;</span><br><span class="line">            console.log(<span class="string">'哈哈哈，监听到值变化了 '</span>, val, <span class="string">' --&gt; '</span>, newVal);</span><br><span class="line">            val = newVal;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这样我们已经可以监听每个数据的变化了，那么监听到变化之后就是怎么通知订阅者了，所以接下来我们需要实现一个消息订阅器，很简单，维护一个数组，用来收集订阅者，数据变动触发notify，再调用订阅者的update方法，代码改善之后是这样：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">// ... 省略</span><br><span class="line"><span class="keyword">function</span> defineReactive(data, key, val) &#123;</span><br><span class="line">    var dep = new Dep();</span><br><span class="line">    observe(val); // 监听子属性</span><br><span class="line"></span><br><span class="line">    Object.defineProperty(data, key, &#123;</span><br><span class="line">        // ... 省略</span><br><span class="line">        <span class="built_in">set</span>: <span class="keyword">function</span>(newVal) &#123;</span><br><span class="line">            <span class="keyword">if</span> (val === newVal) <span class="built_in">return</span>;</span><br><span class="line">            console.log(<span class="string">'哈哈哈，监听到值变化了 '</span>, val, <span class="string">' --&gt; '</span>, newVal);</span><br><span class="line">            val = newVal;</span><br><span class="line">            dep.notify(); // 通知所有订阅者</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">Dep</span></span>() &#123;</span><br><span class="line">    this.subs = [];</span><br><span class="line">&#125;</span><br><span class="line">Dep.prototype = &#123;</span><br><span class="line">    addSub: <span class="keyword">function</span>(sub) &#123;</span><br><span class="line">        this.subs.push(sub);</span><br><span class="line">    &#125;,</span><br><span class="line">    notify: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">        this.subs.forEach(<span class="keyword">function</span>(sub) &#123;</span><br><span class="line">            sub.update();</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>那么问题来了，谁是订阅者？怎么往订阅器添加订阅者？<br>没错，上面的思路整理中我们已经明确订阅者应该是Watcher, 而且var dep = new Dep();是在 defineReactive方法内部定义的，所以想通过dep添加订阅者，就必须要在闭包内操作，所以我们可以在 getter里面动手脚：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// Observer.js</span><br><span class="line">// ...省略</span><br><span class="line">Object.defineProperty(data, key, &#123;</span><br><span class="line">    get: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">        // 由于需要在闭包内添加watcher，所以通过Dep定义一个全局target属性，暂存watcher, 添加完移除</span><br><span class="line">        Dep.target &amp;&amp; dep.addDep(Dep.target);</span><br><span class="line">        <span class="built_in">return</span> val;</span><br><span class="line">    &#125;</span><br><span class="line">    // ... 省略</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// Watcher.js</span><br><span class="line">Watcher.prototype = &#123;</span><br><span class="line">    get: <span class="keyword">function</span>(key) &#123;</span><br><span class="line">        Dep.target = this;</span><br><span class="line">        this.value = data[key];    // 这里会触发属性的getter，从而添加订阅者</span><br><span class="line">        Dep.target = null;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="2-实现Compile"><a href="#2-实现Compile" class="headerlink" title="2.实现Compile"></a>2.实现Compile</h1><p>compile主要做的事情是解析模板指令，将模板中的变量替换成数据，然后初始化渲染页面视图，并将每个指令对应的节点绑定更新函数，添加监听数据的订阅者，一旦数据有变动，收到通知，更新视图。</p>
+<p>便利解析的过程有多次操作dom，为提高性能和效率，会先将根节点el转换成文档碎片fragment进行解析编译操作，解析完成，再讲fragment添加回原来的真实dom节点中<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> Compile(el)&#123;</span><br><span class="line">    this.<span class="variable">$el</span> = this.isElementNode(el)?el:document.querySelector(el);</span><br><span class="line">    <span class="keyword">if</span>(this.<span class="variable">$el</span>)&#123;</span><br><span class="line">        this.<span class="variable">$fragment</span> = this.node2Fragment(this.<span class="variable">$el</span>);</span><br><span class="line">        this.init();</span><br><span class="line">        this.<span class="variable">$el</span>.appendChild(this.<span class="variable">$fragment</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Compile.prototype = &#123;</span><br><span class="line">    init: <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        this.compileElement(this.<span class="variable">$el</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">    node2Fragment: <span class="keyword">function</span>(el)&#123;</span><br><span class="line">        var fragment = document.createDocumentFragment(),child;</span><br><span class="line">        将原生节点拷贝到fragment</span><br><span class="line">        <span class="keyword">while</span>(child = el.firshChild)&#123;</span><br><span class="line">            fragment.appendChild(child);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">return</span> fragment;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>compileElement方法将遍历所有节点及其子节点，进行扫描解析编译，调用对应的指令渲染函数进行数据渲染，并调用对应的指令更新函数进行绑定，详看代码及注释说明：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">Compile.prototype = &#123;</span><br><span class="line">    // ... 省略</span><br><span class="line">    compileElement: <span class="keyword">function</span>(el) &#123;</span><br><span class="line">        var childNodes = el.childNodes, me = this;</span><br><span class="line">        [].slice.call(childNodes).forEach(<span class="keyword">function</span>(node) &#123;</span><br><span class="line">            var text = node.textContent;</span><br><span class="line">            var reg = /\&#123;\&#123;(.*)\&#125;\&#125;/;    // 表达式文本</span><br><span class="line">            // 按元素节点方式编译</span><br><span class="line">            <span class="keyword">if</span> (me.isElementNode(node)) &#123;</span><br><span class="line">                me.compile(node);</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (me.isTextNode(node) &amp;&amp; reg.test(text)) &#123;</span><br><span class="line">                me.compileText(node, RegExp.<span class="variable">$1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            // 遍历编译子节点</span><br><span class="line">            <span class="keyword">if</span> (node.childNodes &amp;&amp; node.childNodes.length) &#123;</span><br><span class="line">                me.compileElement(node);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    compile: <span class="keyword">function</span>(node) &#123;</span><br><span class="line">        var nodeAttrs = node.attributes, me = this;</span><br><span class="line">        [].slice.call(nodeAttrs).forEach(<span class="keyword">function</span>(attr) &#123;</span><br><span class="line">            // 规定：指令以 v-xxx 命名</span><br><span class="line">            // 如 &lt;span v-text=<span class="string">"content"</span>&gt;&lt;/span&gt; 中指令为 v-text</span><br><span class="line">            var attrName = attr.name;    // v-text</span><br><span class="line">            <span class="keyword">if</span> (me.isDirective(attrName)) &#123;</span><br><span class="line">                var exp = attr.value; // content</span><br><span class="line">                var dir = attrName.substring(2);    // text</span><br><span class="line">                <span class="keyword">if</span> (me.isEventDirective(dir)) &#123;</span><br><span class="line">                    // 事件指令, 如 v-on:click</span><br><span class="line">                    compileUtil.eventHandler(node, me.<span class="variable">$vm</span>, exp, dir);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    // 普通指令</span><br><span class="line">                    compileUtil[dir] &amp;&amp; compileUtil[dir](node, me.<span class="variable">$vm</span>, exp);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 指令处理集合</span><br><span class="line">var compileUtil = &#123;</span><br><span class="line">    text: <span class="keyword">function</span>(node, vm, exp) &#123;</span><br><span class="line">        this.bind(node, vm, exp, <span class="string">'text'</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">    // ...省略</span><br><span class="line">    <span class="built_in">bind</span>: <span class="keyword">function</span>(node, vm, exp, dir) &#123;</span><br><span class="line">        var updaterFn = updater[dir + <span class="string">'Updater'</span>];</span><br><span class="line">        // 第一次初始化视图</span><br><span class="line">        updaterFn &amp;&amp; updaterFn(node, vm[exp]);</span><br><span class="line">        // 实例化订阅者，此操作会在对应的属性消息订阅器中添加了该订阅者watcher</span><br><span class="line">        new Watcher(vm, exp, <span class="keyword">function</span>(value, oldValue) &#123;</span><br><span class="line">            // 一旦属性值有变化，会收到通知执行此更新函数，更新视图</span><br><span class="line">            updaterFn &amp;&amp; updaterFn(node, value, oldValue);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 更新函数</span><br><span class="line">var updater = &#123;</span><br><span class="line">    textUpdater: <span class="keyword">function</span>(node, value) &#123;</span><br><span class="line">        node.textContent = typeof value == <span class="string">'undefined'</span> ? <span class="string">''</span> : value;</span><br><span class="line">    &#125;</span><br><span class="line">    // ...省略</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -726,7 +625,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/18/shallowCopeAndDeepCopy/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/12/06/about-vue/">展开全文 >></a>
         </p>
       
 
@@ -763,13 +662,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/10/es6/">es6</a>
+      <a class="article-title" href="/2018/12/03/es6/">es6</a>
     </h1>
   
 
         
-        <a href="/2018/09/10/es6/" class="archive-article-date">
-  	<time datetime="2018-09-10T03:23:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-10</time>
+        <a href="/2018/12/03/es6/" class="archive-article-date">
+  	<time datetime="2018-12-03T08:50:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-03</time>
 </a>
         
       </header>
@@ -805,7 +704,132 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/10/es6/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/12/03/es6/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-继承" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/03/继承/">继承</a>
+    </h1>
+  
+
+        
+        <a href="/2018/12/03/继承/" class="archive-article-date">
+  	<time datetime="2018-12-03T03:07:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>原型对象主要用来继承，eg：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var Person = <span class="keyword">function</span>(name)&#123;</span><br><span class="line">	this.name = name; </span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.getName = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	<span class="built_in">return</span> this.name;</span><br><span class="line">&#125;</span><br><span class="line">var person1 = new Person(<span class="string">'chen'</span>);</span><br><span class="line">person1.getName(); // chen</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/12/03/继承/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-js获取屏幕信息" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/03/js获取屏幕信息/">js获取屏幕大小</a>
+    </h1>
+  
+
+        
+        <a href="/2018/12/03/js获取屏幕信息/" class="archive-article-date">
+  	<time datetime="2018-12-02T16:38:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">a</span></span>()&#123;</span><br><span class="line">document.write(</span><br><span class="line"><span class="string">"屏幕分辨率为："</span>+screen.width+<span class="string">"*"</span>+screen.height</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"屏幕可用大小："</span>+screen.availWidth+<span class="string">"*"</span>+screen.availHeight</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"网页可见区域宽："</span>+document.body.clientWidth</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"网页可见区域高："</span>+document.body.clientHeight</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"网页可见区域宽(包括边线的宽)："</span>+document.body.offsetWidth </span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"网页可见区域高(包括边线的宽)："</span>+document.body.offsetHeight </span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"网页正文全文宽："</span>+document.body.scrollWidth</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"网页正文全文高："</span>+document.body.scrollHeight</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"网页被卷去的高："</span>+document.body.scrollTop</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"网页被卷去的左："</span>+document.body.scrollLeft</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"网页正文部分上："</span>+window.screenTop</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"网页正文部分左："</span>+window.screenLeft</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"屏幕分辨率的高："</span>+window.screen.height</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"屏幕分辨率的宽："</span>+window.screen.width</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"屏幕可用工作区高度："</span>+window.screen.availHeight</span><br><span class="line">+<span class="string">"&lt;br /&gt;"</span>+</span><br><span class="line"><span class="string">"屏幕可用工作区宽度："</span>+window.screen.availWidth</span><br><span class="line">);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/12/03/js获取屏幕信息/">展开全文 >></a>
         </p>
       
 
@@ -837,7 +861,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 
@@ -849,7 +873,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 Geek-Chen
+    		&copy; 2019 Geek-Chen
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
