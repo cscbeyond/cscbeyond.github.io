@@ -192,11 +192,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">this.setData(&#123;</span><br><span class="line">	myData: res;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>要setdata才能更新视图。<br>如果不setData，在data中存在这个值，但是视图不会更新。<br>今天又发现一个坑的地方</p>
-<h2 id="使用my-alert方法的时候，我遇到的情况是这样的，在app-js里面alert内容，再在首页alert，顺序是相反的，多个alert，如果是初始化页面时候，顺序是相反的"><a href="#使用my-alert方法的时候，我遇到的情况是这样的，在app-js里面alert内容，再在首页alert，顺序是相反的，多个alert，如果是初始化页面时候，顺序是相反的" class="headerlink" title="使用my.alert方法的时候，我遇到的情况是这样的，在app.js里面alert内容，再在首页alert，顺序是相反的，多个alert，如果是初始化页面时候，顺序是相反的"></a>使用my.alert方法的时候，我遇到的情况是这样的，在app.js里面alert内容，再在首页alert，顺序是相反的，多个alert，如果是初始化页面时候，顺序是相反的</h2><p>在生命周期函数onLaunch中，参数options.query.qrCode可以拿到二维码的信息。如果为空，说明不是通过扫码进入的。</p>
-<p>渲染富文本的方式:<br>使用wxParse插件<br>使用方法见<a href="https://github.com/yaoshanliang/wxParse">github</a></p>
-<h2 id="注意-app-json的生命周期函数onLaunch"><a href="#注意-app-json的生命周期函数onLaunch" class="headerlink" title="注意 app.json的生命周期函数onLaunch"></a>注意 app.json的生命周期函数onLaunch</h2><p>如果onLaunch中存在异步事件，比如获取用户身份，是异步的。用户扫描二维码后进入首页，首页中，在生命周期函数onLoad中，需要使用用户信息去获取数据，此时就会发生错误，因为在 app.js中 异步获取用户信息还未返回，就已经进入到了首页。<br>    解决办法：<br>    进入首页后再去调用app.js中的某方法。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//index.js</span><br><span class="line">const app = getApp();</span><br><span class="line">//此时的app就是app.js中App的实例</span><br></pre></td></tr></table></figure></p>
-
+        
+          <a class="article-more-a" href="/2019/01/04/alipay/#more">more >></a>
+        
       
 
       
