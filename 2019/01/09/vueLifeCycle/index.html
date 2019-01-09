@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://github.com/cscbeyond/cscbeyond.github.io">
-  <title>Archives | 码农阿成的个人博客</title>
+  <title>Vue生命周期 | 码农阿成的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="利用GitHub + Hexo搭建的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="码农阿成的个人博客">
-<meta property="og:url" content="https://github.com/cscbeyond/cscbeyond.github.io/archives/page/4/index.html">
+  <meta name="description" content="1. 生命周期钩子Vue有以下几个生命周期钩子：1.beforeCreate2.created3.beforeMount4.mounted5.beforeUpdate6.Update7.beforeDestroy8.destroyed  1.beforeCreate:此时还没有创建出Vue实例，无法访问data中的数据">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue生命周期">
+<meta property="og:url" content="https://github.com/cscbeyond/cscbeyond.github.io/2019/01/09/vueLifeCycle/index.html">
 <meta property="og:site_name" content="码农阿成的个人博客">
-<meta property="og:description" content="利用GitHub + Hexo搭建的博客">
+<meta property="og:description" content="1. 生命周期钩子Vue有以下几个生命周期钩子：1.beforeCreate2.created3.beforeMount4.mounted5.beforeUpdate6.Update7.beforeDestroy8.destroyed  1.beforeCreate:此时还没有创建出Vue实例，无法访问data中的数据">
 <meta property="og:locale" content="Chinese/English">
+<meta property="og:updated_time" content="2019-01-09T15:14:56.911Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="码农阿成的个人博客">
-<meta name="twitter:description" content="利用GitHub + Hexo搭建的博客">
+<meta name="twitter:title" content="Vue生命周期">
+<meta name="twitter:description" content="1. 生命周期钩子Vue有以下几个生命周期钩子：1.beforeCreate2.created3.beforeMount4.mounted5.beforeUpdate6.Update7.beforeDestroy8.destroyed  1.beforeCreate:此时还没有创建出Vue实例，无法访问data中的数据">
   
     <link rel="alternative" href="/atom.xml" title="码农阿成的个人博客" type="application/atom+xml">
   
@@ -169,160 +170,158 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-vueLifeCycle" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Vue生命周期
+    </h1>
+  
+
+        
+        <a href="/2019/01/09/vueLifeCycle/" class="archive-article-date">
+  	<time datetime="2019-01-09T15:14:56.911Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-09</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-生命周期钩子"><a href="#1-生命周期钩子" class="headerlink" title="1. 生命周期钩子"></a>1. 生命周期钩子</h2><p>Vue有以下几个生命周期钩子：<br>1.beforeCreate<br>2.created<br>3.beforeMount<br>4.mounted<br>5.beforeUpdate<br>6.Update<br>7.beforeDestroy<br>8.destroyed</p>
+<hr>
+<p>1.beforeCreate:此时还没有创建出Vue实例，无法访问data中的数据<br><a id="more"></a><br>2.created:在Vue实例创建完成之后就调用。此时可以访问data中的数据，但是并没有挂载dom，$el 属性目前不可见，获取原本HTML上的直接加载出来的DOM，但是无法获取到通过挂载模板生成的DOM（例如：v-for循环遍历Vue.list生成li）在这个阶段，通常用来调用数据、方法、调用异步函数。<br>3.beforeMount:在挂载之前被调用，render函数首次被调用。通过v-for生成的html还没有被挂载到页面上。<br>4.mounted:el被新创建vm.$el替换，并挂载到实例上去之后，调用该钩子。有初始值的DOM渲染，例如我们的初始数据list，渲染出来的li，只有这里才能获取到。<br>5.beforeUpdate:数据更新时调用，发生虚拟DOM重新渲染和打补丁之前。你可以在这个钩子中进一步的改变状态，这不会触发附加的重渲染过程。当我们更改Vue的任何数据，都会触发该函数:<br>beforeUpdate:function(){<br>    console.log(‘beforeUpdate执行’)<br>}<br>6.updated:由于数据更改导致的虚拟DOM重新渲染和打补丁，在这之后会调用该钩子。当这个钩子被调用时，组件DOM已经更新，现在可以执行以来于DOM的操作。实际中，应该避免在此期间更改状态，因为可能会导致更新无限循环。<br>Vue的所有数据只要有更新就会触发，如果想数据一遍就做统一处理，可以用这个。如果想怼不同数据的更新做不同的处理，可以用nextTick，或者使用watch监听。<br>7.beforeDestroy:实例销毁之前调用，在这里实例仍然可以访问。<br>8.destroyd: Vue实例销毁后调用。调用后，Vue实例指示的所有东西都会解绑，所有的事件监听都会被移除，所有的子实例(子组件)也被销毁。</p>
+<p>Added:<br>$mount:当vue没有挂载el时，可以用$mount<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var app = new Vue(&#123;</span><br><span class="line">	data:&#123;</span><br><span class="line">		msg:<span class="string">''</span>,</span><br><span class="line">	&#125;,</span><br><span class="line">&#125;).<span class="variable">$mount</span>(<span class="string">'#app'</span>);</span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/25/pxAnddpi/" class="archive-article-date">
-  	<time datetime="2018-09-25T01:52:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/25/pxAnddpi/">设备像素及CSS像素</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://github.com/cscbeyond/cscbeyond.github.io/2019/01/09/vueLifeCycle/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/18/shallowCopeAndDeepCopy/" class="archive-article-date">
-  	<time datetime="2018-09-18T10:15:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-18</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/01/05/react/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">React学习笔记</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/18/shallowCopeAndDeepCopy/">深拷贝对象的技巧</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/07/chain-program/" class="archive-article-date">
-  	<time datetime="2018-09-07T01:10:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/07/chain-program/">关于链式编程的一点理解</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/29/my-first-hexo/" class="archive-article-date">
-  	<time datetime="2018-08-29T01:46:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/29/my-first-hexo/">解决vue首页加载过慢问题</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/29/hello-world/" class="archive-article-date">
-  	<time datetime="2018-08-29T01:23:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/29/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/3/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><span class="page-number current">4</span>
-    </nav>
   
 
 
@@ -346,8 +345,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
