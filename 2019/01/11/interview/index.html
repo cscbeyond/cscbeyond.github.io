@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://github.com/cscbeyond/cscbeyond.github.io">
-  <title>码农阿成的个人博客</title>
+  <title>面试中常见问题及答案 | 码农阿成的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="利用GitHub + Hexo搭建的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="码农阿成的个人博客">
-<meta property="og:url" content="https://github.com/cscbeyond/cscbeyond.github.io/page/2/index.html">
+  <meta name="description" content="浏览器的回流和重绘回流：当render tree 的一部分或全部的元素因改变了自身的宽高，布局，显示或隐藏，或者元素内部的文字结构发生变化 导致需要重新构建页面的时候，回流就产生了 重绘：当一个元素自身的宽高，布局，及显示或隐藏没有改变，而只是改变了元素的外观风格的时候，就会产生重绘。例如你改变了元素的background-color 回流必定触发重绘，而重绘不一定触发回流 触发回流的css 属性">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试中常见问题及答案">
+<meta property="og:url" content="https://github.com/cscbeyond/cscbeyond.github.io/2019/01/11/interview/index.html">
 <meta property="og:site_name" content="码农阿成的个人博客">
-<meta property="og:description" content="利用GitHub + Hexo搭建的博客">
+<meta property="og:description" content="浏览器的回流和重绘回流：当render tree 的一部分或全部的元素因改变了自身的宽高，布局，显示或隐藏，或者元素内部的文字结构发生变化 导致需要重新构建页面的时候，回流就产生了 重绘：当一个元素自身的宽高，布局，及显示或隐藏没有改变，而只是改变了元素的外观风格的时候，就会产生重绘。例如你改变了元素的background-color 回流必定触发重绘，而重绘不一定触发回流 触发回流的css 属性">
 <meta property="og:locale" content="Chinese/English">
+<meta property="og:updated_time" content="2019-01-11T09:54:14.582Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="码农阿成的个人博客">
-<meta name="twitter:description" content="利用GitHub + Hexo搭建的博客">
+<meta name="twitter:title" content="面试中常见问题及答案">
+<meta name="twitter:description" content="浏览器的回流和重绘回流：当render tree 的一部分或全部的元素因改变了自身的宽高，布局，显示或隐藏，或者元素内部的文字结构发生变化 导致需要重新构建页面的时候，回流就产生了 重绘：当一个元素自身的宽高，布局，及显示或隐藏没有改变，而只是改变了元素的外观风格的时候，就会产生重绘。例如你改变了元素的background-color 回流必定触发重绘，而重绘不一定触发回流 触发回流的css 属性">
   
     <link rel="alternative" href="/atom.xml" title="码农阿成的个人博客" type="application/atom+xml">
   
@@ -169,53 +170,136 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-jsstandard" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+            <article id="post-interview" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/04/jsstandard/">JS规范（CommonJS/CMD/AMD）</a>
+    <h1 class="article-title" itemprop="name">
+      面试中常见问题及答案
     </h1>
   
 
         
-        <a href="/2019/01/04/jsstandard/" class="archive-article-date">
-  	<time datetime="2019-01-04T01:48:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-04</time>
+        <a href="/2019/01/11/interview/" class="archive-article-date">
+  	<time datetime="2019-01-11T09:00:27.030Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="JS模块化"><a href="#JS模块化" class="headerlink" title="JS模块化"></a>JS模块化</h3><p>有了模块，我们就可以方便的使用别人的代码，想要什么需求，就加载什么模块，但这样做有个前提，就是大家必须用同样的方式编写模块，因此就出现了这三个模块规范。</p>
-<h2 id="一、CommonJS"><a href="#一、CommonJS" class="headerlink" title="一、CommonJS"></a>一、CommonJS</h2><p>在兼容CommonJS的系统中，可以使用js开发以下程序：<br>1、服务器端js应用程序<br>2.命令行工具<br>3.图形界面应用程序<br>4.混合应用程序<br>
-        
-          <a class="article-more-a" href="/2019/01/04/jsstandard/#more">more >></a>
-        
+        <h2 id="浏览器的回流和重绘"><a href="#浏览器的回流和重绘" class="headerlink" title="浏览器的回流和重绘"></a>浏览器的回流和重绘</h2><p>回流：当render tree 的一部分或全部的元素因改变了自身的宽高，布局，显示或隐藏，或者元素内部的文字结构发生变化 导致需要重新构建页面的时候，回流就产生了</p>
+<p>重绘：当一个元素自身的宽高，布局，及显示或隐藏没有改变，而只是改变了元素的外观风格的时候，就会产生重绘。例如你改变了元素的background-color</p>
+<p>回流必定触发重绘，而重绘不一定触发回流</p>
+<p>触发回流的css 属性有这些：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">盒模型相关属性</span><br><span class="line">width</span><br><span class="line">height</span><br><span class="line">padding</span><br><span class="line">margin</span><br><span class="line">display</span><br><span class="line">border-width</span><br><span class="line">border</span><br><span class="line">min-height</span><br><span class="line"></span><br><span class="line">定位属性及浮动</span><br><span class="line">top</span><br><span class="line">bottom</span><br><span class="line">left</span><br><span class="line">right</span><br><span class="line">position</span><br><span class="line"><span class="built_in">float</span></span><br><span class="line">clear</span><br><span class="line"></span><br><span class="line">改变节点内部文字结构</span><br><span class="line">text-align</span><br><span class="line">overflow-y</span><br><span class="line">font-family</span><br><span class="line">line-height</span><br><span class="line">vertical-align</span><br><span class="line">white-space</span><br><span class="line">font-size</span><br></pre></td></tr></table></figure>
+<p>触发重绘的css 属性有这些：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">color</span><br><span class="line">border-style</span><br><span class="line">border-radius</span><br><span class="line">visibility</span><br><span class="line">text-decoration</span><br><span class="line">background</span><br><span class="line">background-image</span><br><span class="line">background-position</span><br><span class="line">background-repeat</span><br><span class="line">background-size</span><br><span class="line">background-color</span><br><span class="line">outline</span><br><span class="line">outline-style</span><br><span class="line">outline-width</span><br><span class="line">box-shadow</span><br></pre></td></tr></table></figure></p>
+<p>避免回流的方式：<br>1.不使用以上属性<br>2.在外层套一个div，让回流在div内部进行，缩小回流和重绘范围。</p>
+<hr>
+<p>那如果我们使用属性又有那些可替换的属性可以优化回流与重绘呢，一共有一下9点：<br>1：用transform 代替 top，left ，margin-top， margin-left… 这些位移属性<br>2：用opacity 代替 visibility，但是要同时有translate3d 或 translateZ 这些可以创建的图层的属性存在才可以阻止回流<br>但是第二点经过我的实验，发现如果不加 transform: translateZ(0) 配合opacity的话还是会产生回流的，而只用visibility 就只会产生重绘不会回流<br>而  opacity 加上 transform: translateZ/3d  这个属性之后便不会发生回流和重绘了<br>3：不要使用 js 代码对dom 元素设置多条样式，选择用一个 className 代替之。<br>4：如果确实需要用 js 对 dom 设置多条样式那么可以将这个dom 先隐藏，然后再对其设置<br>5：不要在循环内获取dom 的样式例如：offsetWidth, offsetHeight, clientWidth, clientHeight… 这些。浏览器有一个回流的缓冲机制，即多个回流会保存在一个栈里面，当这个栈满了浏览器便会一次性触发所有样式的更改且刷新这个栈。但是如果你多次获取这些元素的实际样式，浏览器为了给你一个准确的答案便会不停刷新这个缓冲栈，导致页面回流增加。<br>所以为了避免这个问题，应该用一个变量保存在循环体外。<br>6：不要使用table 布局，因为table 的每一个行甚至每一个单元格的样式更新都会导致整个table 重新布局<br>7：动画的速度按照业务按需决定<br>8：对于频繁变化的元素应该为其加一个 transform 属性，对于视频使用video 标签<br>9：必要时可以开启 GPU 加速，但是不能滥用</p>
+
       
 
       
-    </p></div>
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
     <div class="article-info article-info-index">
       
       
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/01/04/jsstandard/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://github.com/cscbeyond/cscbeyond.github.io/2019/01/11/interview/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2019/01/11/函数节流和函数防抖/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">函数节流和函数防抖</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -235,600 +319,14 @@
 
 
 
-
-  
-    <article id="post-font" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/03/font/">常用的字体图标库</a>
-    </h1>
-  
-
-        
-        <a href="/2019/01/03/font/" class="archive-article-date">
-  	<time datetime="2019-01-03T09:18:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1-阿里巴巴矢量图标"><a href="#1-阿里巴巴矢量图标" class="headerlink" title="1.阿里巴巴矢量图标"></a>1.阿里巴巴矢量图标</h2><p><a href="https://www.iconfont.cn/" target="_blank" rel="noopener">https://www.iconfont.cn/</a><br>这个也是我一直都在使用的，图标很齐全，并且支持在线将图标字体转成图片，颜色自定义。<br>协同合作也很方便<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;i class=<span class="string">"iconfont icon-arrow"</span>&gt;  //iconfont是固定写法，第二个类名就是你想用的图标</span><br></pre></td></tr></table></figure></p>
-<h2 id="2-Font-Awesome"><a href="#2-Font-Awesome" class="headerlink" title="2.Font Awesome"></a>2.Font Awesome</h2>
-        
-          <a class="article-more-a" href="/2019/01/03/font/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/01/03/font/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-this" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/28/this/">关于this的一点理解</a>
-    </h1>
-  
-
-        
-        <a href="/2018/12/28/this/" class="archive-article-date">
-  	<time datetime="2018-12-28T09:03:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>this永远指向的是最后调用它的对象，也就是看它执行的时候是谁调用的<br>谁调用，就指向谁，但以下情况特殊：<br>    情况1：如果一个函数中有this，但是它没有被上一级的对象所调用，那么this指向的就是window，<br>           这里需要说明的是在js的严格模式中this指向的不是window。<br>
-        
-          <a class="article-more-a" href="/2018/12/28/this/#more">more >></a>
-        
-      
-
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/12/28/this/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-instanceof-hasOwnProperty" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/28/instanceof-hasOwnProperty/">js中 判断对象中是否有某属性 的常用方法</a>
-    </h1>
-  
-
-        
-        <a href="/2018/12/28/instanceof-hasOwnProperty/" class="archive-article-date">
-  	<time datetime="2018-12-28T09:02:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="根据-Obj-x-undefined-的返回值-来判断Obj是否有x属性"><a href="#根据-Obj-x-undefined-的返回值-来判断Obj是否有x属性" class="headerlink" title="根据 Obj.x !== undefined 的返回值 来判断Obj是否有x属性"></a>根据 Obj.x !== undefined 的返回值 来判断Obj是否有x属性</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// 创建对象</span><br><span class="line"><span class="built_in">let</span> <span class="built_in">test</span> = &#123;name : <span class="string">'lei'</span>&#125;</span><br><span class="line">// 获取对象的自身的属性</span><br><span class="line">test.name   //<span class="string">"lei"</span></span><br><span class="line"><span class="built_in">test</span>[<span class="string">"name"</span>]   //<span class="string">"lei"</span></span><br><span class="line"> </span><br><span class="line">// 获取不存在的属性</span><br><span class="line">test.age    //undefined</span><br><span class="line"> </span><br><span class="line">// 获取原型上的属性</span><br><span class="line"><span class="built_in">test</span>[<span class="string">"toString"</span>]  //<span class="function"><span class="title">toString</span></span>() &#123; [native code] &#125;</span><br><span class="line"> </span><br><span class="line">// 新增一个值为undefined的属性</span><br><span class="line">test.un = undefined</span><br><span class="line"> </span><br><span class="line">test.un    //undefined 不能用在属性值存在，但可能为 undefined的场景</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2018/12/28/instanceof-hasOwnProperty/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/12/28/instanceof-hasOwnProperty/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-defineProperty" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/28/defineProperty/">关于defineProperty</a>
-    </h1>
-  
-
-        
-        <a href="/2018/12/28/defineProperty/" class="archive-article-date">
-  	<time datetime="2018-12-28T06:35:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>我是在了解vue原理的时候看到的这个源于ES5的属性,所以想深入理解一下<br>对象是对个键值对的集合。每个属性对应任意类型的值<br>定义对象最常用的方法是使用构造函数或字面量的形式<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var obj = new Object();</span><br><span class="line">obj.name = <span class="string">'zhangsan'</span>;</span><br><span class="line">obj.say = <span class="function"><span class="title">function</span></span>()&#123;&#125;;</span><br></pre></td></tr></table></figure></p>
-<p>#我们还可以使用Object.defineProperty定义新属性或修改原有的属性。</p>
-        
-          <a class="article-more-a" href="/2018/12/28/defineProperty/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/12/28/defineProperty/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-urlParams" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/28/urlParams/">获取url中参数的方法</a>
-    </h1>
-  
-
-        
-        <a href="/2018/12/28/urlParams/" class="archive-article-date">
-  	<time datetime="2018-12-28T02:27:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">/*  获取URl中的参数</span><br><span class="line">* @para url </span><br><span class="line">* @para key 参数名*/</span><br><span class="line"><span class="keyword">function</span> getQueryString(url) &#123;</span><br><span class="line">    var left= url.indexOf(<span class="string">"?"</span>) + 1</span><br><span class="line">    var right= url.lastIndexOf(<span class="string">"#"</span>)</span><br><span class="line">    var parasString = url.slice(left, right)</span><br><span class="line">    var paras = parasString.split(<span class="string">'&amp;'</span>);</span><br><span class="line">    var parasjson = &#123;&#125;</span><br><span class="line">    paras.forEach(<span class="keyword">function</span> (value, index, arr) &#123;</span><br><span class="line">        var a = value.split(<span class="string">'='</span>);</span><br><span class="line">        parasjson[a[0]] !== undefined ? parasjson[a[0]] = [].concat(parasjson[a[0]], a[1]) : parasjson[a[0]] = a[1];</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="built_in">let</span> result = arguments[1] !== void 0 ? (parasjson[arguments[1]] || <span class="string">''</span>) : parasjson;</span><br><span class="line">    <span class="built_in">return</span> result</span><br><span class="line">&#125;</span><br><span class="line">console.log(getQueryString(url))</span><br><span class="line">console.log(getQueryString(url,<span class="string">'sign'</span>))</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/12/28/urlParams/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-bad-mpvue" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/28/bad-mpvue/">mpvue踩坑记</a>
-    </h1>
-  
-
-        
-        <a href="/2018/12/28/bad-mpvue/" class="archive-article-date">
-  	<time datetime="2018-12-28T02:13:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>以下引自官方文档：</p>
-<h3 id="mpvue-（github-地址请参见）是一个使用-Vue-js-开发小程序的前端框架。框架基于-Vue-js-核心，mpvue-修改了-Vue-js-的-runtime-和-compiler-实现，使其可以运行在小程序环境中，从而为小程序开发引入了整套-Vue-js-开发体验。"><a href="#mpvue-（github-地址请参见）是一个使用-Vue-js-开发小程序的前端框架。框架基于-Vue-js-核心，mpvue-修改了-Vue-js-的-runtime-和-compiler-实现，使其可以运行在小程序环境中，从而为小程序开发引入了整套-Vue-js-开发体验。" class="headerlink" title="mpvue （github 地址请参见）是一个使用 Vue.js 开发小程序的前端框架。框架基于 Vue.js 核心，mpvue 修改了 Vue.js 的 runtime 和 compiler 实现，使其可以运行在小程序环境中，从而为小程序开发引入了整套 Vue.js 开发体验。"></a>mpvue （github 地址请参见）是一个使用 Vue.js 开发小程序的前端框架。框架基于 Vue.js 核心，mpvue 修改了 Vue.js 的 runtime 和 compiler 实现，使其可以运行在小程序环境中，从而为小程序开发引入了整套 Vue.js 开发体验。</h3><p>然而，当我想自定义一个底部导航的时候，把底部导航提出来作为一个组件，试了半天发现无法实现跳转，不能响应click事件，后来查了下文档才知道，在组件上面是无法绑定click事件的，原文这样解释：</p>
-<h3 id="暂不支持在组件引用时，在组件上定义-click-等原生事件、v-show（可用-v-if-代替）和-class-style-等样式属性-例：-样式是不会生效的-，因为编译到-wxml，小程序不会生成节点，建议写在内部顶级元素上。"><a href="#暂不支持在组件引用时，在组件上定义-click-等原生事件、v-show（可用-v-if-代替）和-class-style-等样式属性-例：-样式是不会生效的-，因为编译到-wxml，小程序不会生成节点，建议写在内部顶级元素上。" class="headerlink" title="暂不支持在组件引用时，在组件上定义 click 等原生事件、v-show（可用 v-if 代替）和 class style 等样式属性(例：  样式是不会生效的)，因为编译到 wxml，小程序不会生成节点，建议写在内部顶级元素上。"></a>暂不支持在组件引用时，在组件上定义 click 等原生事件、v-show（可用 v-if 代替）和 class style 等样式属性(例：<card class="class-name"> </card> 样式是不会生效的)，因为编译到 wxml，小程序不会生成节点，建议写在内部顶级元素上。</h3><p>组件不支持click事件，难道要我每个页面再复制一遍？？<br>所以，组件存在的意义是什么？静态的展示吗？O**K<br>
-        
-          <a class="article-more-a" href="/2018/12/28/bad-mpvue/#more">more >></a>
-        
-      
-
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/12/28/bad-mpvue/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-promise" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/28/promise/">Promise</a>
-    </h1>
-  
-
-        
-        <a href="/2018/12/28/promise/" class="archive-article-date">
-  	<time datetime="2018-12-28T01:50:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近在看阮一峰大神的ES6教程<br>先说个跟promise关系不大的知识点<br>下面这段代码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> timeout(ms) &#123;</span><br><span class="line">  <span class="built_in">return</span> new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">    setTimeout(resolve, ms, <span class="string">'done'</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">timeout(100).<span class="keyword">then</span>((value) =&gt; &#123;</span><br><span class="line">  console.log(value);  // <span class="string">'done'</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>竟然打印出了’done’，查了资料才发现，经常用到的定时器，竟然存在第三个参数。<br>第三个参数可以是 基本数据类型，也可以是引用数据类型<br>定时器第三个参数之后的参数，都会作为定时器第一个参数的形参传进去。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/12/28/promise/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-heap-stack" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/28/heap-stack/">堆栈问题</a>
-    </h1>
-  
-
-        
-        <a href="/2018/12/28/heap-stack/" class="archive-article-date">
-  	<time datetime="2018-12-28T01:35:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>js中的堆(heap)与栈(stack)<br>js中有两种数据类型</p>
-<h2 id="基本类型、-引用类型"><a href="#基本类型、-引用类型" class="headerlink" title="基本类型、 引用类型"></a>基本类型、 引用类型</h2><h1 id="基本类型存在栈-stack-中"><a href="#基本类型存在栈-stack-中" class="headerlink" title="基本类型存在栈(stack)中"></a>基本类型存在栈(stack)中</h1><p>五种基本类型 undefined null boolean number string，直接按值存放，可以直接访问</p>
-<h1 id="引用类型存在堆-heap-中"><a href="#引用类型存在堆-heap-中" class="headerlink" title="引用类型存在堆(heap)中"></a>引用类型存在堆(heap)中</h1><p>存放在堆内存中的对象，变量实际保存的是一个指针，这个指针指向另一个位置。每个空间大小不一样，要根据情况进行特定的分配。</p>
-        
-          <a class="article-more-a" href="/2018/12/28/heap-stack/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/12/28/heap-stack/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-centos" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/26/centos/">centOS初体验</a>
-    </h1>
-  
-
-        
-        <a href="/2018/12/26/centos/" class="archive-article-date">
-  	<time datetime="2018-12-26T05:52:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>大概是一瓶不满半瓶晃，前端这么多乱七八糟的东西还没学好，非要学linux。<br>好吧，其实我是为了fan墙才想起来要搞一下linux。<br>最近买了个搬瓦工的vps,方便科学上网，但是光用来科学上网有些奢侈，索性了解了一下linux，搭建了一个服务，并且配置了node环境，服务布上去发现，嘿，真好玩，我竟然有了自己的第一个网站！<br>好了，言归正传，我使用的是搬瓦工一年19.99美元的最低配，自己搞着玩足够了。</p>
-<p>#配置node环境<br>开始时候，我是纯手动配置了一遍node环境，还有nginx做反向代理，因为平时工作中有一丢丢nginx的配置经验，所以配置起来感觉并不难。<br>
-        
-          <a class="article-more-a" href="/2018/12/26/centos/#more">more >></a>
-        
-      
-
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/12/26/centos/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -851,8 +349,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

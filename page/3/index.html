@@ -171,6 +171,214 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-mpvue" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/25/mpvue/">mpvue开发手记</a>
+    </h1>
+  
+
+        
+        <a href="/2018/12/25/mpvue/" class="archive-article-date">
+  	<time datetime="2018-12-25T14:34:25.883Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>开发微信小程序过程中遇到的在vue中支持，但在mpvue中不支持的地方：</p>
+<p>（1）不支持v-html。因为小程序没有dom的概念。</p>
+<p>（2）不支持部分javascript渲染表达式，</p>
+<p>（3）不支持直接绑定一个对象到style或class属性上</p>
+<p>（4）img标签中，不能设置宽度高度，例如：width=”200”  height=”200”</p>
+<p>（5）css中background-image里的url只能是服务器上的地址，不能是本地图片地址。</p>
+<p>（6）在跳转之后进入的页面，或者pages目录下的vue文件，不要使用created()。会获取不到mapGetters数据。用async onLoad()代替。</p>
+<p>（7）不支持的插件：jsonp / vue-lazyload / better-scroll / vue-awesome-swiper 等等</p>
+<p>（8）不支持</p>
+<p>v-show（可用v-if代替）</p>
+<p>transition</p>
+<p>keep-alive</p>
+<p>（9）组件命名与小程序的冲突，例如：<loading></loading></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/12/25/mpvue/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-document&amp;window" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/23/document&window/">document和window的区别及联系</a>
+    </h1>
+  
+
+        
+        <a href="/2018/12/23/document&window/" class="archive-article-date">
+  	<time datetime="2018-12-23T13:48:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>前端工程师每天都在与这两个对象接触，可是他们之间到底是什么关系呢？</p>
+<h3 id="document对象"><a href="#document对象" class="headerlink" title="document对象"></a>document对象</h3><p>每个载入浏览器的html文档都会成为document对象<br>document对象使我们可以从脚本中对html页面中的所有元素进行访问<br>document是window的一部分，可以用window.document对其进行访问<br>
+        
+          <a class="article-more-a" href="/2018/12/23/document&window/#more">more >></a>
+        
+      
+
+      
+    </p></div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/12/23/document&window/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-mobile" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/20/mobile/">移动端遇到的各种小问题</a>
+    </h1>
+  
+
+        
+        <a href="/2018/12/20/mobile/" class="archive-article-date">
+  	<time datetime="2018-12-20T11:13:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-webkit-overflow-scrolling: touch</span><br></pre></td></tr></table></figure>
+<p>WebKit私有的属性“-webkit-overflow-scrolling: touch”（允许独立的滚动区域和触摸回弹）</p>
+<p>ios移动端输入内容，软键盘弹出，页面内容整体上移。<br>但是键盘收起，页面内容不下滑。<br>安卓没问题。</p>
+<p>用一下代码解决：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'input,textarea'</span>).on(<span class="string">'blur'</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	window.scroll(0,0);</span><br><span class="line">&#125;);</span><br><span class="line">$(<span class="string">'select'</span>).on(<span class="string">'change'</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	window.scroll(0,0);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>原理就是输入框失去光标，手动控制一下页面滚动就恢复正常了。<br>本以为如果页面很长，输入框很多 会出问题，因为会滚动到最上顶，但实际情况并没有。<br>疑惑中。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/12/20/mobile/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-about-vue" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -607,193 +815,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/11/30/event/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-array" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/26/array/">数组</a>
-    </h1>
-  
-
-        
-        <a href="/2018/11/26/array/" class="archive-article-date">
-  	<time datetime="2018-11-26T05:38:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="数组的长度是比数组最大索引值多一的数。"><a href="#数组的长度是比数组最大索引值多一的数。" class="headerlink" title="数组的长度是比数组最大索引值多一的数。"></a>数组的长度是比数组最大索引值多一的数。</h3>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/26/array/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-closure" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/26/closure/">闭包</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/26/closure/" class="archive-article-date">
-  	<time datetime="2018-10-26T05:38:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>老生常谈的问题，几乎所有的前端面试中都会被问到。<br>而我对这个问题的理解始终不是很透彻，今天好好整理一下。</p>
-<h6 id="一、闭包产生的原因"><a href="#一、闭包产生的原因" class="headerlink" title="一、闭包产生的原因"></a>一、闭包产生的原因</h6>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/26/closure/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-clearfix" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/22/clearfix/">css清除浮动相关</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/22/clearfix/" class="archive-article-date">
-  	<time datetime="2018-10-22T05:49:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/22/clearfix/">展开全文 >></a>
         </p>
       
 
