@@ -583,22 +583,14 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>大概是一瓶不满半瓶晃，前端这么多乱七八糟的东西还没学好，非要学linux。<br>好吧，其实我是为了fan墙才想起来要搞一下linux。<br>最近买了个搬瓦工的vps,方便科学上网，但是光用来科学上网有些奢侈，索性了解了一下linux，搭建了一个服务，并且配置了node环境，服务布上去发现，嘿，真好玩，我竟然有了自己的第一个网站！<br>好了，言归正传，我使用的是搬瓦工一年19.99美元的最低配，自己搞着玩足够了。</p>
-<p>#配置node环境<br>开始时候，我是纯手动配置了一遍node环境，还有nginx做反向代理，因为平时工作中有一丢丢nginx的配置经验，所以配置起来感觉并不难。<br>方法一：<br>中间可能会出现gcc未安装或版本过低的情况，先进行升级。<br>1.安装wget命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install wget</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//如果报错，可能是版本过低或者没有安装gcc，安装一下即可</span><br><span class="line">yum install gcc</span><br></pre></td></tr></table></figure>
-<p>2.安装解压工具 （省略，网上找一下安装教程）</p>
-<p>3.下载node压缩包<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://nodejs.org/dist/v10.9.0/node-v10.9.0-linux-x64.tar.xz</span><br></pre></td></tr></table></figure></p>
-<p>4.解压<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar xf  node-v10.9.0-linux-x64.tar.xz</span><br></pre></td></tr></table></figure></p>
-<p>此时已经安装完成，可以运行以下命令验证<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> node-v10.9.0-linux-x64/                  // 进入解压目录</span><br><span class="line">./bin/node -v                               // 执行node命令 查看版本</span><br><span class="line">v10.9.0   //出现版本号 说明安装完成</span><br></pre></td></tr></table></figure></p>
-<p>5.配置软连接，达到全局都可以使用node和npm的目的<br>（解压文件的 bin 目录底下包含了 node、npm 等命令，我们可以使用 ln 命令来设置软连接）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/software/nodejs/bin/npm   /usr/<span class="built_in">local</span>/bin/ </span><br><span class="line">ln -s /usr/software/nodejs/bin/node   /usr/<span class="built_in">local</span>/bin/</span><br></pre></td></tr></table></figure></p>
-<p>nginx的配置也大体相同，下载，安装，配置反向代理。<br>方法二：<br>使用 宝塔 一键配置<br>很好用的一个可视化工具，安装完成后nginx，mysql以及php环境就都配置好了。<br>然后再按照上面步骤安装node。</p>
-<p>#如果让node服务一直在服务器上运行<br>写过node服务的都知道，要想让服务运行，就不能关掉命令窗口，一旦关闭，服务也就随即停止。<br>forever这个插件，可以让你的node服务一直运行，即使退出了xshell也不会关闭服务。<br>我是按照这个教程安装并使用的， 里面提供的几个命令都测试过，都没问题，很不错。<br><a href="https://blog.csdn.net/zhiyual/article/details/79774225" target="_blank" rel="noopener">传送门</a><br>我遇到的情况是使用express-generator搭建的项目，要使用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm start</span><br></pre></td></tr></table></figure></p>
-<p>才可以让项目运行起来，网上有人说可以使用<br>forever start “npm start”，但是我使用的时候报错了，所以最后我干脆在项目目录下运行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">forever start ./bin/www</span><br></pre></td></tr></table></figure></p>
-<p>也就是在bin下找到www文件，运行，就ok了。我们运行npm start的时候，在package.json中可以看到，实际上运行的就是这一个文件。<br>pm2包管理器似乎更强大一些，免去了很多安装带来的问题。还未尝试</p>
-
+<p>#配置node环境<br>开始时候，我是纯手动配置了一遍node环境，还有nginx做反向代理，因为平时工作中有一丢丢nginx的配置经验，所以配置起来感觉并不难。<br>
+        
+          <a class="article-more-a" href="/2018/12/26/centos/#more">more >></a>
+        
       
 
       
-    </div>
+    </p></div>
     <div class="article-info article-info-index">
       
       
