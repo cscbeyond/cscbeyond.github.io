@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="码农阿成的个人博客">
 <meta property="og:description" content="以下引自官方文档： mpvue （github 地址请参见）是一个使用 Vue.js 开发小程序的前端框架。框架基于 Vue.js 核心，mpvue 修改了 Vue.js 的 runtime 和 compiler 实现，使其可以运行在小程序环境中，从而为小程序开发引入了整套 Vue.js 开发体验。然而，当我想自定义一个底部导航的时候，把底部导航提出来作为一个组件，试了半天发现无法实现跳转，不能响">
 <meta property="og:locale" content="Chinese/English">
-<meta property="og:updated_time" content="2019-01-14T06:16:14.097Z">
+<meta property="og:updated_time" content="2019-01-14T06:23:08.302Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mpvue踩坑记">
 <meta name="twitter:description" content="以下引自官方文档： mpvue （github 地址请参见）是一个使用 Vue.js 开发小程序的前端框架。框架基于 Vue.js 核心，mpvue 修改了 Vue.js 的 runtime 和 compiler 实现，使其可以运行在小程序环境中，从而为小程序开发引入了整套 Vue.js 开发体验。然而，当我想自定义一个底部导航的时候，把底部导航提出来作为一个组件，试了半天发现无法实现跳转，不能响">
@@ -210,6 +210,7 @@
 <p>（9）组件命名与小程序的冲突，例如：<loading></loading></p>
 <hr>
 <p>微信官方更改了授权方式<br>用以下这种写法：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;button class=<span class="string">"avator"</span>  @getuserinfo=<span class="string">"bindGetUserInfo"</span> open-type=<span class="string">'getUserInfo'</span> style=<span class="string">"background-image:url(https://chensc.club/static/assets/images/guitar.jpg);"</span> plain=<span class="string">'true'</span>&gt;&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">js:</span><br><span class="line">	bindGetUserInfo(e)&#123;</span><br><span class="line">		<span class="built_in">let</span> userInfo = e.mp.detail.userInfo;</span><br><span class="line">		console.log(userInfo);</span><br><span class="line">	&#125;,</span><br></pre></td></tr></table></figure></p>
+<p>获取用户是否授权，有哪些授权：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">wx.getSetting(&#123;</span><br><span class="line">	success: (res) =&gt; &#123;</span><br><span class="line">		console.log(res);</span><br><span class="line">		<span class="keyword">if</span>(res.authSetting[<span class="string">'scope.userInfo'</span>])&#123;</span><br><span class="line">			this.havePermission = <span class="literal">true</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 
       
 
