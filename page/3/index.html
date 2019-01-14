@@ -171,81 +171,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-mpvue" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/25/mpvue/">mpvue开发手记</a>
-    </h1>
-  
-
-        
-        <a href="/2018/12/25/mpvue/" class="archive-article-date">
-  	<time datetime="2018-12-25T14:34:25.883Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>开发微信小程序过程中遇到的在vue中支持，但在mpvue中不支持的地方：</p>
-<p>（1）不支持v-html。因为小程序没有dom的概念。</p>
-<p>（2）不支持部分javascript渲染表达式，</p>
-<p>（3）不支持直接绑定一个对象到style或class属性上</p>
-<p>（4）img标签中，不能设置宽度高度，例如：width=”200”  height=”200”</p>
-<p>（5）css中background-image里的url只能是服务器上的地址，不能是本地图片地址。</p>
-<p>（6）在跳转之后进入的页面，或者pages目录下的vue文件，不要使用created()。会获取不到mapGetters数据。用async onLoad()代替。</p>
-<p>（7）不支持的插件：jsonp / vue-lazyload / better-scroll / vue-awesome-swiper 等等</p>
-<p>（8）不支持</p>
-<p>v-show（可用v-if代替）</p>
-<p>transition</p>
-<p>keep-alive</p>
-<p>（9）组件命名与小程序的冲突，例如：<loading></loading></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/12/25/mpvue/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-document&amp;window" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -815,6 +740,68 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/11/30/event/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-array" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/26/array/">数组</a>
+    </h1>
+  
+
+        
+        <a href="/2018/11/26/array/" class="archive-article-date">
+  	<time datetime="2018-11-26T05:38:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="数组的长度是比数组最大索引值多一的数。"><a href="#数组的长度是比数组最大索引值多一的数。" class="headerlink" title="数组的长度是比数组最大索引值多一的数。"></a>数组的长度是比数组最大索引值多一的数。</h3>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/11/26/array/">展开全文 >></a>
         </p>
       
 
