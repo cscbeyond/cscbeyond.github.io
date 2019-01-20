@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="码农阿成的个人博客">
 <meta property="og:description" content="1-webkit-overflow-scrolling: touch WebKit私有的属性“-webkit-overflow-scrolling: touch”（允许独立的滚动区域和触摸回弹） ios移动端输入内容，软键盘弹出，页面内容整体上移。但是键盘收起，页面内容不下滑。安卓没问题。 用一下代码解决：123456$(&apos;input,textarea&apos;).on(&apos;blur&apos;,function()">
 <meta property="og:locale" content="Chinese/English">
-<meta property="og:updated_time" content="2018-12-20T11:13:26.000Z">
+<meta property="og:updated_time" content="2019-01-20T15:03:32.576Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="移动端遇到的各种小问题">
 <meta name="twitter:description" content="1-webkit-overflow-scrolling: touch WebKit私有的属性“-webkit-overflow-scrolling: touch”（允许独立的滚动区域和触摸回弹） ios移动端输入内容，软键盘弹出，页面内容整体上移。但是键盘收起，页面内容不下滑。安卓没问题。 用一下代码解决：123456$(&apos;input,textarea&apos;).on(&apos;blur&apos;,function()">
@@ -195,6 +195,8 @@
 <p>ios移动端输入内容，软键盘弹出，页面内容整体上移。<br>但是键盘收起，页面内容不下滑。<br>安卓没问题。</p>
 <p>用一下代码解决：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'input,textarea'</span>).on(<span class="string">'blur'</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	window.scroll(0,0);</span><br><span class="line">&#125;);</span><br><span class="line">$(<span class="string">'select'</span>).on(<span class="string">'change'</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	window.scroll(0,0);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 <p>原理就是输入框失去光标，手动控制一下页面滚动就恢复正常了。<br>本以为如果页面很长，输入框很多 会出问题，因为会滚动到最上顶，但实际情况并没有。<br>疑惑中。</p>
+<p>事件触发顺序：<br>参考这个道友的博客：<br><a href="https://blog.csdn.net/u013034014/article/details/55668328" target="_blank" rel="noopener">https://blog.csdn.net/u013034014/article/details/55668328</a></p>
+<p>明天自己写一下。<br>click<br>touch<br>mouse<br>这三个事件</p>
 
       
 
