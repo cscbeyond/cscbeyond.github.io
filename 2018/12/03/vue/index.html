@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="码农阿成的个人博客">
 <meta property="og:description" content="mixins在文件中导出一个方法12345678910export let myMixins = &amp;#123;    created: function()&amp;#123;        this.hello()    &amp;#125;,    methosd: &amp;#123;        hello()&amp;#123;            console.log(&apos;hello&apos;);        &amp;#12">
 <meta property="og:locale" content="Chinese/English">
-<meta property="og:updated_time" content="2018-12-02T16:25:08.000Z">
+<meta property="og:updated_time" content="2019-01-25T16:00:00.293Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue开发手记">
 <meta name="twitter:description" content="mixins在文件中导出一个方法12345678910export let myMixins = &amp;#123;    created: function()&amp;#123;        this.hello()    &amp;#125;,    methosd: &amp;#123;        hello()&amp;#123;            console.log(&apos;hello&apos;);        &amp;#12">
@@ -193,6 +193,7 @@
         <h1 id="mixins"><a href="#mixins" class="headerlink" title="mixins"></a>mixins</h1><p>在文件中导出一个方法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> <span class="built_in">let</span> myMixins = &#123;</span><br><span class="line">    created: <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        this.hello()</span><br><span class="line">    &#125;,</span><br><span class="line">    methosd: &#123;</span><br><span class="line">        <span class="function"><span class="title">hello</span></span>()&#123;</span><br><span class="line">            console.log(<span class="string">'hello'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>在组件中使用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import &#123;myMixins&#125; from <span class="string">'mixin'</span>;</span><br><span class="line">new Vue(&#123;</span><br><span class="line">    mixins:[myMixins],</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 <p>—–not the end</p>
+<p>vuecli3.0初始化项目<br><a href="https://www.jianshu.com/p/6307c568832d" target="_blank" rel="noopener">https://www.jianshu.com/p/6307c568832d</a></p>
 
       
 
