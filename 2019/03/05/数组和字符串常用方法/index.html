@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://github.com/cscbeyond/cscbeyond.github.io">
-  <title>Archives | 码农阿成的个人博客</title>
+  <title>数组和字符串的常用方法 | 码农阿成的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="利用GitHub + Hexo搭建的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="码农阿成的个人博客">
-<meta property="og:url" content="https://github.com/cscbeyond/cscbeyond.github.io/archives/page/5/index.html">
+  <meta name="description" content="1.Array.map()此方法是将数组中的每个元素调用一个提供的函数，结果作为一个新的数组返回，并没有改变原来的数组1234let arr = [1, 2, 3, 4, 5]let newArr = arr.map(x =&amp;gt; x*2)//arr = [1, 2, 3, 4, 5]   原数组保持不变//newArr = [2, 4, 6, 8, 10] 返回新数组 2.Array.forE">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数组和字符串的常用方法">
+<meta property="og:url" content="https://github.com/cscbeyond/cscbeyond.github.io/2019/03/05/数组和字符串常用方法/index.html">
 <meta property="og:site_name" content="码农阿成的个人博客">
-<meta property="og:description" content="利用GitHub + Hexo搭建的博客">
+<meta property="og:description" content="1.Array.map()此方法是将数组中的每个元素调用一个提供的函数，结果作为一个新的数组返回，并没有改变原来的数组1234let arr = [1, 2, 3, 4, 5]let newArr = arr.map(x =&amp;gt; x*2)//arr = [1, 2, 3, 4, 5]   原数组保持不变//newArr = [2, 4, 6, 8, 10] 返回新数组 2.Array.forE">
 <meta property="og:locale" content="Chinese/English">
+<meta property="og:updated_time" content="2019-03-05T04:26:03.942Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="码农阿成的个人博客">
-<meta name="twitter:description" content="利用GitHub + Hexo搭建的博客">
+<meta name="twitter:title" content="数组和字符串的常用方法">
+<meta name="twitter:description" content="1.Array.map()此方法是将数组中的每个元素调用一个提供的函数，结果作为一个新的数组返回，并没有改变原来的数组1234let arr = [1, 2, 3, 4, 5]let newArr = arr.map(x =&amp;gt; x*2)//arr = [1, 2, 3, 4, 5]   原数组保持不变//newArr = [2, 4, 6, 8, 10] 返回新数组 2.Array.forE">
   
     <link rel="alternative" href="/atom.xml" title="码农阿成的个人博客" type="application/atom+xml">
   
@@ -169,106 +170,169 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-数组和字符串常用方法" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      数组和字符串的常用方法
+    </h1>
+  
+
+        
+        <a href="/2019/03/05/数组和字符串常用方法/" class="archive-article-date">
+  	<time datetime="2019-03-05T03:03:22.421Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-05</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.Array.map()<br>此方法是将数组中的每个元素调用一个提供的函数，结果作为一个新的数组返回，并没有改变原来的数组<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> arr = [1, 2, 3, 4, 5]</span><br><span class="line"><span class="built_in">let</span> newArr = arr.map(x =&gt; x*2)</span><br><span class="line">//arr = [1, 2, 3, 4, 5]   原数组保持不变</span><br><span class="line">//newArr = [2, 4, 6, 8, 10] 返回新数组</span><br></pre></td></tr></table></figure></p>
+<p>2.Array.forEach()<br>此方法是将数组中的每个元素执行传进提供的函数，没有返回值，直接改变原数组，注意和map方法区分<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> arr = [1, 2, 3, 4, 5]</span><br><span class="line">num.forEach(x =&gt; x * 2)</span><br><span class="line">// arr = [2, 4, 6, 8, 10]  数组改变,注意和map区分</span><br></pre></td></tr></table></figure></p>
+<p>3.Array.filter()<br>此方法是将所有元素进行判断，将满足条件的元素作为一个新的数组返回<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> arr = [1, 2, 3, 4, 5]</span><br><span class="line">const isBigEnough =&gt; value =&gt; value &gt;= 3</span><br><span class="line"><span class="built_in">let</span> newArr = arr.filter(isBigEnough )</span><br><span class="line">//newNum = [3, 4, 5] 满足条件的元素返回为一个新的数组</span><br></pre></td></tr></table></figure></p>
+<p>4.Array.every()<br>此方法是将所有元素进行判断返回一个布尔值，如果所有元素都满足判断条件，则返回true，否则为false<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> arr = [1, 2, 3, 4, 5]</span><br><span class="line">   const isLessThan4 = value =&gt; value &lt; 4</span><br><span class="line">   const isLessThan6 = value =&gt; value &lt; 6</span><br><span class="line">   arr.every(isLessThan4 ) //<span class="literal">false</span></span><br><span class="line">   arr.every(isLessThan6 ) //<span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
+<p>5.Array.some()<br>此方法是将所有元素进行判断返回一个布尔值，如果存在元素都满足判断条件，则返回true，若所有元素都不满足判断条件，则返回false：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> arr= [1, 2, 3, 4, 5]</span><br><span class="line">   const isLessThan4 =&gt; value =&gt; value &lt; 4</span><br><span class="line">   const isLessThan6 =&gt; value =&gt; value &gt; 6</span><br><span class="line">   arr.some(isLessThan4 ) //<span class="literal">true</span></span><br><span class="line">   arr.some(isLessThan6 ) //<span class="literal">false</span></span><br></pre></td></tr></table></figure></p>
+<p>6.Array.reduce()<br> 此方法是所有元素调用返回函数，返回值为最后结果,传入的值必须是函数类型<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> arr = [1, 2, 3, 4, 5]</span><br><span class="line"> 	const add = (a, b) =&gt; a + b</span><br><span class="line"> 	<span class="built_in">let</span> sum = arr.reduce(add)</span><br><span class="line"> 	//sum = 15  相当于累加的效果</span><br><span class="line"> 	与之相对应的还有一个 Array.reduceRight() 方法，区别是这个是从右向左操作的</span><br></pre></td></tr></table></figure></p>
+<p>7.Array.push()<br> 此方法是在数组的后面添加新加元素，此方法改变了数组的长度</p>
+<p>8.Array.pop()<br>此方法在数组后面删除最后一个元素，并返回数组，此方法改变了数组的长度</p>
+<p>9.Array.shift()<br>此方法在数组后面删除第一个元素，并返回数组，此方法改变了数组的长度<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> arr = [1, 2, 3, 4, 5]</span><br><span class="line">   arr.shift()</span><br><span class="line">   console.log(arr) //[2, 3, 4, 5]</span><br><span class="line">   console.log(arr.length) //4</span><br></pre></td></tr></table></figure></p>
+<p>10.Array.unshift()<br>此方法是将一个或多个元素添加到数组的开头，并返回新数组的长度<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> arr = [1, 2, 3, 4, 5]</span><br><span class="line">   arr.unshift(6, 7)</span><br><span class="line">   console.log(arr) //[6, 7, 1, 2, 3, 4, 5]</span><br><span class="line">   console.log(arr.length) //7</span><br></pre></td></tr></table></figure></p>
+<p>11.Array.isArray()<br>判断一个对象是不是数组，返回的是布尔值</p>
+<p>12.Array.concat()<br>此方法是一个可以将多个数组拼接成一个数组<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> arr1 = [1, 2, 3]</span><br><span class="line">arr2 = [4, 5]</span><br><span class="line"> 	<span class="built_in">let</span> arr = arr1.concat(arr2)</span><br><span class="line"> 	console.log(arr)//[1, 2, 3, 4, 5]</span><br></pre></td></tr></table></figure></p>
+<p>13.Array.toString()<br>此方法将数组转化为字符串<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> arr = [1, 2, 3, 4, 5];</span><br><span class="line">  	<span class="built_in">let</span> str = arr.toString()</span><br><span class="line">  	console.log(str)// 1,2,3,4,5</span><br></pre></td></tr></table></figure></p>
+<p>14.Array.join()<br>此方法也是将数组转化为字符串<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> arr = [1, 2, 3, 4, 5];</span><br><span class="line">  	<span class="built_in">let</span> str1 = arr.toString()</span><br><span class="line">  	<span class="built_in">let</span> str2 = arr.toString(<span class="string">','</span>)</span><br><span class="line">  	<span class="built_in">let</span> str3 = arr.toString(<span class="string">'##'</span>)</span><br><span class="line">  	console.log(str1)// 12345</span><br><span class="line">  	console.log(str2)// 1,2,3,4,5</span><br><span class="line">  	console.log(str3)// 1<span class="comment">##2##3##4##5</span></span><br></pre></td></tr></table></figure></p>
+<p>15.Array.splice(开始位置， 删除的个数，元素)<br>万能方法，可以实现增删改<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> arr = [1, 2, 3, 4, 5];</span><br><span class="line">   <span class="built_in">let</span> arr1 = arr.splice(2, 0 <span class="string">'haha'</span>)</span><br><span class="line"><span class="built_in">let</span> arr2 = arr.splice(2, 3)</span><br><span class="line">   <span class="built_in">let</span> arr1 = arr.splice(2, 1 <span class="string">'haha'</span>)</span><br><span class="line">   console.log(arr1) //[1, 2, <span class="string">'haha'</span>, 3, 4, 5]新增一个元素</span><br><span class="line">   console.log(arr2) //[1, 2] 删除三个元素</span><br><span class="line">   console.log(arr3) //[1, 2, <span class="string">'haha'</span>, 4, 5] 替换一个元素</span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/07/chain-program/" class="archive-article-date">
-  	<time datetime="2018-09-07T01:10:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/07/chain-program/">关于链式编程的一点理解</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://github.com/cscbeyond/cscbeyond.github.io/2019/03/05/数组和字符串常用方法/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/29/my-first-hexo/" class="archive-article-date">
-  	<time datetime="2018-08-29T01:46:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-29</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/02/23/跨域的几种方式及实现/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">跨域的几种方式及实现</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/29/my-first-hexo/">解决vue首页加载过慢问题</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/29/hello-world/" class="archive-article-date">
-  	<time datetime="2018-08-29T01:23:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/29/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/4/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><span class="page-number current">5</span>
-    </nav>
   
 
 
@@ -292,8 +356,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

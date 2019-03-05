@@ -171,6 +171,71 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-react" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/05/react/">React学习笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/05/react/" class="archive-article-date">
+  	<time datetime="2019-01-05T14:31:25.854Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>React中有类似Vue的ref特性，可以通过给react的组件添加一个ref=”xxx”，通过this.refs.xxx,就可以所引到这个react组件，但此时并不是真正的dom元素。React提供了获取dom元素的方法： React.findDOMNode(this.refs.xxx);<br>
+        
+          <a class="article-more-a" href="/2019/01/05/react/#more">more >></a>
+        
+      
+
+      
+    </p></div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/01/05/react/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-alipay" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -727,73 +792,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/12/28/urlParams/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-mpvue" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/28/mpvue/">mpvue踩坑记</a>
-    </h1>
-  
-
-        
-        <a href="/2018/12/28/mpvue/" class="archive-article-date">
-  	<time datetime="2018-12-28T02:13:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>以下引自官方文档：</p>
-<h3 id="mpvue-（github-地址请参见）是一个使用-Vue-js-开发小程序的前端框架。框架基于-Vue-js-核心，mpvue-修改了-Vue-js-的-runtime-和-compiler-实现，使其可以运行在小程序环境中，从而为小程序开发引入了整套-Vue-js-开发体验。"><a href="#mpvue-（github-地址请参见）是一个使用-Vue-js-开发小程序的前端框架。框架基于-Vue-js-核心，mpvue-修改了-Vue-js-的-runtime-和-compiler-实现，使其可以运行在小程序环境中，从而为小程序开发引入了整套-Vue-js-开发体验。" class="headerlink" title="mpvue （github 地址请参见）是一个使用 Vue.js 开发小程序的前端框架。框架基于 Vue.js 核心，mpvue 修改了 Vue.js 的 runtime 和 compiler 实现，使其可以运行在小程序环境中，从而为小程序开发引入了整套 Vue.js 开发体验。"></a>mpvue （github 地址请参见）是一个使用 Vue.js 开发小程序的前端框架。框架基于 Vue.js 核心，mpvue 修改了 Vue.js 的 runtime 和 compiler 实现，使其可以运行在小程序环境中，从而为小程序开发引入了整套 Vue.js 开发体验。</h3><p>然而，当我想自定义一个底部导航的时候，把底部导航提出来作为一个组件，试了半天发现无法实现跳转，不能响应click事件，后来查了下文档才知道，在组件上面是无法绑定click事件的，原文这样解释：</p>
-<h3 id="暂不支持在组件引用时，在组件上定义-click-等原生事件、v-show（可用-v-if-代替）和-class-style-等样式属性-例：-样式是不会生效的-，因为编译到-wxml，小程序不会生成节点，建议写在内部顶级元素上。"><a href="#暂不支持在组件引用时，在组件上定义-click-等原生事件、v-show（可用-v-if-代替）和-class-style-等样式属性-例：-样式是不会生效的-，因为编译到-wxml，小程序不会生成节点，建议写在内部顶级元素上。" class="headerlink" title="暂不支持在组件引用时，在组件上定义 click 等原生事件、v-show（可用 v-if 代替）和 class style 等样式属性(例：  样式是不会生效的)，因为编译到 wxml，小程序不会生成节点，建议写在内部顶级元素上。"></a>暂不支持在组件引用时，在组件上定义 click 等原生事件、v-show（可用 v-if 代替）和 class style 等样式属性(例：<card class="class-name"> </card> 样式是不会生效的)，因为编译到 wxml，小程序不会生成节点，建议写在内部顶级元素上。</h3><p>组件不支持click事件，难道要我每个页面再复制一遍？？<br>所以，组件存在的意义是什么？静态的展示吗？O**K<br>
-        
-          <a class="article-more-a" href="/2018/12/28/mpvue/#more">more >></a>
-        
-      
-
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/12/28/mpvue/">展开全文 >></a>
         </p>
       
 
