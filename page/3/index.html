@@ -171,6 +171,72 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-defineProperty" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/28/defineProperty/">关于defineProperty</a>
+    </h1>
+  
+
+        
+        <a href="/2018/12/28/defineProperty/" class="archive-article-date">
+  	<time datetime="2018-12-28T06:35:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>我是在了解vue原理的时候看到的这个源于ES5的属性,所以想深入理解一下<br>对象是对个键值对的集合。每个属性对应任意类型的值<br>定义对象最常用的方法是使用构造函数或字面量的形式<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var obj = new Object();</span><br><span class="line">obj.name = <span class="string">'zhangsan'</span>;</span><br><span class="line">obj.say = <span class="function"><span class="title">function</span></span>()&#123;&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>#我们还可以使用Object.defineProperty定义新属性或修改原有的属性。</p>
+        
+          <a class="article-more-a" href="/2018/12/28/defineProperty/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/12/28/defineProperty/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-urlParams" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -320,9 +386,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>最近在看阮一峰大神的ES6教程<br>先说个跟promise关系不大的知识点<br>下面这段代码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> timeout(ms) &#123;</span><br><span class="line">  <span class="built_in">return</span> new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">    setTimeout(resolve, ms, <span class="string">'done'</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">timeout(100).<span class="keyword">then</span>((value) =&gt; &#123;</span><br><span class="line">  console.log(value);  // <span class="string">'done'</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+        <h2 id="题外话："><a href="#题外话：" class="headerlink" title="题外话："></a>题外话：</h2><p>最近在看阮一峰大神的ES6教程<br>先说个跟promise关系不大的知识点<br>下面这段代码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> timeout(ms) &#123;</span><br><span class="line">  <span class="built_in">return</span> new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">    setTimeout(resolve, ms, <span class="string">'done'</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">timeout(100).<span class="keyword">then</span>((value) =&gt; &#123;</span><br><span class="line">  console.log(value);  // <span class="string">'done'</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 <p>竟然打印出了’done’，查了资料才发现，经常用到的定时器，竟然存在第三个参数。<br>第三个参数可以是 基本数据类型，也可以是引用数据类型<br>定时器第三个参数之后的参数，都会作为定时器第一个参数的形参传进去。</p>
-
+<h1 id="正题"><a href="#正题" class="headerlink" title="正题"></a>正题</h1>
       
 
       
@@ -753,69 +819,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/12/03/es6/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-继承" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/03/继承/">继承</a>
-    </h1>
-  
-
-        
-        <a href="/2018/12/03/继承/" class="archive-article-date">
-  	<time datetime="2018-12-03T03:07:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>原型对象主要用来继承，eg：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var Person = <span class="keyword">function</span>(name)&#123;</span><br><span class="line">	this.name = name; </span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.getName = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	<span class="built_in">return</span> this.name;</span><br><span class="line">&#125;</span><br><span class="line">var person1 = new Person(<span class="string">'chen'</span>);</span><br><span class="line">person1.getName(); // chen</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/12/03/继承/">展开全文 >></a>
         </p>
       
 

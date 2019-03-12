@@ -171,6 +171,69 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-继承" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/03/继承/">继承</a>
+    </h1>
+  
+
+        
+        <a href="/2018/12/03/继承/" class="archive-article-date">
+  	<time datetime="2018-12-03T03:07:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>原型对象主要用来继承，eg：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var Person = <span class="keyword">function</span>(name)&#123;</span><br><span class="line">	this.name = name; </span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.getName = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	<span class="built_in">return</span> this.name;</span><br><span class="line">&#125;</span><br><span class="line">var person1 = new Person(<span class="string">'chen'</span>);</span><br><span class="line">person1.getName(); // chen</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/12/03/继承/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-js获取屏幕信息" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -557,7 +620,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/22/clearfix/">css清除浮动相关</a>
+      <a class="article-title" href="/2018/10/22/clearfix/">css浮动</a>
     </h1>
   
 
@@ -570,7 +633,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>使用了float的元素会脱离文档流<br>表现：浮动的元素会失去高度，不能把父级元素撑开<br>特殊情况：文本类型的标签，会产生文字环绕效果。<br>处理办法：清除浮动</p>
+<p>清除浮动的几种方式：<br>1.利用bfc原理<br>比较常见的：给父级元素加上over-flow:hidden。此时会触发bfc（块级格式化上下文）</p>
+<p>2.父级div定义伪类：after和zoom<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">给父级加</span><br><span class="line">&lt;!-- 通用 -&gt;</span><br><span class="line">.clearfloat:after&#123;</span><br><span class="line">	display:block;</span><br><span class="line">	clear:both;</span><br><span class="line">	content:<span class="string">""</span>;</span><br><span class="line">	visibility:hidden;</span><br><span class="line">	height:0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- 针对ie6 7 -&gt;</span><br><span class="line">.clearfloat&#123;</span><br><span class="line">	zoom:1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>3.在结尾处添加空div标签clear:both<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">给浮动元素后面加</span><br><span class="line">  .clearfloat&#123;clear:both&#125;</span><br></pre></td></tr></table></figure></p>
+<p>4..父级div定义height （不是真正意义上的清除浮动）</p>
+
       
 
       
@@ -708,68 +776,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/10/22/hexoTheme/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-pxAnddpi" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/25/pxAnddpi/">设备像素及CSS像素</a>
-    </h1>
-  
-
-        
-        <a href="/2018/09/25/pxAnddpi/" class="archive-article-date">
-  	<time datetime="2018-09-25T01:52:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/25/pxAnddpi/">展开全文 >></a>
         </p>
       
 

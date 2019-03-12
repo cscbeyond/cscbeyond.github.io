@@ -171,6 +171,72 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-function" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/12/function/">js中的各种函数</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/12/function/" class="archive-article-date">
+  	<time datetime="2019-03-12T01:23:07.286Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>只是各种函数的写法，不包括语法，例如es6的箭头函数等</p>
+<p>1.最常用的就是使用function去声明一个函数<br>eg:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">foo</span></span>()&#123;&#125;</span><br><span class="line">foo();// 调用</span><br></pre></td></tr></table></figure></p>
+<p>2.自执行函数<br>eg:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">//(函数)(实参)</span><br><span class="line">   (<span class="keyword">function</span> (n1,n2)&#123;</span><br><span class="line">       console.log(<span class="string">"这是匿名函数的自执行的第一种写法，结果为:"</span>+(n1+n2))</span><br><span class="line">   &#125;)(10,100)//110</span><br><span class="line"></span><br><span class="line">   (<span class="keyword">function</span> start(n1,n2)&#123;</span><br><span class="line">       console.log(<span class="string">"这是函数声明方式的自执行的第一种写法，结果为:"</span>+(n1+n2))</span><br><span class="line">   &#125;)(10,100)//110</span><br><span class="line"></span><br><span class="line">//(函数(实参))</span><br><span class="line">(<span class="keyword">function</span> (n1,n2)&#123;</span><br><span class="line">       console.log(<span class="string">"这是匿名函数的自执行的第二种写法，结果为："</span>+(n1+n2))</span><br><span class="line">   &#125;(10,100))//110</span><br><span class="line"></span><br><span class="line">   (<span class="keyword">function</span> start(n1,n2)&#123;</span><br><span class="line">       console.log(<span class="string">"这是函数声明方式的自执行的第二种写法，结果为："</span>+(n1+n2))</span><br><span class="line">   &#125;(10,100))//110</span><br></pre></td></tr></table></figure></p>
+<p>3.匿名函数<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	alert(1)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/12/function/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-loop" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -644,7 +710,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>react<br>react native<br>flutter<br>nginx<br>loadsh<br>设计模式<br>网络的7层协议</p>
+        <p>设计模式</p>
+<p>react<br>react native<br>网络的7层协议<br>flutter<br>nginx<br>loadsh</p>
 
       
 
@@ -725,69 +792,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/01/09/vueLifeCycle/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-symbol" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/08/symbol/">ES6新增Symbol类型</a>
-    </h1>
-  
-
-        
-        <a href="/2019/01/08/symbol/" class="archive-article-date">
-  	<time datetime="2019-01-08T02:18:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>ES5中，对象的属性名都是字符串。<br>ES6 引入了一种新的原始数据类型Symbol，表示独一无二的值。它是 JavaScript 语言的第七种数据类型，前六种是：undefined、null、布尔值（Boolean）、字符串（String）、数值（Number）、对象（Object）。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/01/08/symbol/">展开全文 >></a>
         </p>
       
 
