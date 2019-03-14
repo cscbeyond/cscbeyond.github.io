@@ -145,72 +145,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-defineProperty" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/28/defineProperty/">关于defineProperty</a>
-    </h1>
-  
-
-        
-        <a href="/2018/12/28/defineProperty/" class="archive-article-date">
-  	<time datetime="2018-12-28T06:35:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>我是在了解vue原理的时候看到的这个源于ES5的属性,所以想深入理解一下<br>对象是对个键值对的集合。每个属性对应任意类型的值<br>定义对象最常用的方法是使用构造函数或字面量的形式<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var obj = new Object();</span><br><span class="line">obj.name = <span class="string">'zhangsan'</span>;</span><br><span class="line">obj.say = <span class="function"><span class="title">function</span></span>()&#123;&#125;;</span><br></pre></td></tr></table></figure></p>
-<p>#我们还可以使用Object.defineProperty定义新属性或修改原有的属性。</p>
-        
-          <a class="article-more-a" href="/2018/12/28/defineProperty/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/12/28/defineProperty/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-urlParams" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -752,7 +686,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/03/es6/">es6</a>
+      <a class="article-title" href="/2018/12/03/es6/">es6学习笔记</a>
     </h1>
   
 
@@ -766,13 +700,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>解构赋值：<br>左右两边结构格式要一致<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> [a,b,c] = [12,[5,6]];</span><br><span class="line">console.log(a,b,c)</span><br></pre></td></tr></table></figure></p>
-<p>结构的时候可以给默认值</p>
+<p>解构的时候可以给默认值</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> [a,b,c=默认值] = [<span class="string">'aa'</span>,<span class="string">'bb'</span>]</span><br></pre></td></tr></table></figure>
-<p>字符串的查找<br>includes<br>str.indexOf(要找的东西)  返回的是位置<br>str.indexOf(要找的东西)  返回的是true/false<br>startsWith<br>endsWith<br>let str = ‘222ww.ll–’;<br>console.log(str.repeat(3));</p>
+<h1 id="字符串新增方法"><a href="#字符串新增方法" class="headerlink" title="字符串新增方法"></a>字符串新增方法</h1><p>includes<br>str.indexOf(要找的东西)  返回的是位置<br>str.indexOf(要找的东西)  返回的是true/false<br>startsWith<br>endsWith<br>let str = ‘222ww.ll–’;<br>console.log(str.repeat(3));</p>
 <p>参数可以给默认值</p>
 <p>函数的参数默认是已经定义的<br>不能再使用let const声明</p>
 <p>扩展运算符<br>…</p>
-<p>在es6之前，js中的模块没有官方规范，民间自定的，客户端两种—-AMD和CMD，服务端一种—-CommonJS<br>es6中对模块进行了规范<br>引入模块使用import<br>导出模块用export<br>import 和 export<br>首先我们定义一个模块：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// a.js</span><br><span class="line">const a = 23;</span><br><span class="line"><span class="built_in">export</span> &#123;a&#125;;</span><br><span class="line"><span class="built_in">export</span> const b = 24;</span><br></pre></td></tr></table></figure></p>
+<h1 id="Number新增的方法：（实际上就是把以前存在的方法新增到了Number上）"><a href="#Number新增的方法：（实际上就是把以前存在的方法新增到了Number上）" class="headerlink" title="Number新增的方法：（实际上就是把以前存在的方法新增到了Number上）"></a>Number新增的方法：（实际上就是把以前存在的方法新增到了Number上）</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//新增 </span><br><span class="line">isFinite()  	//判断是不是数字</span><br><span class="line">isInteger()		//判断是不是整数</span><br><span class="line">//原有</span><br><span class="line">isNaN()  		//判断是否是NaN</span><br><span class="line">parseInt()		//向上取整</span><br><span class="line">parseFloat()	//向下取整</span><br></pre></td></tr></table></figure>
+<h1 id="新增数据类型"><a href="#新增数据类型" class="headerlink" title="新增数据类型"></a>新增数据类型</h1><p>ES5中，对象的属性名都是字符串。<br>ES6 引入了一种新的原始数据类型Symbol，表示独一无二的值。它是 JavaScript 语言的第七种数据类型，前六种是：undefined、null、布尔值（Boolean）、字符串（String）、数值（Number）、对象（Object）。</p>
+<p>#<br>在es6之前，js中的模块没有官方规范，民间自定的，客户端两种—-AMD和CMD，服务端一种—-CommonJS<br>es6中对模块进行了规范<br>引入模块使用import<br>导出模块用export<br>import 和 export<br>首先我们定义一个模块：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// a.js</span><br><span class="line">const a = 23;</span><br><span class="line"><span class="built_in">export</span> &#123;a&#125;;</span><br><span class="line"><span class="built_in">export</span> const b = 24;</span><br></pre></td></tr></table></figure></p>
 <p>在导出时，可以导出多个。<br>引入：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import &#123; a, b &#125; from <span class="string">'./a.js'</span>;</span><br><span class="line">console.log(a);  //23</span><br><span class="line">console.log(b);  //24</span><br></pre></td></tr></table></figure></p>
 <p>还有其他情况</p>
 <p>定义一个模块：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const a = 12;</span><br><span class="line"><span class="built_in">export</span> default a</span><br></pre></td></tr></table></figure></p>
@@ -795,6 +731,69 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/12/03/es6/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-继承" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/03/继承/">继承</a>
+    </h1>
+  
+
+        
+        <a href="/2018/12/03/继承/" class="archive-article-date">
+  	<time datetime="2018-12-03T03:07:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>原型对象主要用来继承，eg：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var Person = <span class="keyword">function</span>(name)&#123;</span><br><span class="line">	this.name = name; </span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.getName = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	<span class="built_in">return</span> this.name;</span><br><span class="line">&#125;</span><br><span class="line">var person1 = new Person(<span class="string">'chen'</span>);</span><br><span class="line">person1.getName(); // chen</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/12/03/继承/">展开全文 >></a>
         </p>
       
 
