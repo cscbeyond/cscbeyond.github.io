@@ -145,6 +145,72 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-defineProperty" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/28/defineProperty/">关于defineProperty</a>
+    </h1>
+  
+
+        
+        <a href="/2018/12/28/defineProperty/" class="archive-article-date">
+  	<time datetime="2018-12-28T06:35:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>我是在了解vue原理的时候看到的这个源于ES5的属性,所以想深入理解一下<br>对象是对个键值对的集合。每个属性对应任意类型的值<br>定义对象最常用的方法是使用构造函数或字面量的形式<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var obj = new Object();</span><br><span class="line">obj.name = <span class="string">'zhangsan'</span>;</span><br><span class="line">obj.say = <span class="function"><span class="title">function</span></span>()&#123;&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>#我们还可以使用Object.defineProperty定义新属性或修改原有的属性。</p>
+        
+          <a class="article-more-a" href="/2018/12/28/defineProperty/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/12/28/defineProperty/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-urlParams" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -718,7 +784,13 @@
 <p>3.当用export { name } 时，就用import { name }导入（记得带上大括号）</p>
 <p>4.当一个文件里，既有一个export default people, 又有多个export name 或者 export age时，导入就用 import people, { name, age } </p>
 <p>5.当一个文件里出现n多个 export 导出很多模块，导入时除了一个一个导入，也可以用import * as example</p>
-
+<h1 id="Set和Map数据结构"><a href="#Set和Map数据结构" class="headerlink" title="Set和Map数据结构"></a>Set和Map数据结构</h1><h2 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const s = new Set();</span><br><span class="line">[2,3,4,5,1,2,3,4].forEach(x=&gt;s.add(x));</span><br><span class="line"><span class="keyword">for</span>(<span class="built_in">let</span> i of s)&#123;</span><br><span class="line">	console.log(i);</span><br><span class="line">&#125;</span><br><span class="line">//2 3 4 5 1</span><br></pre></td></tr></table></figure>
+<p>Set有自动去重作用<br>存在的方法：<br>add();          添加元素<br>delete();        删除某个值<br>has();            查找判断是否有某个值 返回布尔值<br>clear();        清除所有成员<br>属性：<br>size();            返回元素个数</p>
+<p>Array.from方法可以将Set结构转为数组<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var items = new Set([1, 2, 3, 4, 5]);</span><br><span class="line">var array = Array.from(items);</span><br></pre></td></tr></table></figure></p>
+<p>去重：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> dedupe(array) &#123;</span><br><span class="line">  <span class="built_in">return</span> Array.from(new Set(array));</span><br><span class="line">&#125;</span><br><span class="line">dedupe([1, 1, 2, 3]) // [1, 2, 3]</span><br></pre></td></tr></table></figure></p>
+<p>遍历操作<br>Set结构的实例有四个遍历方法，可以用于遍历成员。</p>
+<p>keys()：返回键名的遍历器<br>values()：返回键值的遍历器<br>entries()：返回键值对的遍历器<br>forEach()：使用回调函数遍历每个成员</p>
+<h1 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h1>
       
 
       
@@ -731,69 +803,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/12/03/es6/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-继承" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/03/继承/">继承</a>
-    </h1>
-  
-
-        
-        <a href="/2018/12/03/继承/" class="archive-article-date">
-  	<time datetime="2018-12-03T03:07:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>原型对象主要用来继承，eg：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var Person = <span class="keyword">function</span>(name)&#123;</span><br><span class="line">	this.name = name; </span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.getName = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	<span class="built_in">return</span> this.name;</span><br><span class="line">&#125;</span><br><span class="line">var person1 = new Person(<span class="string">'chen'</span>);</span><br><span class="line">person1.getName(); // chen</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/12/03/继承/">展开全文 >></a>
         </p>
       
 

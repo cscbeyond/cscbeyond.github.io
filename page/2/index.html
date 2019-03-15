@@ -145,6 +145,73 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-vueLifeCycle" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/09/vueLifeCycle/">Vue生命周期</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/09/vueLifeCycle/" class="archive-article-date">
+  	<time datetime="2019-01-09T15:14:56.911Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-生命周期钩子"><a href="#1-生命周期钩子" class="headerlink" title="1. 生命周期钩子"></a>1. 生命周期钩子</h2><p>Vue有以下几个生命周期钩子：<br>1.beforeCreate<br>2.created<br>3.beforeMount<br>4.mounted<br>5.beforeUpdate<br>6.Update<br>7.beforeDestroy<br>8.destroyed</p>
+<hr>
+<p>1.beforeCreate:此时还没有创建出Vue实例，无法访问data中的数据<br>
+        
+          <a class="article-more-a" href="/2019/01/09/vueLifeCycle/#more">more >></a>
+        
+      
+
+      
+    </p></div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/01/09/vueLifeCycle/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-vue插件" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -228,7 +295,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>React中有类似Vue的ref特性，可以通过给react的组件添加一个ref=”xxx”，通过this.refs.xxx,就可以所引到这个react组件，但此时并不是真正的dom元素。React提供了获取dom元素的方法： React.findDOMNode(this.refs.xxx);<br>
+        <p>在react中，数据是单向的，需要我们手动去setState<br>给数组添加元素的时候，注意点：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//错误写法</span><br><span class="line">this.setState(&#123;</span><br><span class="line">	list: this.state.list.push(item)</span><br><span class="line">&#125;)</span><br><span class="line">这是因为 push的返回值，不是数组，而是新数组的长度。</span><br><span class="line"></span><br><span class="line">//正确写法：</span><br><span class="line">this.setState(&#123;</span><br><span class="line">	lsit:this.state.list.concat(item)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>在react中，this的指向要多注意，事件要在构造函数中使用bind纠正this指向，指向当前实例。之所以不适用call和apply是因为这两者会执行函数，而bind不会执行函数，并且在执行的时候矫正this。<br>
         
           <a class="article-more-a" href="/2019/01/05/react/#more">more >></a>
         
@@ -701,72 +769,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/12/28/instanceof-hasOwnProperty/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-defineProperty" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/28/defineProperty/">关于defineProperty</a>
-    </h1>
-  
-
-        
-        <a href="/2018/12/28/defineProperty/" class="archive-article-date">
-  	<time datetime="2018-12-28T06:35:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>我是在了解vue原理的时候看到的这个源于ES5的属性,所以想深入理解一下<br>对象是对个键值对的集合。每个属性对应任意类型的值<br>定义对象最常用的方法是使用构造函数或字面量的形式<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var obj = new Object();</span><br><span class="line">obj.name = <span class="string">'zhangsan'</span>;</span><br><span class="line">obj.say = <span class="function"><span class="title">function</span></span>()&#123;&#125;;</span><br></pre></td></tr></table></figure></p>
-<p>#我们还可以使用Object.defineProperty定义新属性或修改原有的属性。</p>
-        
-          <a class="article-more-a" href="/2018/12/28/defineProperty/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/12/28/defineProperty/">展开全文 >></a>
         </p>
       
 
