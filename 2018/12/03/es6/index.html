@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="码农阿成的个人博客">
 <meta property="og:description" content="解构赋值：左右两边结构格式要一致12let [a,b,c] = [12,[5,6]];console.log(a,b,c) 解构的时候可以给默认值 1let [a,b,c=默认值] = [&apos;aa&apos;,&apos;bb&apos;] 字符串新增方法includesstr.indexOf(要找的东西)  返回的是位置str.indexOf(要找的东西)  返回的是true/falsestartsWithendsWithle">
 <meta property="og:locale" content="Chinese/English">
-<meta property="og:updated_time" content="2019-03-14T07:49:30.106Z">
+<meta property="og:updated_time" content="2019-03-17T16:20:22.571Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="es6学习笔记">
 <meta name="twitter:description" content="解构赋值：左右两边结构格式要一致12let [a,b,c] = [12,[5,6]];console.log(a,b,c) 解构的时候可以给默认值 1let [a,b,c=默认值] = [&apos;aa&apos;,&apos;bb&apos;] 字符串新增方法includesstr.indexOf(要找的东西)  返回的是位置str.indexOf(要找的东西)  返回的是true/falsestartsWithendsWithle">
@@ -189,6 +189,7 @@
 <p>去重：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> dedupe(array) &#123;</span><br><span class="line">  <span class="built_in">return</span> Array.from(new Set(array));</span><br><span class="line">&#125;</span><br><span class="line">dedupe([1, 1, 2, 3]) // [1, 2, 3]</span><br></pre></td></tr></table></figure></p>
 <p>遍历操作<br>Set结构的实例有四个遍历方法，可以用于遍历成员。</p>
 <p>keys()：返回键名的遍历器<br>values()：返回键值的遍历器<br>entries()：返回键值对的遍历器<br>forEach()：使用回调函数遍历每个成员</p>
+<h1 id="Iterator（遍历器）"><a href="#Iterator（遍历器）" class="headerlink" title="Iterator（遍历器）"></a>Iterator（遍历器）</h1><p>js，原有的表示集合的数据结构，主要是Array和Object，ES6新增了两个，Map和Set。<br>Iterator的作用有三个：<br>1.为各种数据结构，提供一个统一的、简便的访问接口<br>2.是数据结构的成员能够按照某种次序排列<br>3.ES6创造了一种新的遍历命令： for…of循环，Iterator主要提供for…of消费<br>（阮大神写的）</p>
 <h1 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h1>
       
 
