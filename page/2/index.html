@@ -145,6 +145,70 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-readyToStudy" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/11/readyToStudy/">准备深入学习的东西</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/11/readyToStudy/" class="archive-article-date">
+  	<time datetime="2019-01-11T08:16:17.574Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>设计模式</p>
+<p>react<br>react native<br>网络的7层协议<br>flutter<br>nginx<br>loadsh</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/01/11/readyToStudy/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-vueLifeCycle" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -704,71 +768,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/12/28/this/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-instanceof-hasOwnProperty" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/28/instanceof-hasOwnProperty/">js中 判断对象中是否有某属性 的常用方法</a>
-    </h1>
-  
-
-        
-        <a href="/2018/12/28/instanceof-hasOwnProperty/" class="archive-article-date">
-  	<time datetime="2018-12-28T09:02:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="根据-Obj-x-undefined-的返回值-来判断Obj是否有x属性"><a href="#根据-Obj-x-undefined-的返回值-来判断Obj是否有x属性" class="headerlink" title="根据 Obj.x !== undefined 的返回值 来判断Obj是否有x属性"></a>根据 Obj.x !== undefined 的返回值 来判断Obj是否有x属性</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// 创建对象</span><br><span class="line"><span class="built_in">let</span> <span class="built_in">test</span> = &#123;name : <span class="string">'lei'</span>&#125;</span><br><span class="line">// 获取对象的自身的属性</span><br><span class="line">test.name   //<span class="string">"lei"</span></span><br><span class="line"><span class="built_in">test</span>[<span class="string">"name"</span>]   //<span class="string">"lei"</span></span><br><span class="line"> </span><br><span class="line">// 获取不存在的属性</span><br><span class="line">test.age    //undefined</span><br><span class="line"> </span><br><span class="line">// 获取原型上的属性</span><br><span class="line"><span class="built_in">test</span>[<span class="string">"toString"</span>]  //<span class="function"><span class="title">toString</span></span>() &#123; [native code] &#125;</span><br><span class="line"> </span><br><span class="line">// 新增一个值为undefined的属性</span><br><span class="line">test.un = undefined</span><br><span class="line"> </span><br><span class="line">test.un    //undefined 不能用在属性值存在，但可能为 undefined的场景</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2018/12/28/instanceof-hasOwnProperty/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/12/28/instanceof-hasOwnProperty/">展开全文 >></a>
         </p>
       
 
