@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="码农阿成的个人博客">
 <meta property="og:description" content="this永远指向的是最后调用它的对象，也就是看它执行的时候是谁调用的谁调用，就指向谁，但以下情况特殊：情况1：如果一个函数中有this，但是它没有被上一级的对象所调用，那么this指向的就是window，           这里需要说明的是在js的严格模式中this指向的不是window。">
 <meta property="og:locale" content="Chinese/English">
-<meta property="og:updated_time" content="2019-03-13T02:05:29.904Z">
+<meta property="og:updated_time" content="2019-03-19T10:28:44.467Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于this的一点理解">
 <meta name="twitter:description" content="this永远指向的是最后调用它的对象，也就是看它执行的时候是谁调用的谁调用，就指向谁，但以下情况特殊：情况1：如果一个函数中有this，但是它没有被上一级的对象所调用，那么this指向的就是window，           这里需要说明的是在js的严格模式中this指向的不是window。">
@@ -168,6 +168,7 @@
 <p>情况2：如果一个函数中有this，这个函数有被上一级的对象所调用，那么this指向的就是上一级的对象。</p>
 <p>情况3：如果一个函数中有this，这个函数中包含多个对象，尽管这个函数是被最外层的对象所调用，this指向的也只是它上一级的对象</p>
 <p>还可以使用call apply bind改变指向<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//	call的使用方式</span><br><span class="line"><span class="keyword">function</span> add(c,d)&#123;</span><br><span class="line">	<span class="built_in">return</span> this.a + this.b + c + d;</span><br><span class="line">&#125;</span><br><span class="line">const obj = &#123;</span><br><span class="line">	a: 1,</span><br><span class="line">	b: 2</span><br><span class="line">&#125;</span><br><span class="line">console.log(add.call(obj,4,5)); //12</span><br></pre></td></tr></table></figure></p>
+<p>如果很难理解，那就记住，()在哪，this就是谁。()代表调用==&gt;在哪调用，this就是谁。</p>
 
       
 
