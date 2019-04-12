@@ -145,6 +145,72 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-font" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/03/font/">常用的字体图标库</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/03/font/" class="archive-article-date">
+  	<time datetime="2019-01-03T09:18:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-阿里巴巴矢量图标"><a href="#1-阿里巴巴矢量图标" class="headerlink" title="1.阿里巴巴矢量图标"></a>1.阿里巴巴矢量图标</h2><p><a href="https://www.iconfont.cn/" target="_blank" rel="noopener">https://www.iconfont.cn/</a><br>这个也是我一直都在使用的，图标很齐全，并且支持在线将图标字体转成图片，颜色自定义。<br>协同合作也很方便<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;i class=<span class="string">"iconfont icon-arrow"</span>&gt;  //iconfont是固定写法，第二个类名就是你想用的图标</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-Font-Awesome"><a href="#2-Font-Awesome" class="headerlink" title="2.Font Awesome"></a>2.Font Awesome</h2>
+        
+          <a class="article-more-a" href="/2019/01/03/font/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/01/03/font/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-this" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -706,75 +772,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/12/23/document&window/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-mobile" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/20/mobile/">移动端遇到的各种小问题</a>
-    </h1>
-  
-
-        
-        <a href="/2018/12/20/mobile/" class="archive-article-date">
-  	<time datetime="2018-12-20T11:13:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-webkit-overflow-scrolling: touch</span><br></pre></td></tr></table></figure>
-<p>WebKit私有的属性“-webkit-overflow-scrolling: touch”（允许独立的滚动区域和触摸回弹）</p>
-<p>ios移动端输入内容，软键盘弹出，页面内容整体上移。<br>但是键盘收起，页面内容不下滑。<br>安卓没问题。</p>
-<p>用一下代码解决：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'input,textarea'</span>).on(<span class="string">'blur'</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	window.scroll(0,0);</span><br><span class="line">&#125;);</span><br><span class="line">$(<span class="string">'select'</span>).on(<span class="string">'change'</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	window.scroll(0,0);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>原理就是输入框失去光标，手动控制一下页面滚动就恢复正常了。<br>本以为如果页面很长，输入框很多 会出问题，因为会滚动到最上顶，但实际情况并没有。<br>疑惑中。</p>
-<p>事件触发顺序：<br>参考这个道友的博客：<br><a href="https://blog.csdn.net/u013034014/article/details/55668328" target="_blank" rel="noopener">https://blog.csdn.net/u013034014/article/details/55668328</a></p>
-<p>明天自己写一下。<br>click<br>touch<br>mouse<br>这三个事件</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/12/20/mobile/">展开全文 >></a>
         </p>
       
 

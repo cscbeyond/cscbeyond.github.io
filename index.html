@@ -145,6 +145,73 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-什么是异步" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/20/什么是异步/">什么是异步</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/20/什么是异步/" class="archive-article-date">
+  	<time datetime="2019-03-20T06:47:34.660Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">区别：同步会阻塞代码，异步不会。</span><br><span class="line">eg：alert是同步，setTimeout是异步。</span><br><span class="line"></span><br><span class="line">//异步</span><br><span class="line">console.log(100);</span><br><span class="line">setTimeout(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	console.log(200);</span><br><span class="line">&#125;)</span><br><span class="line">console.log(300);</span><br><span class="line">//	100		300		200</span><br></pre></td></tr></table></figure>
+<p>执行第一行，打印100<br>执行setTimeout后，传入setTimeout的函数会被暂存起来，不会立即执行（单线程的特点，不能同时干两件事）<br>执行最后一行，打印300<br>等所有程序执行完，处于空闲状态时，会立马看有没有暂存起来的要执行<br>发现暂存起来的setTimeout中的函数，无需等待时间，立即执行。</p>
+<p>异步和同步最大区别是 是否有阻塞，js是单线程的。<br>
+        
+          <a class="article-more-a" href="/2019/03/20/什么是异步/#more">more >></a>
+        
+      
+
+      
+    </p></div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/20/什么是异步/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-作用域链" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -695,71 +762,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/02/03/database/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-interview" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/11/interview/">面试中常见问题</a>
-    </h1>
-  
-
-        
-        <a href="/2019/01/11/interview/" class="archive-article-date">
-  	<time datetime="2019-01-11T09:00:27.030Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="html："><a href="#html：" class="headerlink" title="html："></a>html：</h4><p>常用标签按块级和行内元素区分<br>img的alt标签是 在图片加载失败时才会显示<br>
-        
-          <a class="article-more-a" href="/2019/01/11/interview/#more">more >></a>
-        
-      
-
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/01/11/interview/">展开全文 >></a>
         </p>
       
 
