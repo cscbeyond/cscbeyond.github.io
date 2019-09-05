@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/cscbeyond/cscbeyond.github.io">
   <title>React学习笔记 | 码农阿成的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="码农阿成的个人博客">
 <meta property="og:description" content="在react中，数据是单向的，需要我们手动去setState给数组添加元素的时候，注意点：12345678910//错误写法this.setState(&amp;#123;	list: this.state.list.push(item)&amp;#125;)这是因为 push的返回值，不是数组，而是新数组的长度。//正确写法：this.setState(&amp;#123;	lsit:this.state.list.c">
 <meta property="og:locale" content="Chinese/English">
-<meta property="og:updated_time" content="2019-04-12T01:33:13.452Z">
+<meta property="og:updated_time" content="2019-04-15T16:24:29.853Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React学习笔记">
 <meta name="twitter:description" content="在react中，数据是单向的，需要我们手动去setState给数组添加元素的时候，注意点：12345678910//错误写法this.setState(&amp;#123;	list: this.state.list.push(item)&amp;#125;)这是因为 push的返回值，不是数组，而是新数组的长度。//正确写法：this.setState(&amp;#123;	lsit:this.state.list.c">
@@ -37,7 +37,7 @@
   
 
 </head>
-</html>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -144,7 +144,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-react" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-react" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -168,7 +168,13 @@
 <p>在react中，this的指向要多注意，事件要在构造函数中使用bind纠正this指向，指向当前实例。之所以不适用call和apply是因为这两者会执行函数，而bind不会执行函数，并且在执行的时候矫正this。<br><a id="more"></a><br>React中有类似Vue的ref特性，可以通过给react的组件添加一个ref=”xxx”，通过<br>this.refs.xxx,就可以所引到这个react组件，但此时并不是真正的dom元素。React提供了获取dom元素的方法： React.findDOMNode(this.refs.xxx);</p>
 <hr>
 <p>react的每个组件，是需要使用标签在最外层包裹的，但是在我们使用flex布局时，有时候会因为多出来一个标签导致布局混乱。react的解决办法是：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; Component ,Fragment&#125; from <span class="string">'react'</span>;</span><br><span class="line">class TodoList extends Component &#123;//es6写法</span><br><span class="line">	<span class="function"><span class="title">render</span></span>()&#123;</span><br><span class="line">		<span class="built_in">return</span>(</span><br><span class="line">			&lt;Fragment&gt;</span><br><span class="line">				&lt;input placeholder=<span class="string">"请输入计划"</span>/&gt; &lt;button&gt;add&lt;/button&gt;</span><br><span class="line">				&lt;ul&gt;</span><br><span class="line">					&lt;li&gt;study javascript&lt;/li&gt;</span><br><span class="line">					&lt;li&gt;study html&lt;/li&gt;</span><br><span class="line">					&lt;li&gt;study css&lt;/li&gt;</span><br><span class="line">					&lt;li&gt;study java&lt;/li&gt;</span><br><span class="line">				&lt;/ul&gt;</span><br><span class="line">			&lt;/Fragment&gt;</span><br><span class="line">		)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">export</span> default TodoList</span><br></pre></td></tr></table></figure></p>
-
+<p>在render函数里绑定事件，应该使用bind去矫正this指向，并且bind可以填参数<br>eg:onClick = {this.handleClick.bind(this,item)}<br>更优的做法是在constructor里面<br>this.handleClick = this.handleClick.bind(this)<br>react的immutable概念，让我们不能直接修改state，跟性能优化有关系。可以先拷贝一份做处理，然后this.setState进行赋值。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const value = e.target.value;</span><br><span class="line">this.setState(()=&gt;&#123;</span><br><span class="line">	<span class="built_in">return</span> &#123;</span><br><span class="line">		inputValue: value</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br><span class="line">//写成函数，是异步的</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>react的注释方式：<br>{/<em>这里是注释</em>/}</p>
+<h2 id="在js里面表示-表达式，-接下来就是我们写注释的方式"><a href="#在js里面表示-表达式，-接下来就是我们写注释的方式" class="headerlink" title="{}在js里面表示 表达式， 接下来就是我们写注释的方式"></a>{}在js里面表示 表达式， 接下来就是我们写注释的方式</h2><p>{<br>    //这里是注释</p>
+<h2 id=""><a href="#" class="headerlink" title="}"></a>}</h2><p>输入框内容不转译</p>
+<h2 id="dangerouslySetInnerHTML-html-item"><a href="#dangerouslySetInnerHTML-html-item" class="headerlink" title="dangerouslySetInnerHTML = { {__html: item} }"></a>dangerouslySetInnerHTML = { {__html: item} }</h2><p>label 使用for的时候，换成 htmlFor</p>
+<h2 id="或者用另一种写法-用label把元素包起来"><a href="#或者用另一种写法-用label把元素包起来" class="headerlink" title="或者用另一种写法 用label把元素包起来"></a>或者用另一种写法 用label把元素包起来</h2>
       
 
       
@@ -402,7 +408,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
+            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:

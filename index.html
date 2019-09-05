@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/cscbeyond/cscbeyond.github.io">
   <title>码农阿成的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -36,7 +36,7 @@
   
 
 </head>
-</html>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -145,7 +145,203 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-什么是异步" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-js精度丢失问题的解决办法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/05/js精度丢失问题的解决办法/">封装函数解决js精度丢失问题</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/05/js精度丢失问题的解决办法/" class="archive-article-date">
+  	<time datetime="2019-09-05T15:52:09.954Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">    var calc = &#123;</span><br><span class="line">        /*</span><br><span class="line">        函数，加法函数，用来得到精确的加法结果  </span><br><span class="line">        说明：javascript的加法结果会有误差，在两个浮点数相加的时候会比较明显。这个函数返回较为精确的加法结果。</span><br><span class="line">        参数：arg1：第一个加数；arg2第二个加数；d要保留的小数位数（可以不传此参数，如果不传则不处理小数位数）</span><br><span class="line">        调用：Calc.Add(arg1,arg2,d)  </span><br><span class="line">        返回值：两数相加的结果</span><br><span class="line">        */</span><br><span class="line">        Add: <span class="keyword">function</span> (arg1, arg2) &#123;</span><br><span class="line">            arg1 = arg1.toString(), arg2 = arg2.toString();</span><br><span class="line">            var arg1Arr = arg1.split(<span class="string">"."</span>), arg2Arr = arg2.split(<span class="string">"."</span>), d1 = arg1Arr.length == 2 ? arg1Arr[1] : <span class="string">""</span>, d2 = arg2Arr.length == 2 ? arg2Arr[1] : <span class="string">""</span>;</span><br><span class="line">            var maxLen = Math.max(d1.length, d2.length);</span><br><span class="line">            var m = Math.pow(10, maxLen);</span><br><span class="line">            var result = Number(((arg1 * m + arg2 * m) / m).toFixed(maxLen));</span><br><span class="line">            var d = arguments[2];</span><br><span class="line">            <span class="built_in">return</span> typeof d === <span class="string">"number"</span> ? Number((result).toFixed(d)) : result;</span><br><span class="line">        &#125;,</span><br><span class="line">        /*</span><br><span class="line">        函数：减法函数，用来得到精确的减法结果  </span><br><span class="line">        说明：函数返回较为精确的减法结果。 </span><br><span class="line">        参数：arg1：第一个加数；arg2第二个加数；d要保留的小数位数（可以不传此参数，如果不传则不处理小数位数</span><br><span class="line">        调用：Calc.Sub(arg1,arg2)  </span><br><span class="line">        返回值：两数相减的结果</span><br><span class="line">        */</span><br><span class="line">        Sub: <span class="keyword">function</span> (arg1, arg2) &#123;</span><br><span class="line">            <span class="built_in">return</span> Calc.Add(arg1, -Number(arg2), arguments[2]);</span><br><span class="line">        &#125;,</span><br><span class="line">        /*</span><br><span class="line">        函数：乘法函数，用来得到精确的乘法结果  </span><br><span class="line">        说明：函数返回较为精确的乘法结果。 </span><br><span class="line">        参数：arg1：第一个乘数；arg2第二个乘数；d要保留的小数位数（可以不传此参数，如果不传则不处理小数位数)</span><br><span class="line">        调用：Calc.Mul(arg1,arg2)  </span><br><span class="line">        返回值：两数相乘的结果</span><br><span class="line">        */</span><br><span class="line">        Mul: <span class="keyword">function</span> (arg1, arg2) &#123;</span><br><span class="line">            var r1 = arg1.toString(), r2 = arg2.toString(), m, resultVal, d = arguments[2];</span><br><span class="line">            m = (r1.split(<span class="string">"."</span>)[1] ? r1.split(<span class="string">"."</span>)[1].length : 0) + (r2.split(<span class="string">"."</span>)[1] ? r2.split(<span class="string">"."</span>)[1].length : 0);</span><br><span class="line">            resultVal = Number(r1.replace(<span class="string">"."</span>, <span class="string">""</span>)) * Number(r2.replace(<span class="string">"."</span>, <span class="string">""</span>)) / Math.pow(10, m);</span><br><span class="line">            <span class="built_in">return</span> typeof d !== <span class="string">"number"</span> ? Number(resultVal) : Number(resultVal.toFixed(parseInt(d)));</span><br><span class="line">        &#125;,</span><br><span class="line">        /*</span><br><span class="line">        函数：除法函数，用来得到精确的除法结果  </span><br><span class="line">        说明：函数返回较为精确的除法结果。 </span><br><span class="line">        参数：arg1：除数；arg2被除数；d要保留的小数位数（可以不传此参数，如果不传则不处理小数位数)</span><br><span class="line">        调用：Calc.Div(arg1,arg2)  </span><br><span class="line">        返回值：arg1除于arg2的结果</span><br><span class="line">        */</span><br><span class="line">        Div: <span class="keyword">function</span> (arg1, arg2) &#123;</span><br><span class="line">            var r1 = arg1.toString(), r2 = arg2.toString(), m, resultVal, d = arguments[2];</span><br><span class="line">            m = (r2.split(<span class="string">"."</span>)[1] ? r2.split(<span class="string">"."</span>)[1].length : 0) - (r1.split(<span class="string">"."</span>)[1] ? r1.split(<span class="string">"."</span>)[1].length : 0);</span><br><span class="line">            resultVal = Number(r1.replace(<span class="string">"."</span>, <span class="string">""</span>)) / Number(r2.replace(<span class="string">"."</span>, <span class="string">""</span>)) * Math.pow(10, m);</span><br><span class="line">            <span class="built_in">return</span> typeof d !== <span class="string">"number"</span> ? Number(resultVal) : Number(resultVal.toFixed(parseInt(d)));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    window.Calc = calc;</span><br><span class="line">&#125;());</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/05/js精度丢失问题的解决办法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-不为人知的webAPI" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/24/不为人知的webAPI/">那些不为人知的web api</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/24/不为人知的webAPI/" class="archive-article-date">
+  	<time datetime="2019-08-23T17:17:06.324Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="URLSearchParams"><a href="#URLSearchParams" class="headerlink" title="URLSearchParams"></a>URLSearchParams</h3><p>假设浏览器的url参数是 “?name=蜘蛛侠&amp;age=16”<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">new URLSearchParams(location.search).get(<span class="string">"name"</span>); // 蜘蛛侠</span><br></pre></td></tr></table></figure></p>
+<h3 id="getBoundingClientRect"><a href="#getBoundingClientRect" class="headerlink" title="getBoundingClientRect"></a>getBoundingClientRect</h3><p>可以获取指定元素在当前页面的空间信息：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">elem.getBoundingClientRect();</span><br><span class="line"></span><br><span class="line">// 返回</span><br><span class="line">&#123;</span><br><span class="line">  x: 604.875,</span><br><span class="line">  y: 1312,</span><br><span class="line">  width: 701.625,</span><br><span class="line">  height: 31,</span><br><span class="line">  top: 1312,</span><br><span class="line">  right: 1306.5,</span><br><span class="line">  bottom: 1343,</span><br><span class="line">  left: 604.875</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>注意：top是距离文档顶部的距离，y则是距离可视窗口（浏览器屏幕）的顶部距离，如果浏览器滚动，top值不变，y值会变</p>
+<h3 id="contains"><a href="#contains" class="headerlink" title="contains"></a>contains</h3><p>可以判断指定元素是否包含了指定的子元素：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">  &lt;p&gt;&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">document.querySelector(<span class="string">"div"</span>).contains(document.querySelector(<span class="string">"p"</span>)); // <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
+        
+          <a class="article-more-a" href="/2019/08/24/不为人知的webAPI/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/24/不为人知的webAPI/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-浏览器的渲染机制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/24/浏览器的渲染机制/">浏览器的渲染机制</a>
+    </h1>
+  
+
+        
+        <a href="/2019/06/24/浏览器的渲染机制/" class="archive-article-date">
+  	<time datetime="2019-06-24T06:50:44.304Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>要对程序进行性能优化，就要了解浏览器的运行机制。</p>
+<p>在浏览器中，存在<br>DOM 浏览器将html解析成的树形结构<br>CSSOM 浏览器将css解析成的树形结构<br>Render Tree DOM和CSSOM合并后 生成了Render Tree<br>Layout 计算出Render Tree每个节点的具体位置<br>Painting 通过显卡将Layout后的节点呈现在屏幕上</p>
+<p>浏览器获得html后，从上到下加载，过程中解析并渲染</p>
+<p>获取图片等资源是异步的，不会阻止<br>但是执行js时 会阻塞html的渲染，因为js可能会对dom进行修改，如果是同步进行，将会出现问题。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/06/24/浏览器的渲染机制/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-什么是异步" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -174,7 +370,7 @@
       
 
       
-    </p></div>
+    </div>
     <div class="article-info article-info-index">
       
       
@@ -212,7 +408,7 @@
 
 
   
-    <article id="post-作用域链" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-作用域链" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -275,7 +471,7 @@
 
 
   
-    <article id="post-高程二刷笔记" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-高程二刷笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -338,7 +534,7 @@
 
 
   
-    <article id="post-对面向对象的理解" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-对面向对象的理解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -366,7 +562,7 @@
       
 
       
-    </p></div>
+    </div>
     <div class="article-info article-info-index">
       
       
@@ -404,7 +600,7 @@
 
 
   
-    <article id="post-function" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-function" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -470,7 +666,7 @@
 
 
   
-    <article id="post-loop" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-loop" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -535,7 +731,7 @@
 
 
   
-    <article id="post-数组和字符串常用方法" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-数组和字符串常用方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -601,199 +797,9 @@
 
 
   
-    <article id="post-跨域的几种方式及实现" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/23/跨域的几种方式及实现/">跨域的几种方式及实现</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/23/跨域的几种方式及实现/" class="archive-article-date">
-  	<time datetime="2019-02-23T07:51:00.836Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>引自：<a href="https://www.cnblogs.com/smiler/p/5829621.html" target="_blank" rel="noopener">https://www.cnblogs.com/smiler/p/5829621.html</a></p>
-<p>综合对比以上五种跨域方式，cros方式最佳。但也要根据不同使用场景进行实现。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/23/跨域的几种方式及实现/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-设计模式" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/23/设计模式/">设计模式</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/23/设计模式/" class="archive-article-date">
-  	<time datetime="2019-02-23T07:29:41.803Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="23种设计模式"><a href="#23种设计模式" class="headerlink" title="23种设计模式"></a>23种设计模式</h4><p>总体来说设计模式分为三大类：<br>创建型模式，共五种：工厂方法模式、抽象工厂模式、单例模式、建造者模式、原型模式。<br>结构型模式，共七种：适配器模式、装饰器模式、代理模式、外观模式、桥接模式、组合模式、享元模式。<br>行为型模式，共十一种：策略模式、模板方法模式、观察者模式、迭代子模式、责任链模式、命令模式、备忘录模式、状态模式、访问者模式、中介者模式、解释器模式。<br>Not the end</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/23/设计模式/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-database" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/03/database/">数据库基础</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/03/database/" class="archive-article-date">
-  	<time datetime="2019-02-03T02:52:22.881Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>还需要继续整理、学习<br>Not the end<br>mongodb对数据的操作大部分都在内存中。但mongodb并不是单纯的内存数据库。<br>相反，redis就是一个不折不扣的内存数据库了，mysql一个不折不扣的硬盘数据库。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/03/database/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -892,7 +898,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
+            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:

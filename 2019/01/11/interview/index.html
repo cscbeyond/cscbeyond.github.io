@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/cscbeyond/cscbeyond.github.io">
   <title>面试中常见问题 | 码农阿成的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="码农阿成的个人博客">
 <meta property="og:description" content="html：常用标签按块级和行内元素区分img的alt标签是 在图片加载失败时才会显示">
 <meta property="og:locale" content="Chinese/English">
-<meta property="og:updated_time" content="2019-03-17T16:28:32.633Z">
+<meta property="og:updated_time" content="2019-06-24T06:32:30.637Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试中常见问题">
 <meta name="twitter:description" content="html：常用标签按块级和行内元素区分img的alt标签是 在图片加载失败时才会显示">
@@ -37,7 +37,7 @@
   
 
 </head>
-</html>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -144,7 +144,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-interview" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-interview" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -176,6 +176,8 @@
 <p>js中有六种数据类型，包括五种基本数据类型（Number,String,Boolean,Undefined,Null）,和一种复杂数据类型（Object）。</p>
 <p>typeof：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"> // 基本数据类型</span><br><span class="line">// number类型</span><br><span class="line">var num = 1;</span><br><span class="line">console.log(typeof num);//返回的是number</span><br><span class="line">// string 类型</span><br><span class="line">var str = <span class="string">'jack'</span>;</span><br><span class="line">console.log(typeof str);//返回的是string</span><br><span class="line">// boolean类型</span><br><span class="line">var boo =<span class="literal">true</span>;</span><br><span class="line">console.log(typeof boo);//返回的是boolean</span><br><span class="line">// undefined类型</span><br><span class="line">var und ;</span><br><span class="line">console.log(typeof und);//返回的是undefined</span><br><span class="line">// null类型</span><br><span class="line">var nul =null;</span><br><span class="line">console.log(nul); //返回的是null</span><br><span class="line"></span><br><span class="line">// 可以得出：基本数据类型返回的是自己对应的类型</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 复杂数据类型</span><br><span class="line">// Array类型</span><br><span class="line">var arr = new Array();</span><br><span class="line">console.log(typeof arr); //返回的是object </span><br><span class="line">// <span class="keyword">function</span>类型</span><br><span class="line">var fn = <span class="function"><span class="title">function</span></span>()&#123;&#125;;</span><br><span class="line">console.log(typeof fn); //返回的是<span class="keyword">function</span></span><br><span class="line">// Object类型</span><br><span class="line">var  obj = new Object();</span><br><span class="line">console.log(typeof obj); //返回的是object</span><br><span class="line">// 字面量的数组</span><br><span class="line">var arr2 = [1,32];</span><br><span class="line">console.log(typeof arr2);//返回的是object</span><br><span class="line"></span><br><span class="line">// 自定义对象</span><br><span class="line"><span class="keyword">function</span> Person(name)&#123;</span><br><span class="line">	this.name =name;</span><br><span class="line">&#125;</span><br><span class="line">var stu = new Person();</span><br><span class="line">console.log(typeof stu); //返回的是object</span><br></pre></td></tr></table></figure></p>
 <p>typeof可以返回的数据类型：<br>复杂数据类型，如果是对象，则返回的是object,如果的function类型,则返回的是function<br>所以：typeof 可以返回的类型为：number、string、boolean、undefined、null、object、function</p>
+<p>还会问一些开放性的问题<br>比如说 面试官问 在以往的开发过程中，遇到过什么比较难解决的问题<br>这个问题会让对方知道你<br>1 你实现的功能的深浅<br>2 面对问题的解题思路、嗅觉、知识面</p>
+<p>让我记忆比较深的一个问题就是，之前的公司自己对开源出来的chrome进行了封装，做成了一个exe桌面程序，我们写的web项目在其中运行。由于是PACS（医疗软件） 医生非常有可能会长时间使用，不退出登录，不关闭应用。这样就会造成一个问题，浏览器内部的对象一直在增加，内存逐步上升，时间久就会造成卡顿现象。当时的解决办法：先在chrome内查看哪些对象或过度占用内存并且无法进行垃圾回收。刚开始时是想手动将对象置为null，但这并不能从根本上解决问题。当时是使用了layui这个插件，发现内存释放不掉，最终选择换其他框架，将常用的弹窗功能自己进行封装，将layui从项目中剔除。其实最开始的解决思路就是错的，解决办法很简单。</p>
 <h2 id="浏览器的回流和重绘"><a href="#浏览器的回流和重绘" class="headerlink" title="浏览器的回流和重绘"></a>浏览器的回流和重绘</h2><p>回流：当render tree 的一部分或全部的元素因改变了自身的宽高，布局，显示或隐藏，或者元素内部的文字结构发生变化 导致需要重新构建页面的时候，回流就产生了</p>
 <p>重绘：当一个元素自身的宽高，布局，及显示或隐藏没有改变，而只是改变了元素的外观风格的时候，就会产生重绘。例如你改变了元素的background-color。</p>
 <p>重绘可以理解为 在页面元素的样式改变时候发生的，例如background-color 等等。<br>回流导致的问题比较大，因为页面会重新渲染。<br>回流必定触发重绘，而重绘不一定触发回流</p>
@@ -422,7 +424,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
+            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:
