@@ -228,9 +228,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="URLSearchParams"><a href="#URLSearchParams" class="headerlink" title="URLSearchParams"></a>URLSearchParams</h3><p>假设浏览器的url参数是 “?name=蜘蛛侠&amp;age=16”<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">new URLSearchParams(location.search).get(<span class="string">"name"</span>); // 蜘蛛侠</span><br></pre></td></tr></table></figure></p>
-<h3 id="getBoundingClientRect"><a href="#getBoundingClientRect" class="headerlink" title="getBoundingClientRect"></a>getBoundingClientRect</h3><p>可以获取指定元素在当前页面的空间信息：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">elem.getBoundingClientRect();</span><br><span class="line"></span><br><span class="line">// 返回</span><br><span class="line">&#123;</span><br><span class="line">  x: 604.875,</span><br><span class="line">  y: 1312,</span><br><span class="line">  width: 701.625,</span><br><span class="line">  height: 31,</span><br><span class="line">  top: 1312,</span><br><span class="line">  right: 1306.5,</span><br><span class="line">  bottom: 1343,</span><br><span class="line">  left: 604.875</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>注意：top是距离文档顶部的距离，y则是距离可视窗口（浏览器屏幕）的顶部距离，如果浏览器滚动，top值不变，y值会变</p>
-<h3 id="contains"><a href="#contains" class="headerlink" title="contains"></a>contains</h3><p>可以判断指定元素是否包含了指定的子元素：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">  &lt;p&gt;&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">document.querySelector(<span class="string">"div"</span>).contains(document.querySelector(<span class="string">"p"</span>)); // <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="getBoundingClientRect"><a href="#getBoundingClientRect" class="headerlink" title="getBoundingClientRect"></a>getBoundingClientRect</h3><p>可以获取指定元素在当前页面的空间信息：<br>
         
           <a class="article-more-a" href="/2019/08/24/不为人知的webAPI/#more">more >></a>
         
@@ -296,9 +294,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>要对程序进行性能优化，就要了解浏览器的运行机制。</p>
-<p>在浏览器中，存在<br>DOM 浏览器将html解析成的树形结构<br>CSSOM 浏览器将css解析成的树形结构<br>Render Tree DOM和CSSOM合并后 生成了Render Tree<br>Layout 计算出Render Tree每个节点的具体位置<br>Painting 通过显卡将Layout后的节点呈现在屏幕上</p>
-<p>浏览器获得html后，从上到下加载，过程中解析并渲染</p>
-<p>获取图片等资源是异步的，不会阻止<br>但是执行js时 会阻塞html的渲染，因为js可能会对dom进行修改，如果是同步进行，将会出现问题。</p>
+<p>在浏览器中，存在<br>DOM 浏览器将html解析成的树形结构<br>CSSOM 浏览器将css解析成的树形结构<br>Render Tree DOM和CSSOM合并后 生成了Render Tree<br>Layout 计算出Render Tree每个节点的具体位置<br>Painting 通过显卡将Layout后的节点呈现在屏幕上<br>浏览器获得html后，从上到下加载，过程中解析并渲染<br>获取图片等资源是异步的，不会阻止<br>但是执行js时 会阻塞html的渲染，因为js可能会对dom进行修改，如果是同步进行，将会出现问题。</p>
 
       
 
