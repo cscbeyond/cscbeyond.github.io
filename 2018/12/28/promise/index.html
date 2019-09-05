@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="码农阿成的个人博客">
 <meta property="og:description" content="题外话：最近在看阮一峰大神的ES6教程先说个跟promise关系不大的知识点下面这段代码123456789function timeout(ms) &amp;#123;  return new Promise((resolve, reject) =&amp;gt; &amp;#123;    setTimeout(resolve, ms, &apos;done&apos;);  &amp;#125;);&amp;#125;timeout(100).then">
 <meta property="og:locale" content="Chinese/English">
-<meta property="og:updated_time" content="2019-03-12T07:38:45.230Z">
+<meta property="og:updated_time" content="2019-09-05T16:07:12.942Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Promise">
 <meta name="twitter:description" content="题外话：最近在看阮一峰大神的ES6教程先说个跟promise关系不大的知识点下面这段代码123456789function timeout(ms) &amp;#123;  return new Promise((resolve, reject) =&amp;gt; &amp;#123;    setTimeout(resolve, ms, &apos;done&apos;);  &amp;#125;);&amp;#125;timeout(100).then">
@@ -166,8 +166,7 @@
       
         <h2 id="题外话："><a href="#题外话：" class="headerlink" title="题外话："></a>题外话：</h2><p>最近在看阮一峰大神的ES6教程<br>先说个跟promise关系不大的知识点<br>下面这段代码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> timeout(ms) &#123;</span><br><span class="line">  <span class="built_in">return</span> new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">    setTimeout(resolve, ms, <span class="string">'done'</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">timeout(100).<span class="keyword">then</span>((value) =&gt; &#123;</span><br><span class="line">  console.log(value);  // <span class="string">'done'</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 <p>竟然打印出了’done’，查了资料才发现，经常用到的定时器，竟然存在第三个参数。<br>第三个参数可以是 基本数据类型，也可以是引用数据类型<br>定时器第三个参数之后的参数，都会作为定时器第一个参数的形参传进去。</p>
-<h1 id="正题"><a href="#正题" class="headerlink" title="正题"></a>正题</h1><p>promise是一个构造函数，也可以当做方法进行调用。</p>
-<p>promise构造函数接受一个函数作为参数，该函数的两个参数分别是resolve和reject。它们是两个函数，resolve函数的作用是，将Promise对象的状态从“未完成”变为“成功”，在异步操作成功时调用，并将异步操作的结果，作为参数传递出去；reject函数的作用是，将Promise对象的状态从“未完成”变为“失败”，在异步操作失败时调用，并将异步操作报出的错误，作为参数传递出去。<br>状态一但发生改变，就不会再变。<br>promise原型上常用的两个方法：<br>then：成功的处理方法，接受两个参数，第二个参数通常不写，而是使用catch去捕获错误<br>catch：发生错误的处理方法<br>promise构造函数上的常用方法：<br>all: 接受一个数组作为参数，并且数组的每一项都是promise的实例。</p>
+<h1 id="正题"><a href="#正题" class="headerlink" title="正题"></a>正题</h1><p>promise是一个构造函数，也可以当做方法进行调用。<br><a id="more"></a><br>promise构造函数接受一个函数作为参数，该函数的两个参数分别是resolve和reject。它们是两个函数，resolve函数的作用是，将Promise对象的状态从“未完成”变为“成功”，在异步操作成功时调用，并将异步操作的结果，作为参数传递出去；reject函数的作用是，将Promise对象的状态从“未完成”变为“失败”，在异步操作失败时调用，并将异步操作报出的错误，作为参数传递出去。<br>状态一但发生改变，就不会再变。<br>promise原型上常用的两个方法：<br>then：成功的处理方法，接受两个参数，第二个参数通常不写，而是使用catch去捕获错误<br>catch：发生错误的处理方法<br>promise构造函数上的常用方法：<br>all: 接受一个数组作为参数，并且数组的每一项都是promise的实例。</p>
 
       
 
