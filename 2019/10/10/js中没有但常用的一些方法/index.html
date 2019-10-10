@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/cscbeyond/cscbeyond.github.io">
-  <title>Archives: 2019 | 码农阿成的个人博客</title>
+  <title>js中没有但常用的一些方法 | 码农阿成的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="利用GitHub + Hexo搭建的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="码农阿成的个人博客">
-<meta property="og:url" content="https://github.com/cscbeyond/cscbeyond.github.io/archives/2019/page/3/index.html">
+  <meta name="description" content="sleep1234567891011function sleep (seconds)&amp;#123;    let startTime = new Date().getTime();    for(let i = 0; i &amp;lt; 2; i++)&amp;#123;        let endTime = new Date().getTime();        if((endTime - startTi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js中没有但常用的一些方法">
+<meta property="og:url" content="https://github.com/cscbeyond/cscbeyond.github.io/2019/10/10/js中没有但常用的一些方法/index.html">
 <meta property="og:site_name" content="码农阿成的个人博客">
-<meta property="og:description" content="利用GitHub + Hexo搭建的博客">
+<meta property="og:description" content="sleep1234567891011function sleep (seconds)&amp;#123;    let startTime = new Date().getTime();    for(let i = 0; i &amp;lt; 2; i++)&amp;#123;        let endTime = new Date().getTime();        if((endTime - startTi">
 <meta property="og:locale" content="Chinese/English">
+<meta property="og:updated_time" content="2019-10-10T01:16:41.520Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="码农阿成的个人博客">
-<meta name="twitter:description" content="利用GitHub + Hexo搭建的博客">
+<meta name="twitter:title" content="js中没有但常用的一些方法">
+<meta name="twitter:description" content="sleep1234567891011function sleep (seconds)&amp;#123;    let startTime = new Date().getTime();    for(let i = 0; i &amp;lt; 2; i++)&amp;#123;        let endTime = new Date().getTime();        if((endTime - startTi">
   
     <link rel="alternative" href="/atom.xml" title="码农阿成的个人博客" type="application/atom+xml">
   
@@ -143,160 +144,155 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-js中没有但常用的一些方法" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      js中没有但常用的一些方法
+    </h1>
+  
+
+        
+        <a href="/2019/10/10/js中没有但常用的一些方法/" class="archive-article-date">
+  	<time datetime="2019-10-10T01:11:47.187Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-10</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="sleep"><a href="#sleep" class="headerlink" title="sleep"></a>sleep</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function sleep (seconds)&#123;</span><br><span class="line">    let startTime = new Date().getTime();</span><br><span class="line">    for(let i = 0; i &lt; 2; i++)&#123;</span><br><span class="line">        let endTime = new Date().getTime();</span><br><span class="line">        if((endTime - startTime) &gt; seconds * 1000)&#123;</span><br><span class="line">            return;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            i = 0;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Date的format方法"><a href="#Date的format方法" class="headerlink" title="Date的format方法"></a>Date的format方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 给js内置对象Date添加format方法，进行日期格式化</span><br><span class="line"> * @param   &#123;Date&#125;  当前时间</span><br><span class="line"> * 调用方式：eg：let time2 = new Date().format(&quot;yyyy-MM-dd hh:mm:ss&quot;); </span><br><span class="line"> */</span><br><span class="line">Date.prototype.format = function (fmt) &#123;</span><br><span class="line">    var o = &#123;</span><br><span class="line">        &quot;M+&quot;: this.getMonth() + 1, //月份 </span><br><span class="line">        &quot;d+&quot;: this.getDate(), //日 </span><br><span class="line">        &quot;h+&quot;: this.getHours(), //小时 </span><br><span class="line">        &quot;m+&quot;: this.getMinutes(), //分 </span><br><span class="line">        &quot;s+&quot;: this.getSeconds(), //秒 </span><br><span class="line">        &quot;q+&quot;: Math.floor((this.getMonth() + 3) / 3), //季度 </span><br><span class="line">        &quot;S&quot;: this.getMilliseconds() //毫秒 </span><br><span class="line">    &#125;;</span><br><span class="line">    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + &quot;&quot;).substr(4 - RegExp.$1.length));</span><br><span class="line">    for (var k in o)</span><br><span class="line">        if (new RegExp(&quot;(&quot; + k + &quot;)&quot;).test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : ((&quot;00&quot; + o[k]).substr((&quot;&quot; + o[k]).length)));</span><br><span class="line">    return fmt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>好饿，早知道不做前端了<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/04/alipay/" class="archive-article-date">
-  	<time datetime="2019-01-04T03:19:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/04/alipay/">支付宝小程序开发手记</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://github.com/cscbeyond/cscbeyond.github.io/2019/10/10/js中没有但常用的一些方法/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/04/mouse/" class="archive-article-date">
-  	<time datetime="2019-01-04T02:13:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-04</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/09/05/js精度丢失问题的解决办法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">封装函数解决js精度丢失问题</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/04/mouse/">mouse事件</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/04/call-apply-bind/" class="archive-article-date">
-  	<time datetime="2019-01-04T02:09:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/04/call-apply-bind/">call apply bind 的使用方法及使用场景</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/04/jsstandard/" class="archive-article-date">
-  	<time datetime="2019-01-04T01:48:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/04/jsstandard/">JS规范（CommonJS/CMD/AMD）</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/03/font/" class="archive-article-date">
-  	<time datetime="2019-01-03T09:18:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/03/font/">常用的字体图标库</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2019/page/2/">&laquo; Prev</a><a class="page-number" href="/archives/2019/">1</a><a class="page-number" href="/archives/2019/page/2/">2</a><span class="page-number current">3</span>
-    </nav>
   
 
 
@@ -320,8 +316,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

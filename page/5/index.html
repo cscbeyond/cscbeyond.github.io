@@ -145,6 +145,68 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-事件冒泡及捕获" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/30/事件冒泡及捕获/">事件冒泡及捕获</a>
+    </h1>
+  
+
+        
+        <a href="/2018/11/30/事件冒泡及捕获/" class="archive-article-date">
+  	<time datetime="2018-11-30T02:50:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 冒泡</span></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">    &lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span><br><span class="line">    &lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"ie=edge"</span>&gt;</span><br><span class="line">    &lt;title&gt;捕获和冒泡&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        .out&#123;</span><br><span class="line">            width: 500px;</span><br><span class="line">            height: 500px;</span><br><span class="line">            background-color: lightblue;</span><br><span class="line">            overflow: hidden;</span><br><span class="line">        &#125;</span><br><span class="line">        .mid&#123;</span><br><span class="line">            width: 300px;</span><br><span class="line">            height: 300px;</span><br><span class="line">            background-color: lightcoral;</span><br><span class="line">            margin: 100px auto;</span><br><span class="line">            overflow: hidden;</span><br><span class="line">        &#125;</span><br><span class="line">        .inner&#123;</span><br><span class="line">            width: 100x;</span><br><span class="line">            height: 100px;</span><br><span class="line">            background-color: lightgreen;</span><br><span class="line">            margin: 100px auto;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class=<span class="string">"out"</span>&gt;</span><br><span class="line">        &lt;div class=<span class="string">"mid"</span>&gt;</span><br><span class="line">            &lt;div class=<span class="string">"inner"</span>&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        window.onload = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">            <span class="built_in">let</span> out = document.querySelector(<span class="string">'.out'</span>);</span><br><span class="line">            <span class="built_in">let</span> mid = document.querySelector(<span class="string">'.mid'</span>);</span><br><span class="line">            <span class="built_in">let</span> inner = document.querySelector(<span class="string">'.inner'</span>);</span><br><span class="line">            out.addEventListener(<span class="string">'click'</span>,<span class="keyword">function</span>(e)&#123;</span><br><span class="line">                alert(<span class="string">'out'</span>);</span><br><span class="line">            &#125;)</span><br><span class="line">            mid.addEventListener(<span class="string">'click'</span>,<span class="keyword">function</span>(e)&#123;</span><br><span class="line">                e.stopPropagation();  //这里阻止事件继续向上冒泡，因此，在点击了inner后，弹出inner mid，不会有out</span><br><span class="line">                alert(<span class="string">'mid'</span>);</span><br><span class="line">            &#125;)</span><br><span class="line">            inner.addEventListener(<span class="string">'click'</span>,<span class="keyword">function</span>(e)&#123;</span><br><span class="line">                e.stopPropagation();  </span><br><span class="line">                alert(<span class="string">'inner'</span>);</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">        //冒泡，是从小的元素向大的元素传递，子元素使用e.stopPropagation()阻止冒泡后，事件无法向上传递，因此，父级元素无法监听到子元素事件。</span><br><span class="line">        // 以上是事件冒泡</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/11/30/事件冒泡及捕获/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-event" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -692,72 +754,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/09/07/chain-program/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-my-first-hexo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/29/my-first-hexo/">解决vue首页加载过慢问题</a>
-    </h1>
-  
-
-        
-        <a href="/2018/08/29/my-first-hexo/" class="archive-article-date">
-  	<time datetime="2018-08-29T01:46:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>解决vue项目首页加载过慢的问题</p>
-<p>1.使用vue-router结合webapack的require异步加载，按需加载模块<br>2.使用异步组件，按需加载<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">components: &#123;</span><br><span class="line">    <span class="string">'my-component'</span>:()=&gt;import(<span class="string">'./my-async-component'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>3.vue-lazyload插件可以实现图片的懒加载<br>4.moment.js插件  外部引入一些插件，不要在vue中引入<br>项目中有用到moment.js这个插件，在vue内部引入后打包的项目大小要比在外部用src的方式引入打包的项目大个300k左右。下载好moment.min.js包，然后在vue项目的webpack.base.conf.js中添加：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">externals:&#123;</span><br><span class="line">    &apos;moment&apos;:&apos;moment&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>代码后是不会将moment.js给打包到js中的。<br>将刚才下载的moment.min.js包，手动引入到打包好的index.html 文件中</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/08/29/my-first-hexo/">展开全文 >></a>
         </p>
       
 
