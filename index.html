@@ -554,6 +554,18 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>第几次看高程属于走马观花，只是看了js可以做哪些事，但没有看具体怎么做。再看一次，顺便记一下学习笔记，相信会有更多收获。</p>
+<h4 id="基本包装类型-Boolean-Number-String"><a href="#基本包装类型-Boolean-Number-String" class="headerlink" title="基本包装类型 Boolean Number String"></a>基本包装类型 Boolean Number String</h4><blockquote>
+<p>每次读取一个基本类型值得时候，后台就会创建一个对应的基本包装类型的对象，从而让我们能够调用一些方法来操作这些数据<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var s1 = <span class="string">'some text'</span>;</span><br><span class="line">var s2 = s1.substring(2);</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>这部分代码：在第二行代码访问s1时，访问过程处于一种读取模式，也就是要从内存中读取这个字符串的值。而在读取模式中访问字符串时，后台会自动完成以下处理：</p>
+<ul>
+<li>创建String类型的实例</li>
+<li>在实例上调用指定方法</li>
+<li>销毁这个实例<br>理解成代码就是：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var s1 = new String(<span class="string">'some text'</span>);</span><br><span class="line">var s2 = s1.substring(2);</span><br><span class="line">s1 = null;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
 
       
 
