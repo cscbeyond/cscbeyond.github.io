@@ -141,6 +141,72 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-react" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/05/react/">React学习笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/05/react/" class="archive-article-date">
+  	<time datetime="2019-01-05T14:31:25.854Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在react中，数据是单向的，需要我们手动去setState<br>给数组添加元素的时候，注意点：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//错误写法</span><br><span class="line">this.setState(&#123;</span><br><span class="line">	list: this.state.list.push(item)</span><br><span class="line">&#125;)</span><br><span class="line">这是因为 push的返回值，不是数组，而是新数组的长度。</span><br><span class="line"></span><br><span class="line">//正确写法：</span><br><span class="line">this.setState(&#123;</span><br><span class="line">	lsit:this.state.list.concat(item)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>在react中，this的指向要多注意，事件要在构造函数中使用bind纠正this指向，指向当前实例。之所以不适用call和apply是因为这两者会执行函数，而bind不会执行函数，并且在执行的时候矫正this。<br>
+        
+          <a class="article-more-a" href="/2019/01/05/react/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/01/05/react/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-alipay" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -697,73 +763,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/12/28/urlParams/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-mpvue" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/28/mpvue/">mpvue踩坑记</a>
-    </h1>
-  
-
-        
-        <a href="/2018/12/28/mpvue/" class="archive-article-date">
-  	<time datetime="2018-12-28T02:13:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>以下引自官方文档：</p>
-<h3 id="mpvue-（github-地址请参见）是一个使用-Vue-js-开发小程序的前端框架。框架基于-Vue-js-核心，mpvue-修改了-Vue-js-的-runtime-和-compiler-实现，使其可以运行在小程序环境中，从而为小程序开发引入了整套-Vue-js-开发体验。"><a href="#mpvue-（github-地址请参见）是一个使用-Vue-js-开发小程序的前端框架。框架基于-Vue-js-核心，mpvue-修改了-Vue-js-的-runtime-和-compiler-实现，使其可以运行在小程序环境中，从而为小程序开发引入了整套-Vue-js-开发体验。" class="headerlink" title="mpvue （github 地址请参见）是一个使用 Vue.js 开发小程序的前端框架。框架基于 Vue.js 核心，mpvue 修改了 Vue.js 的 runtime 和 compiler 实现，使其可以运行在小程序环境中，从而为小程序开发引入了整套 Vue.js 开发体验。"></a>mpvue （github 地址请参见）是一个使用 Vue.js 开发小程序的前端框架。框架基于 Vue.js 核心，mpvue 修改了 Vue.js 的 runtime 和 compiler 实现，使其可以运行在小程序环境中，从而为小程序开发引入了整套 Vue.js 开发体验。</h3><p>然而，当我想自定义一个底部导航的时候，把底部导航提出来作为一个组件，试了半天发现无法实现跳转，不能响应click事件，后来查了下文档才知道，在组件上面是无法绑定click事件的，原文这样解释：</p>
-<h3 id="暂不支持在组件引用时，在组件上定义-click-等原生事件、v-show（可用-v-if-代替）和-class-style-等样式属性-例：-样式是不会生效的-，因为编译到-wxml，小程序不会生成节点，建议写在内部顶级元素上。"><a href="#暂不支持在组件引用时，在组件上定义-click-等原生事件、v-show（可用-v-if-代替）和-class-style-等样式属性-例：-样式是不会生效的-，因为编译到-wxml，小程序不会生成节点，建议写在内部顶级元素上。" class="headerlink" title="暂不支持在组件引用时，在组件上定义 click 等原生事件、v-show（可用 v-if 代替）和 class style 等样式属性(例：  样式是不会生效的)，因为编译到 wxml，小程序不会生成节点，建议写在内部顶级元素上。"></a>暂不支持在组件引用时，在组件上定义 click 等原生事件、v-show（可用 v-if 代替）和 class style 等样式属性(例：<card class="class-name"> </card> 样式是不会生效的)，因为编译到 wxml，小程序不会生成节点，建议写在内部顶级元素上。</h3><p>组件不支持click事件，难道要我每个页面再复制一遍？？<br>所以，组件存在的意义是什么？静态的展示吗？O**K<br>
-        
-          <a class="article-more-a" href="/2018/12/28/mpvue/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/12/28/mpvue/">展开全文 >></a>
         </p>
       
 

@@ -141,6 +141,71 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-loop" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/11/loop/">js中的循环</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/11/loop/" class="archive-article-date">
+  	<time datetime="2019-03-11T09:55:49.977Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>先说一下循环控制语句<br>　　1、break：跳出本层循环，继续执行循环后面的语句。<br>　　　　如果循环有多层，则break只能跳出一层。<br>　　2、continue：跳过本次循环剩余的代码，继续执行下一次循环。<br>　　　　①对与for循环，continue之后执行的语句，是循环变量更新语句i++；<br>　　　　②对于while、do-while循环，continue之后执行的语句，是循环条件判断；<br>　　　　因此，使用这两个循环时，必须将continue放到i++之后使用，否则，continue将跳过i++进入死循环。</p>
+        
+          <a class="article-more-a" href="/2019/03/11/loop/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/11/loop/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-数组和字符串常用方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -693,72 +758,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/01/07/vue插件/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-react" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/05/react/">React学习笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2019/01/05/react/" class="archive-article-date">
-  	<time datetime="2019-01-05T14:31:25.854Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在react中，数据是单向的，需要我们手动去setState<br>给数组添加元素的时候，注意点：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//错误写法</span><br><span class="line">this.setState(&#123;</span><br><span class="line">	list: this.state.list.push(item)</span><br><span class="line">&#125;)</span><br><span class="line">这是因为 push的返回值，不是数组，而是新数组的长度。</span><br><span class="line"></span><br><span class="line">//正确写法：</span><br><span class="line">this.setState(&#123;</span><br><span class="line">	lsit:this.state.list.concat(item)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>在react中，this的指向要多注意，事件要在构造函数中使用bind纠正this指向，指向当前实例。之所以不适用call和apply是因为这两者会执行函数，而bind不会执行函数，并且在执行的时候矫正this。<br>
-        
-          <a class="article-more-a" href="/2019/01/05/react/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/01/05/react/">展开全文 >></a>
         </p>
       
 
